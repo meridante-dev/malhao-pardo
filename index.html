@@ -56,19 +56,22 @@ h2 em,.disp em{font-style:italic;color:var(--terra)}
 .word i{display:inline-block;font-style:inherit;will-change:transform}
 
 /* ── preloader ── */
-#pre{position:fixed;inset:0;z-index:200;background:var(--stone);display:flex;
-  flex-direction:column;align-items:center;justify-content:center;gap:26px;
-  transition:opacity .9s var(--ease),visibility .9s}
+#pre{position:fixed;inset:0;z-index:200;display:flex;
+  flex-direction:column;align-items:center;justify-content:center;gap:18px;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 62%, rgba(201,122,93,.16), transparent 70%),
+    linear-gradient(180deg,#F6EFE3 0%,#EFDFC8 100%);
+  transition:opacity .6s var(--ease),visibility .6s}
 #pre.gone{opacity:0;visibility:hidden}
-#pre svg{width:88px;height:88px}
-#pre svg path{stroke:var(--olive);stroke-width:1.6;fill:none;stroke-linecap:round;
-  stroke-dasharray:300;stroke-dashoffset:300;animation:draw 2.1s var(--ease) forwards}
-#pre svg circle{fill:var(--terra);opacity:0;animation:dot .6s .9s forwards}
+#pre svg{width:56px;height:56px}
+#pre svg path{stroke:var(--olive);stroke-width:1.5;fill:none;stroke-linecap:round;
+  stroke-dasharray:300;stroke-dashoffset:300;animation:draw .8s var(--ease) forwards}
+#pre svg circle{fill:var(--terra);opacity:0;animation:dot .4s .45s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes dot{to{opacity:1}}
-#pre .pn{font-family:var(--disp);font-size:1.24rem;letter-spacing:.42em;text-transform:uppercase;
-  color:var(--ink);text-indent:.42em}
-#pre .pt{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--olive)}
+#pre .pn{font-family:var(--disp);font-size:1.06rem;letter-spacing:.42em;text-transform:uppercase;
+  color:#5A4636;text-indent:.42em;opacity:0;animation:dot .6s .25s forwards}
+#pre .pt{display:none}
 
 /* ── nav ── */
 nav{position:fixed;inset:0 0 auto;z-index:90;transition:background .5s,box-shadow .5s,transform .5s}
@@ -765,12 +768,12 @@ window.addEventListener('load',()=>{
     const h1=document.getElementById('h1');
     const lines=h1.innerHTML.split('<br>');
     h1.innerHTML=lines.map(l=>`<span class="word"><i>${l}</i></span>`).join('<br>');
-    gsap.fromTo('#h1 .word i',{yPercent:110},{yPercent:0,duration:1.25,ease:'power4.out',stagger:.14,delay:.15});
+    gsap.fromTo('#h1 .word i',{yPercent:110},{yPercent:0,duration:1.1,ease:'power4.out',stagger:.1,delay:.05});
     gsap.fromTo('.hero .eyebrow',{opacity:0,y:14},{opacity:1,y:0,duration:1,delay:.1});
-    gsap.fromTo('.hero .sub',{opacity:0,y:22},{opacity:1,y:0,duration:1.1,delay:.55});
-    gsap.fromTo('.bookbar',{opacity:0,y:26},{opacity:1,y:0,duration:1,delay:.75,ease:'power3.out'});
-    gsap.fromTo('.scue',{opacity:0},{opacity:1,duration:1,delay:1.2});
-  }, 1900);
+    gsap.fromTo('.hero .sub',{opacity:0,y:22},{opacity:1,y:0,duration:1,delay:.4});
+    gsap.fromTo('.bookbar',{opacity:0,y:26},{opacity:1,y:0,duration:.9,delay:.55,ease:'power3.out'});
+    gsap.fromTo('.scue',{opacity:0},{opacity:1,duration:1,delay:.9});
+  }, 950);
 });
 
 /* ── nav + progress ── */
