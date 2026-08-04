@@ -3,25 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Malhão Pardo — Boutique Resort in Alentejo, Portugal</title>
+<title>Herdade do Malhão Pardo — Turismo Rural, Alentejo</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 104 96'%3E%3Cg fill='%234E5637'%3E%3Ccircle cx='52' cy='34' r='21'/%3E%3Ccircle cx='33' cy='42' r='14'/%3E%3Ccircle cx='71' cy='42' r='14'/%3E%3Ccircle cx='40' cy='26' r='13'/%3E%3Ccircle cx='64' cy='26' r='13'/%3E%3Ccircle cx='52' cy='20' r='11'/%3E%3Ccircle cx='52' cy='50' r='15'/%3E%3C/g%3E%3Cpath d='M49 88 L49 60 M55 88 L55 62' stroke='%234E5637' stroke-width='5'/%3E%3C/svg%3E">
 <meta name="description" content="A boutique resort in the Alentejo countryside. Rural soul, refined living — stays, slow food, starry nights and the quiet of the montado. Book directly.">
-<meta property="og:title" content="Malhão Pardo — Rural soul. Refined living.">
+<meta property="og:title" content="Herdade do Malhão Pardo — Rural soul. Refined living.">
 <meta property="og:description" content="A boutique resort in the Alentejo. Rooted in nature, made for connection.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://meridante-dev.github.io/malhao-pardo/img/hero-land.jpg">
 <meta property="og:url" content="https://meridante-dev.github.io/malhao-pardo/">
 <link rel="canonical" href="https://meridante-dev.github.io/malhao-pardo/">
-<meta name="theme-color" content="#1E2A35">
+<meta name="theme-color" content="#22261D">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23E9E4DB'/%3E%3Cpath d='M18 46C26 38 30 28 32 16M32 16c3 6 8 9 14 10M32 16c-6 3-12 3-16 1' stroke='%236B705C' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='40' cy='34' r='3.4' fill='%23C97A5D'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/hero-land.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-land.webp" fetchpriority="high">
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Resort","name":"Malhão Pardo",
+{"@context":"https://schema.org","@type":"Resort","name":"Herdade do Malhão Pardo","alternateName":"Malhão Pardo","additionalType":"https://schema.org/FarmStay",
 "description":"Boutique resort in the Alentejo, Portugal. Rural soul, refined living.",
 "slogan":"Rooted in nature. Made for connection.",
 "address":{"@type":"PostalAddress","addressRegion":"Alentejo","addressCountry":"PT"},
@@ -29,8 +30,8 @@
 </script>
 <style>
 :root{
-  --terra:#C97A5D; --olive:#6B705C; --sand:#DCC9B2; --stone:#E9E4DB; --night:#1E2A35;
-  --ink:#2A2622; --paper:#F4F0E8;
+  --terra:#A9834A; --olive:#4E5637; --sand:#DCC9B2; --stone:#EFEAE0; --night:#22261D;
+  --ink:#2B2C22; --paper:#F5F0E4;
   --disp:'Playfair Display',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
   --pad:clamp(22px,5vw,72px); --ease:cubic-bezier(.25,.8,.25,1); --r:4px;
 }
@@ -63,15 +64,18 @@ h2 em,.disp em{font-style:italic;color:var(--terra)}
     linear-gradient(180deg,#F6EFE3 0%,#EFDFC8 100%);
   transition:opacity .6s var(--ease),visibility .6s}
 #pre.gone{opacity:0;visibility:hidden}
-#pre svg{width:56px;height:56px}
+#pre svg{width:64px;height:60px}
+#pre .pre-oak{color:var(--olive);opacity:0;animation:oakin .9s .1s var(--ease) forwards}
+@keyframes oakin{from{opacity:0;transform:translateY(6px) scale(.96)}to{opacity:1;transform:none}}
 #pre svg path{stroke:var(--olive);stroke-width:1.5;fill:none;stroke-linecap:round;
   stroke-dasharray:300;stroke-dashoffset:300;animation:draw .8s var(--ease) forwards}
 #pre svg circle{fill:var(--terra);opacity:0;animation:dot .4s .45s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes dot{to{opacity:1}}
-#pre .pn{font-family:var(--disp);font-size:1.06rem;letter-spacing:.42em;text-transform:uppercase;
-  color:#5A4636;text-indent:.42em;opacity:0;animation:dot .6s .25s forwards}
-#pre .pt{display:none}
+#pre .pn{font-family:var(--disp);font-size:.98rem;line-height:1.7;text-align:center;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--olive);text-indent:.34em;opacity:0;animation:dot .6s .25s forwards}
+#pre .pt{font-size:.56rem;font-weight:600;letter-spacing:.5em;text-transform:uppercase;
+  color:var(--terra);margin-top:10px;opacity:0;animation:dot .8s .55s forwards;padding-left:.5em}
 
 /* ── nav ── */
 nav{position:fixed;inset:0 0 auto;z-index:90;transition:background .5s,box-shadow .5s,transform .5s}
@@ -81,7 +85,7 @@ nav.hide{transform:translateY(-100%)}
 .nav-in{display:flex;align-items:center;gap:34px;padding:20px var(--pad);max-width:1600px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:13px}
 .brand svg{width:34px;height:34px;flex:none}
-.brand .bt{font-family:var(--disp);font-size:1.06rem;letter-spacing:.3em;text-transform:uppercase;line-height:1}
+.brand .bt{font-family:var(--disp);font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;line-height:1;white-space:nowrap}
 .brand .bt small{display:block;font-family:var(--sans);font-size:.5rem;font-weight:600;
   letter-spacing:.44em;color:var(--olive);margin-top:5px}
 .nav-links{display:flex;gap:30px;margin-left:auto;font-size:.72rem;font-weight:600;
@@ -108,7 +112,7 @@ nav:not(.solid) .btn{background:rgba(30,42,53,.6);border-color:rgba(233,228,219,
 
 /* ── hero ── */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;color:var(--stone)}
-.hero .bg{position:absolute;inset:-12% 0;background:url(img/hero-land.jpg) center/cover;will-change:transform}
+.hero .bg{position:absolute;inset:-12% 0;background:url(img/hero-land.webp) center/cover;will-change:transform}
 .hero .tint{position:absolute;inset:0;background:
   linear-gradient(180deg,rgba(30,42,53,.42),rgba(30,42,53,.06) 45%,rgba(30,42,53,.6) 100%)}
 .hero-in{position:relative;z-index:2;width:100%;padding-bottom:clamp(120px,17vh,180px)}
@@ -153,7 +157,7 @@ section{position:relative}
   margin-top:70px;flex-wrap:wrap}
 .pillar{display:flex;flex-direction:column;align-items:center;gap:14px;flex:1;min-width:110px}
 .pillar svg{width:40px;height:40px;stroke:var(--olive);fill:none;stroke-width:1.3;stroke-linecap:round}
-.pillar span{font-size:.62rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#4C463F}
+.pillar span{text-align:center;line-height:1.9;font-size:.58rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#4C463F}
 
 /* editorial split */
 .split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,110px);align-items:center}
@@ -207,7 +211,7 @@ section{position:relative}
 
 /* quote interstitial */
 .quote{position:relative;min-height:74vh;display:flex;align-items:center;overflow:hidden;color:var(--stone)}
-.quote .bg{position:absolute;inset:-14% 0;background:url(img/hero-alt.jpg) center/cover;will-change:transform}
+.quote .bg{position:absolute;inset:-14% 0;background:url(img/hero-alt.webp) center/cover;will-change:transform}
 .quote .tint{position:absolute;inset:0;background:rgba(30,42,53,.45)}
 .quote blockquote{position:relative;z-index:2;font-family:var(--disp);font-style:italic;font-weight:400;
   font-size:clamp(1.7rem,3.6vw,3rem);line-height:1.3;max-width:22ch;margin:0 auto;text-align:center}
@@ -244,7 +248,7 @@ section{position:relative}
 /* final cta */
 .final{position:relative;min-height:88svh;display:flex;align-items:center;overflow:hidden;
   color:var(--stone);text-align:center}
-.final .bg{position:absolute;inset:-12% 0;background:url(img/night-sky.jpg) center/cover;will-change:transform}
+.final .bg{position:absolute;inset:-12% 0;background:url(img/night-sky.webp) center/cover;will-change:transform}
 .final .tint{position:absolute;inset:0;background:rgba(30,42,53,.5)}
 .final .in{position:relative;z-index:2;width:100%}
 .final h2{font-size:clamp(2.6rem,6vw,5rem)}
@@ -330,6 +334,43 @@ footer a:hover{color:var(--terra)}
 
 
 
+
+/* concierge */
+#ccOrb{position:fixed;right:26px;bottom:26px;z-index:120;width:58px;height:58px;border-radius:50%;
+  border:1px solid rgba(169,131,74,.55);background:var(--night);cursor:pointer;
+  display:grid;place-items:center;box-shadow:0 10px 30px rgba(34,38,29,.35);
+  transition:transform .35s var(--ease),box-shadow .35s}
+#ccOrb:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(34,38,29,.45)}
+#ccOrb svg{width:30px;height:28px;color:var(--sand)}
+#ccOrb::after{content:'';position:absolute;inset:-5px;border-radius:50%;
+  border:1px solid rgba(169,131,74,.35);animation:ccb 3.2s ease-in-out infinite}
+@keyframes ccb{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.1);opacity:.2}}
+#ccPanel{position:fixed;right:26px;bottom:98px;z-index:120;width:min(360px,calc(100vw - 40px));
+  background:var(--paper);border:1px solid rgba(42,38,34,.12);border-radius:10px;
+  box-shadow:0 24px 70px rgba(34,38,29,.28);overflow:hidden;
+  display:flex;flex-direction:column;max-height:min(520px,70vh)}
+#ccPanel[hidden]{display:none}
+.cc-hd{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;
+  background:var(--night);color:var(--stone)}
+.cc-hd span{font-family:var(--disp);font-size:1rem;letter-spacing:.14em;text-transform:uppercase}
+.cc-hd button{background:none;border:0;color:var(--sand);font-size:.9rem;cursor:pointer;padding:4px}
+.cc-log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.cc-m{max-width:86%;padding:10px 14px;border-radius:10px;font-size:.86rem;line-height:1.6}
+.cc-a{background:#fff;border:1px solid rgba(42,38,34,.08);align-self:flex-start;border-bottom-left-radius:3px}
+.cc-u{background:var(--olive);color:var(--stone);align-self:flex-end;border-bottom-right-radius:3px}
+.cc-m.thinking{color:#8A8478;font-style:italic}
+.cc-in{display:flex;gap:8px;padding:12px;border-top:1px solid rgba(42,38,34,.1);background:#fff}
+.cc-in input{flex:1;border:0;outline:0;background:none;font-family:var(--sans);font-size:.88rem;color:var(--ink)}
+.cc-in button{width:38px;height:38px;border-radius:50%;border:0;background:var(--night);color:var(--sand);
+  cursor:pointer;display:grid;place-items:center;flex:none;transition:background .3s}
+.cc-in button:hover{background:var(--olive)}
+.cc-in button svg{width:16px;height:16px}
+@media(max-width:640px){#ccOrb{right:18px;bottom:18px}#ccPanel{right:12px;bottom:86px}}
+
+/* seasonal */
+.eyebrow #seasonTag{font-style:normal}
+.eyebrow #seasonTag:not(:empty)::before{content:'·';margin:0 .7em;opacity:.5}
+:root[data-season="green"] #pre{background:linear-gradient(180deg,#F2F0E6 0%,#E4E4D2 100%)}
 /* vitality circuit */
 .ritual{margin-top:2.2em;display:flex;flex-direction:column}
 .rit{display:flex;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid rgba(42,38,34,.12);
@@ -496,16 +537,30 @@ body.menu-open .m-view{opacity:1;transform:none}
 <div id="ring"><span>View</span></div>
 
 <!-- preloader -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<g id="oakMark">
+  <path d="M49 88 L49 60 M55 88 L55 62 M52 90 C 46 90 40 89 34 90 M52 90 C 58 90 64 89 70 90"
+    stroke="currentColor" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <g fill="currentColor">
+    <circle cx="52" cy="34" r="21"/>
+    <circle cx="33" cy="42" r="14"/><circle cx="71" cy="42" r="14"/>
+    <circle cx="40" cy="26" r="13"/><circle cx="64" cy="26" r="13"/>
+    <circle cx="52" cy="20" r="11"/>
+    <circle cx="26" cy="50" r="9"/><circle cx="78" cy="50" r="9"/>
+    <circle cx="52" cy="50" r="15"/>
+  </g>
+</g>
+</defs></svg>
 <div id="pre" aria-hidden="true">
-  <svg viewBox="0 0 64 64"><path d="M18 46C26 38 30 28 32 16M32 16c3 6 8 9 14 10M32 16c-6 3-12 3-16 1"/><circle cx="40" cy="34" r="3.2"/></svg>
-  <div class="pn">Malhão Pardo</div>
-  <div class="pt">Alentejo · Portugal</div>
+  <svg viewBox="0 0 104 96" class="pre-oak"><use href="#oakMark"/></svg>
+  <div class="pn">Herdade do<br>Malhão Pardo</div>
+  <div class="pt">Turismo Rural</div>
 </div>
 
 <nav id="nav"><div class="nav-in">
-  <a class="brand" href="#top" aria-label="Malhão Pardo">
-    <svg viewBox="0 0 64 64" fill="none"><path d="M18 46C26 38 30 28 32 16M32 16c3 6 8 9 14 10M32 16c-6 3-12 3-16 1" stroke="#6B705C" stroke-width="2" stroke-linecap="round"/><circle cx="40" cy="34" r="3" fill="#C97A5D"/></svg>
-    <span class="bt">Malhão Pardo<small>Alentejo · Portugal</small></span>
+  <a class="brand" href="#top" aria-label="Herdade do Malhão Pardo">
+    <svg viewBox="0 0 104 96" class="oak" style="color:var(--olive)"><use href="#oakMark"/></svg>
+    <span class="bt">Herdade do Malhão Pardo<small>Turismo Rural</small></span>
   </a>
   <div class="navlive" id="navLive" aria-hidden="true"></div>
   <button class="btn" data-book>Book your stay</button>
@@ -517,10 +572,10 @@ body.menu-open .m-view{opacity:1;transform:none}
 <!-- ═══ HERO ═══ -->
 <header class="hero" id="top">
   <div class="bg" data-plx></div>
-  <video class="herovid" id="heroVid" muted playsinline preload="auto" poster="img/hero-land.jpg"></video>
+  <video class="herovid" id="heroVid" muted playsinline preload="auto" poster="img/hero-land.webp"></video>
   <div class="tint"></div>
   <div class="wrap hero-in">
-    <span class="eyebrow">Boutique resort · Alentejo</span>
+    <span class="eyebrow">Turismo Rural · Alentejo<i id="seasonTag"></i></span>
     <h1 id="h1">Rural soul.<br><em>Refined living.</em></h1>
     <p class="sub rv" data-rv>An estate of cork oaks, whitewash and long horizons — where the
     day is measured in light, not hours.</p>
@@ -547,18 +602,18 @@ body.menu-open .m-view{opacity:1;transform:none}
     <div class="sunarc rv" data-rv aria-hidden="true">
       <svg viewBox="0 0 900 210" preserveAspectRatio="xMidYMax meet">
         <path id="horizon" d="M0,196 H900" stroke="rgba(107,112,92,.35)" stroke-width="1" fill="none"/>
-        <path id="arc" d="M60,196 C230,30 670,30 840,196" stroke="#6B705C" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        <circle id="sun" cx="60" cy="196" r="7" fill="#C97A5D"/>
-        <text x="60" y="188" text-anchor="middle" font-family="Montserrat" font-size="9" letter-spacing="2.5" fill="#6B705C">SUNRISE 06:12</text>
-        <text x="840" y="188" text-anchor="middle" font-family="Montserrat" font-size="9" letter-spacing="2.5" fill="#6B705C">SUNSET 21:04</text>
+        <path id="arc" d="M60,196 C230,30 670,30 840,196" stroke="#4E5637" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <circle id="sun" cx="60" cy="196" r="7" fill="#A9834A"/>
+        <text x="60" y="188" text-anchor="middle" font-family="Montserrat" font-size="9" letter-spacing="2.5" fill="#4E5637">SUNRISE 06:12</text>
+        <text x="840" y="188" text-anchor="middle" font-family="Montserrat" font-size="9" letter-spacing="2.5" fill="#4E5637">SUNSET 21:04</text>
       </svg>
     </div>
     <div class="pillars">
-      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><path d="M8 32V18l12-9 12 9v14M16 32v-8h8v8"/></svg><span>Stay</span></div>
-      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><path d="M20 33V15M20 15c2 4 6 6 10 6M20 15c-2 4-6 6-10 6M20 15c0-4 2-7 5-9"/></svg><span>Nature</span></div>
-      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="11"/><path d="M20 13v7l5 4"/></svg><span>Slow living</span></div>
-      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><circle cx="14" cy="16" r="4.5"/><circle cx="26" cy="16" r="4.5"/><path d="M7 30c1.5-5 4-7 7-7s5.5 2 6 7M20 30c.5-5 3-7 6-7s5.5 2 7 7"/></svg><span>Connection</span></div>
-      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><path d="M6 28c6-2 10-6 12-12M18 16c4 2 8 3 12 2M6 33h28"/></svg><span>Alentejo</span></div>
+      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><path d="M20 34V10M20 30c-4-1-7-4-8-8M20 26c-4-1-6-3-7-6M20 22c-3-1-5-2-6-5M20 30c4-1 7-4 8-8M20 26c4-1 6-3 7-6M20 22c3-1 5-2 6-5M20 14c-2-1-3-2-3-4M20 14c2-1 3-2 3-4"/></svg><span>Enraizado na<br>Natureza</span></div>
+      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><path d="M4 26c5-6 9-6 13 0s8 6 12 0M4 33c5-6 9-6 13 0s8 6 12 0" transform="translate(3 -4)"/></svg><span>Paisagens<br>Autênticas</span></div>
+      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><path d="M8 28a12 12 0 0 1 24 0M20 10v-4M8 16l-3-3M32 16l3-3M4 28h32M10 33h20"/></svg><span>Tempo que<br>Inspira</span></div>
+      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><circle cx="20" cy="12" r="4"/><circle cx="9" cy="16" r="3.4"/><circle cx="31" cy="16" r="3.4"/><path d="M13 32c0-5 3-8 7-8s7 3 7 8M3 30c.6-4 2.6-6.4 6-6.4M37 30c-.6-4-2.6-6.4-6-6.4"/></svg><span>Conexão<br>Verdadeira</span></div>
+      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><path d="M12 33V18a8 8 0 0 1 16 0v15M8 33h24"/></svg><span>Luxo Discreto<br>e Atemporal</span></div>
     </div>
   </div>
 </section>
@@ -567,8 +622,8 @@ body.menu-open .m-view{opacity:1;transform:none}
 <section class="band paper-band" id="estate" style="padding-top:clamp(70px,10vh,130px)">
   <div class="wrap split">
     <div class="collage rv" data-rv>
-      <div class="frame tall"><img src="img/casa.jpg" alt="Whitewashed architecture of the estate under a stone pine" loading="lazy" data-kb><span class="cap">The white houses</span></div>
-      <div class="detail" data-float><img src="img/breakfast.jpg" alt="Morning table detail" loading="lazy"></div>
+      <div class="frame tall"><img src="img/casa.webp" alt="Whitewashed architecture of the estate under a stone pine" loading="lazy" data-kb><span class="cap">The white houses</span></div>
+      <div class="detail" data-float><img src="img/breakfast.webp" alt="Morning table detail" loading="lazy"></div>
     </div>
     <div>
       <span class="eyebrow rv" data-rv><i class="idx">02</i>The estate</span>
@@ -593,7 +648,7 @@ body.menu-open .m-view{opacity:1;transform:none}
       bar and stay until the swifts come out.</p>
     </div>
     <div class="frame wide rv" data-rv>
-        <video class="livevid" muted playsinline loop autoplay preload="metadata" poster="img/pool.jpg" aria-label="The pool at golden hour">
+        <video class="livevid" muted playsinline loop autoplay preload="metadata" poster="img/pool.webp" aria-label="The pool at golden hour">
           <source src="media/pool-loop.mp4" type="video/mp4"></video>
         <span class="cap">Golden hour · live</span></div>
   </div>
@@ -601,7 +656,7 @@ body.menu-open .m-view{opacity:1;transform:none}
 
 <!-- ═══ CHAPTER I ═══ -->
 <section class="chapter">
-  <div class="bg" data-plx style="background-image:url(img/forest.jpg)"></div>
+  <div class="bg" data-plx style="background-image:url(img/forest.webp)"></div>
   <div class="tint"></div>
   <div class="wrap ch-in">
     <span class="ch-n">I</span>
@@ -620,7 +675,7 @@ body.menu-open .m-view{opacity:1;transform:none}
     </div>
     <div class="stays">
       <article class="stay rv" data-rv>
-        <div class="ph"><img src="img/room-1.jpg" alt="Quarto — bright double room" loading="lazy" style="transform:scale(1.28);transform-origin:72% 12%"></div>
+        <div class="ph"><img src="img/room-1.webp" alt="Quarto — bright double room" loading="lazy" style="transform:scale(1.28);transform-origin:72% 12%"></div>
         <div class="bd">
           <h3>Quartos</h3><div class="meta">Sleeps 2 · Garden view · 28 m²</div>
           <p>Light-washed rooms with linen beds, a reading chair and a door straight to the herbs.</p>
@@ -628,7 +683,7 @@ body.menu-open .m-view{opacity:1;transform:none}
         </div>
       </article>
       <article class="stay rv" data-rv>
-        <div class="ph"><img src="img/room-2.jpg" alt="Suite Montado — moody green suite" loading="lazy"></div>
+        <div class="ph"><img src="img/room-2.webp" alt="Suite Montado — moody green suite" loading="lazy"></div>
         <div class="bd">
           <h3>Suites</h3><div class="meta">Sleeps 2–3 · Terrace · 45 m²</div>
           <p>Deep colours, a fireplace for winter, a private terrace facing the cork oaks for summer.</p>
@@ -636,7 +691,7 @@ body.menu-open .m-view{opacity:1;transform:none}
         </div>
       </article>
       <article class="stay rv" data-rv>
-        <div class="ph"><img src="img/casa-monte.jpg" alt="Casa do Monte — the old farmhouse and its pool at night" loading="lazy"></div>
+        <div class="ph"><img src="img/casa-monte.webp" alt="Casa do Monte — the old farmhouse and its pool at night" loading="lazy"></div>
         <div class="bd">
           <h3>Casa do Monte</h3><div class="meta">Sleeps 4–6 · Private pool · 120 m²</div>
           <p>The old farmhouse, whole — kitchen, courtyard, your own slice of the estate.</p>
@@ -670,7 +725,7 @@ body.menu-open .m-view{opacity:1;transform:none}
         <div class="menu-line rv" data-rv><b>The cellar</b><i></i><span>Alentejo, mostly small</span></div>
       </div>
     </div>
-    <div class="frame tall rv" data-rv><img src="img/table.jpg" alt="Candlelit dinner table" loading="lazy" data-kb><span class="cap">Dinner, 20:00</span></div>
+    <div class="frame tall rv" data-rv><img src="img/table.webp" alt="Candlelit dinner table" loading="lazy" data-kb><span class="cap">Dinner, 20:00</span></div>
   </div>
 </section>
 
@@ -696,7 +751,7 @@ body.menu-open .m-view{opacity:1;transform:none}
         <span class="vit-price">€85 <small>per person · €65 as an add-on to your stay</small></span>
       </div>
     </div>
-    <div class="frame tall rv" data-rv><img src="img/spa.jpg" alt="The Vitality Circuit — warm towels and quiet" loading="lazy" data-kb><span class="cap">The circuit · 2h30</span></div>
+    <div class="frame tall rv" data-rv><img src="img/spa.webp" alt="The Vitality Circuit — warm towels and quiet" loading="lazy" data-kb><span class="cap">The circuit · 2h30</span></div>
   </div>
 </section>
 
@@ -710,19 +765,19 @@ body.menu-open .m-view{opacity:1;transform:none}
   </div>
   <div class="exp-outer">
     <div class="exp-track" id="expTrack">
-      <figure class="exp"><img src="img/forest.jpg" alt="" loading="lazy"><span class="ov"></span>
+      <figure class="exp"><img src="img/forest.webp" alt="" loading="lazy"><span class="ov"></span>
         <figcaption class="tx"><span>On the estate</span><b>Walks in the montado</b></figcaption></figure>
-      <figure class="exp"><img src="img/breakfast.jpg" alt="" loading="lazy"><span class="ov"></span>
+      <figure class="exp"><img src="img/breakfast.webp" alt="" loading="lazy"><span class="ov"></span>
         <figcaption class="tx"><span>Slow mornings</span><b>Breakfast that lingers</b></figcaption></figure>
-      <figure class="exp"><img src="img/night-sky.jpg" alt="" loading="lazy"><span class="ov"></span>
+      <figure class="exp"><img src="img/night-sky.webp" alt="" loading="lazy"><span class="ov"></span>
         <figcaption class="tx"><span>After dinner</span><b>Dark-sky stargazing</b></figcaption></figure>
-      <figure class="exp"><img src="img/spa.jpg" alt="" loading="lazy"><span class="ov"></span>
+      <figure class="exp"><img src="img/spa.webp" alt="" loading="lazy"><span class="ov"></span>
         <figcaption class="tx"><span>Wellness</span><b>Massages in the olive shade</b></figcaption></figure>
-      <figure class="exp"><img src="img/landscape-2.jpg" alt="" loading="lazy"><span class="ov"></span>
+      <figure class="exp"><img src="img/landscape-2.webp" alt="" loading="lazy"><span class="ov"></span>
         <figcaption class="tx"><span>Out &amp; about</span><b>Évora &amp; the marble towns</b></figcaption></figure>
-      <figure class="exp"><img src="img/coast.jpg" alt="" loading="lazy"><span class="ov"></span>
+      <figure class="exp"><img src="img/coast.webp" alt="" loading="lazy"><span class="ov"></span>
         <figcaption class="tx"><span>Day trip</span><b>The wild coast, one hour west</b></figcaption></figure>
-      <figure class="exp"><img src="img/food.jpg" alt="" loading="lazy"><span class="ov"></span>
+      <figure class="exp"><img src="img/food.webp" alt="" loading="lazy"><span class="ov"></span>
         <figcaption class="tx"><span>Hands in</span><b>Cooking with the kitchen</b></figcaption></figure>
     </div>
   </div>
@@ -783,7 +838,8 @@ body.menu-open .m-view{opacity:1;transform:none}
   <div class="wrap">
     <div class="fgrid">
       <div class="fbrand">
-        <span class="bt">Malhão Pardo<small>Alentejo · Portugal</small></span>
+        <svg viewBox="0 0 104 96" class="oak f-oak" style="color:var(--sand);width:44px;height:40px;margin-bottom:14px"><use href="#oakMark"/></svg>
+        <span class="bt">Herdade do Malhão Pardo<small>Turismo Rural</small></span>
         <p>Rural soul. Refined living.</p>
       </div>
       <div><h4>Visit</h4><ul>
@@ -799,7 +855,7 @@ body.menu-open .m-view{opacity:1;transform:none}
     </div>
     <div class="flive" id="footLive" aria-live="off"></div>
     <div class="fbot">
-      <span>© Malhão Pardo · <span class="ph">[ENTITY · pending]</span></span>
+      <span>© Herdade do Malhão Pardo · <span class="ph">[ENTITY · pending]</span></span>
       <span>Sustainable by habit, not by hashtag.</span>
     </div>
   </div>
@@ -812,14 +868,14 @@ body.menu-open .m-view{opacity:1;transform:none}
 <div id="menu" aria-hidden="true">
   <div class="m-in">
     <nav class="m-links">
-      <a href="#estate" data-mi="img/casa.jpg"><i>01</i>The Estate</a>
-      <a href="#stays" data-mi="img/casa-monte.jpg"><i>02</i>Stays</a>
-      <a href="#table" data-mi="img/table.jpg"><i>03</i>The Table</a>
-      <a href="#vitality" data-mi="img/spa.jpg"><i>04</i>Vitality Circuit</a>
-      <a href="#days" data-mi="img/forest.jpg"><i>05</i>Days Here</a>
-      <a href="#find" data-mi="img/hero-land.jpg"><i>06</i>Find Us</a>
+      <a href="#estate" data-mi="img/casa.webp"><i>01</i>The Estate</a>
+      <a href="#stays" data-mi="img/casa-monte.webp"><i>02</i>Stays</a>
+      <a href="#table" data-mi="img/table.webp"><i>03</i>The Table</a>
+      <a href="#vitality" data-mi="img/spa.webp"><i>04</i>Vitality Circuit</a>
+      <a href="#days" data-mi="img/forest.webp"><i>05</i>Days Here</a>
+      <a href="#find" data-mi="img/hero-land.webp"><i>06</i>Find Us</a>
     </nav>
-    <div class="m-view"><img id="mView" src="img/casa.jpg" alt=""></div>
+    <div class="m-view"><img id="mView" src="img/casa.webp" alt=""></div>
   </div>
   <div class="m-foot">
     <span class="ph">[EMAIL — pending]</span>
@@ -855,13 +911,13 @@ body.menu-open .m-view{opacity:1;transform:none}
 
       <div class="bk-step" id="st2">
         <div class="bk-opt" data-rate="160" data-name="Quartos">
-          <img src="img/room-1.jpg" alt="" style="object-position:72% 10%"><div class="t"><b>Quartos</b>
+          <img src="img/room-1.webp" alt="" style="object-position:72% 10%"><div class="t"><b>Quartos</b>
           <span>Sleeps 2 · garden view</span><em>€160 / night</em></div></div>
         <div class="bk-opt" data-rate="240" data-name="Suites">
-          <img src="img/room-2.jpg" alt=""><div class="t"><b>Suites</b>
+          <img src="img/room-2.webp" alt=""><div class="t"><b>Suites</b>
           <span>Sleeps 2–3 · terrace · fireplace</span><em>€240 / night</em></div></div>
         <div class="bk-opt" data-rate="420" data-name="Casa do Monte">
-          <img src="img/casa-monte.jpg" alt=""><div class="t"><b>Casa do Monte</b>
+          <img src="img/casa-monte.webp" alt=""><div class="t"><b>Casa do Monte</b>
           <span>Sleeps 4–6 · private pool</span><em>€420 / night</em></div></div>
       </div>
 
@@ -1209,6 +1265,13 @@ renderCal();
 document.getElementById('gMinus').onclick=()=>{state.g=Math.max(1,state.g-1);gN.textContent=state.g;};
 document.getElementById('gPlus').onclick=()=>{state.g=Math.min(12,state.g+1);gN.textContent=state.g;};
 
+/* season */
+(()=>{const m=new Date().getMonth()+1,
+  green=(m>=10||m<=3), tag=document.getElementById('seasonTag');
+  document.documentElement.dataset.season=green?'green':'summer';
+  if(tag) tag.textContent=green?'The green season':'High summer';
+})();
+
 /* slots */
 document.querySelectorAll('.slot').forEach(o=>o.addEventListener('click',()=>{
   document.querySelectorAll('.slot').forEach(x=>x.classList.remove('sel'));
@@ -1299,7 +1362,7 @@ nextB.addEventListener('click',()=>{
     if(state.mode==='circuit'){
       const total=85*state.g;
       subject='Vitality Circuit · '+fmt(state.inD);
-      body=`Experience request — Malhão Pardo
+      body=`Experience request — Herdade do Malhão Pardo
 
 Experience: The Vitality Circuit (2h30)
 Name: ${name}
@@ -1312,7 +1375,7 @@ Notes: ${msg||'—'}`;
     } else {
       const nn=nights(), est=nn*(state.rate||160), circ=state.addCircuit?65*state.g:0;
       subject='Booking request · '+state.stay+' · '+fmt(state.inD);
-      body=`Booking request — Malhão Pardo
+      body=`Booking request — Herdade do Malhão Pardo
 
 Name: ${name}
 Email: ${mail}
@@ -1400,6 +1463,51 @@ document.querySelectorAll('.livevid').forEach(v=>{
   },{passive:true});
   addEventListener('pointerup',()=>down=false);
 })();
+
+/* concierge */
+addEventListener('DOMContentLoaded',()=>{
+const orb=document.getElementById('ccOrb'),panel=document.getElementById('ccPanel'),
+      log=document.getElementById('ccLog'),form=document.getElementById('ccForm'),
+      inp=document.getElementById('ccT'),API='https://malhao-concierge.edenrise.workers.dev';
+const hist=[];
+function add(cls,text){const d=document.createElement('div');d.className='cc-m '+cls;
+  d.textContent=text;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+function toggle(open){const o=open??panel.hidden;panel.hidden=!o;
+  orb.setAttribute('aria-expanded',String(o)); if(o) inp.focus()}
+orb.addEventListener('click',()=>toggle());
+document.getElementById('ccX').addEventListener('click',()=>toggle(false));
+form.addEventListener('submit',async e=>{
+  e.preventDefault();const q=inp.value.trim();if(!q)return;
+  inp.value='';add('cc-u',q);hist.push({role:'user',content:q});
+  const t=add('cc-a thinking','…');
+  try{
+    const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({messages:hist})});
+    const j=await r.json();
+    const a=(j.reply||'').trim()||'I could not answer just now — the booking form always reaches us.';
+    t.textContent=a;t.classList.remove('thinking');hist.push({role:'assistant',content:a});
+  }catch(err){t.textContent='I could not answer just now — the booking form always reaches us.';t.classList.remove('thinking')}
+});
+});
 </script>
+
+<!-- ═══ CONCIERGE ═══ -->
+<button id="ccOrb" aria-label="Ask the concierge" aria-expanded="false">
+  <svg viewBox="0 0 104 96"><use href="#oakMark"/></svg>
+</button>
+<div id="ccPanel" role="dialog" aria-label="Concierge" hidden>
+  <div class="cc-hd">
+    <span>Concierge</span>
+    <button id="ccX" aria-label="Close">✕</button>
+  </div>
+  <div class="cc-log" id="ccLog">
+    <div class="cc-m cc-a">Welcome to the herdade. Ask me anything about the estate, the stays or the Vitality Circuit.</div>
+  </div>
+  <form class="cc-in" id="ccForm">
+    <input id="ccT" autocomplete="off" placeholder="Ask about your stay…" maxlength="400">
+    <button type="submit" aria-label="Send"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M12 5l5 5-5 5"/></svg></button>
+  </form>
+</div>
+
 </body>
 </html>

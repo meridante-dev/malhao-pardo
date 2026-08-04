@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://meridante-dev.github.io/malhao-pardo/sitemap.xml
