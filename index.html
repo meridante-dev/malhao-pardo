@@ -1167,19 +1167,31 @@ if(!RM){
             '?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1';
       f.allow='autoplay; fullscreen'; f.setAttribute('frameborder','0');
       f.setAttribute('tabindex','-1'); f.title='';
-      f.addEventListener('load',()=>hero.classList.add('filmon'),{once:true});
+      /* fade the poster out only when the player REPORTS playback — an iframe can
+         'load' and still never play (blockers, power saving), and then we'd be
+         hiding the poster behind a dead player */
+      let playing=false;
+      addEventListener('message',ev=>{
+        if(!String(ev.origin).includes('player.vimeo.com')) return;
+        let d; try{ d=typeof ev.data==='string'?JSON.parse(ev.data):ev.data; }catch(_){ return; }
+        if(d.event==='ready'){
+          tell('addEventListener','playing'); tell('addEventListener','play');
+        }
+        if(d.event==='playing'||d.event==='play'){ playing=true; hero.classList.add('filmon'); }
+      });
       film.appendChild(f);
       /* Browsers freeze iframe playback whenever the tab is hidden (even briefly at load)
          and NEVER resume it — and a single 'play' nudge can be refused. So: a watchdog
          keeps re-asking while the page is visible and the hero is on screen. 'play' on an
          already-playing player is a no-op, so this is safe to repeat. */
-      const tell=m=>{ try{ f.contentWindow.postMessage(JSON.stringify({method:m}),
+      const tell=(m,v)=>{ try{ f.contentWindow.postMessage(JSON.stringify(v!==undefined?{method:m,value:v}:{method:m}),
                      'https://player.vimeo.com'); }catch(_){} };
       let heroOn=true;
       const resume=()=>{ if(!document.hidden && heroOn) tell('play'); };
       document.addEventListener('visibilitychange',resume);
       addEventListener('pageshow',resume);
       addEventListener('focus',resume);
+      addEventListener('resize',resume);
       /* phones in low-power mode block all autoplay until a gesture — first touch wakes it */
       ['pointerdown','touchstart','keydown','wheel'].forEach(ev=>
         addEventListener(ev,resume,{once:true,passive:true}));
