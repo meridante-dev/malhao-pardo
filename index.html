@@ -1169,16 +1169,24 @@ if(!RM){
       f.setAttribute('tabindex','-1'); f.title='';
       f.addEventListener('load',()=>hero.classList.add('filmon'),{once:true});
       film.appendChild(f);
-      /* the browser pauses background-tab media and never resumes it on its own —
-         nudge the player back whenever the page becomes visible again */
+      /* Browsers freeze iframe playback whenever the tab is hidden (even briefly at load)
+         and NEVER resume it — and a single 'play' nudge can be refused. So: a watchdog
+         keeps re-asking while the page is visible and the hero is on screen. 'play' on an
+         already-playing player is a no-op, so this is safe to repeat. */
       const tell=m=>{ try{ f.contentWindow.postMessage(JSON.stringify({method:m}),
                      'https://player.vimeo.com'); }catch(_){} };
-      const resume=()=>{ if(!document.hidden) tell('play'); };
+      let heroOn=true;
+      const resume=()=>{ if(!document.hidden && heroOn) tell('play'); };
       document.addEventListener('visibilitychange',resume);
       addEventListener('pageshow',resume);
+      addEventListener('focus',resume);
+      /* phones in low-power mode block all autoplay until a gesture — first touch wakes it */
+      ['pointerdown','touchstart','keydown','wheel'].forEach(ev=>
+        addEventListener(ev,resume,{once:true,passive:true}));
       f.addEventListener('load',()=>setTimeout(resume,600),{once:true});
-      new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?resume():tell('pause')),
-        {threshold:0}).observe(hero);
+      setInterval(resume,4000);
+      new IntersectionObserver(es=>es.forEach(e=>{ heroOn=e.isIntersecting;
+        heroOn?resume():tell('pause'); }),{threshold:0}).observe(hero);
       return;                                   /* never fetch the mp4 as well */
     }
 
