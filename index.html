@@ -6,9 +6,9 @@
 <title>Herdade do Malhão Pardo — Turismo Rural, Alentejo</title>
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
-<meta name="description" content="A boutique resort in the Alentejo countryside. Rural soul, refined living — stays, slow food, starry nights and the quiet of the montado. Book directly.">
+<meta name="description" content="Turismo Rural no Alentejo — casas caiadas, pinheiros-mansos, piscina e o silêncio do montado. Pedido de reserva directo.">
 <meta property="og:title" content="Herdade do Malhão Pardo — Rural soul. Refined living.">
-<meta property="og:description" content="A boutique resort in the Alentejo. Rooted in nature, made for connection.">
+<meta property="og:description" content="Turismo Rural no Alentejo. Enraizado na natureza, feito para a ligação.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://meridante-dev.github.io/malhao-pardo/img/social-card.jpg">
 <meta property="og:url" content="https://meridante-dev.github.io/malhao-pardo/">
@@ -18,6 +18,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/hero-poster.webp" fetchpriority="high">
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -32,8 +33,8 @@
 </script>
 <style>
 :root{
-  --terra:#A9834A; --olive:#4E5637; --sand:#DCC9B2; --stone:#EFEAE0; --night:#22261D;
-  --ink:#2B2C22; --paper:#F5F0E4;
+  --terra:#A9834A; --terra-ink:#8A6835; --olive:#4E5637; --sand:#DCC9B2; --stone:#EFEAE0; --night:#22261D;
+  --ink:#2B2C22; --paper:#FBF8F1; --line:rgba(42,38,34,.12);
   --disp:'Playfair Display',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
   --pad:clamp(22px,5vw,72px); --ease:cubic-bezier(.25,.8,.25,1); --r:4px;
 }
@@ -45,7 +46,7 @@ body{font-family:var(--sans);background:var(--stone);color:var(--ink);
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--terra);color:var(--stone)}
-.wrap{max-width:1360px;margin:0 auto;padding-inline:var(--pad)}
+.wrap{max-width:1220px;margin:0 auto;padding-inline:var(--pad)}
 
 /* ── typography ── */
 .disp{font-family:var(--disp);font-weight:400;line-height:1.08;letter-spacing:-.01em}
@@ -54,7 +55,7 @@ h2 em,.disp em{font-style:italic;color:var(--terra)}
 .eyebrow{font-size:.64rem;font-weight:600;letter-spacing:.38em;text-transform:uppercase;
   color:var(--olive);display:inline-flex;align-items:center;gap:1.2em}
 .eyebrow::before{content:"";width:34px;height:1px;background:var(--terra)}
-.lede{font-size:clamp(1rem,1.3vw,1.14rem);font-weight:300;max-width:56ch;color:#4C463F}
+.lede{line-height:1.6;font-size:clamp(1rem,1.3vw,1.14rem);font-weight:300;max-width:56ch;color:#4C463F}
 .word{display:inline-block;overflow:hidden;vertical-align:bottom}
 .word i{display:inline-block;font-style:inherit;will-change:transform}
 
@@ -100,7 +101,7 @@ nav.hide{transform:translateY(-100%)}
   font-family:var(--sans);font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
   padding:1.15em 2.3em;border:1px solid var(--night);background:var(--night);color:var(--stone);
   border-radius:var(--r);transition:background .4s,color .4s,border-color .4s,transform .4s var(--ease)}
-.btn:hover{background:var(--terra);border-color:var(--terra);transform:translateY(-2px)}
+.btn:hover{background:var(--olive);border-color:var(--terra);transform:translateY(-2px)}
 .btn.ghost{background:transparent;color:var(--night)}
 .btn.ghost:hover{background:var(--night);color:var(--stone)}
 .btn.light{background:var(--stone);border-color:var(--stone);color:var(--night)}
@@ -109,7 +110,7 @@ nav:not(.solid) .nav-links{color:rgba(233,228,219,.88)}
 nav:not(.solid) .brand .bt{color:var(--stone)}
 nav:not(.solid) .brand .bt small{color:var(--sand)}
 nav:not(.solid) .brand svg path{stroke:var(--sand)}
-nav:not(.solid) .btn{background:rgba(30,42,53,.6);border-color:rgba(233,228,219,.4);backdrop-filter:blur(6px)}
+nav:not(.solid) .btn{background:rgba(34,38,29,.6);border-color:rgba(233,228,219,.4);backdrop-filter:blur(6px)}
 @media(max-width:960px){.nav-links{display:none}}
 
 /* ── hero ── */
@@ -132,7 +133,7 @@ nav:not(.solid) .btn{background:rgba(30,42,53,.6);border-color:rgba(233,228,219,
 /* booking bar */
 .bookbar{position:absolute;z-index:5;left:var(--pad);right:var(--pad);bottom:34px;
   display:flex;align-items:stretch;background:rgba(233,228,219,.96);backdrop-filter:blur(12px);
-  border-radius:var(--r);box-shadow:0 30px 70px -30px rgba(30,42,53,.55);overflow:hidden;
+  border-radius:var(--r);box-shadow:0 30px 70px -30px rgba(34,38,29,.55);overflow:hidden;
   max-width:1360px;margin:0 auto}
 .bb-f{flex:1;padding:16px 24px;border-right:1px solid rgba(42,38,34,.1);min-width:0}
 .bb-f label{display:block;font-size:.56rem;font-weight:700;letter-spacing:.3em;
@@ -142,7 +143,7 @@ nav:not(.solid) .btn{background:rgba(30,42,53,.6);border-color:rgba(233,228,219,
 .bb-go{border:0;cursor:pointer;background:var(--night);color:var(--stone);font-family:var(--sans);
   font-weight:600;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;padding:0 44px;
   transition:background .4s}
-.bb-go:hover{background:var(--terra)}
+.bb-go:hover{background:var(--olive)}
 @media(max-width:900px){.bookbar{display:none}}
 .scue{position:absolute;z-index:4;right:var(--pad);bottom:120px;display:flex;flex-direction:column;
   align-items:center;gap:12px;color:rgba(233,228,219,.75);font-size:.56rem;letter-spacing:.34em;
@@ -154,7 +155,7 @@ nav:not(.solid) .btn{background:rgba(30,42,53,.6);border-color:rgba(233,228,219,
 section{position:relative}
 .band{padding-block:clamp(90px,13vh,170px)}
 .night-band{background:var(--night);color:var(--stone)}
-.night-band .lede{color:rgba(233,228,219,.72)}
+.night-band .lede{line-height:1.6;color:rgba(233,228,219,.72)}
 .night-band .eyebrow{color:var(--sand)}
 .paper-band{background:var(--paper)}
 .shead{max-width:760px}
@@ -167,22 +168,22 @@ section{position:relative}
 .pillar span{text-align:center;line-height:1.9;font-size:.58rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#4C463F}
 
 /* editorial split */
-.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,110px);align-items:center}
+.split{align-items:start;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,110px);align-items:center}
 .split.rev{grid-template-columns:.95fr 1.05fr}
 @media(max-width:900px){.split,.split.rev{grid-template-columns:1fr}}
 .frame{position:relative;overflow:hidden;border-radius:var(--r)}
 .frame img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);will-change:transform}
 .frame.tall{aspect-ratio:4/5}.frame.wide{aspect-ratio:16/11}
 .frame .cap{position:absolute;left:18px;bottom:14px;font-size:.58rem;letter-spacing:.3em;
-  text-transform:uppercase;color:rgba(233,228,219,.9);text-shadow:0 1px 8px rgba(30,42,53,.5)}
+  text-transform:uppercase;color:rgba(233,228,219,.9);text-shadow:0 1px 8px rgba(34,38,29,.5)}
 .smallcaps{font-size:.62rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--terra)}
 
 /* stays */
-.stays{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
+.stays{gap:clamp(28px,3vw,44px);display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
 .stay{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;
-  box-shadow:0 26px 60px -40px rgba(30,42,53,.4);transition:transform .55s var(--ease),box-shadow .55s}
-.stay:hover{transform:translateY(-8px);box-shadow:0 44px 80px -40px rgba(30,42,53,.55)}
-.stay .ph{aspect-ratio:4/3;overflow:hidden}
+  box-shadow:0 26px 60px -40px rgba(34,38,29,.4);transition:transform .55s var(--ease),box-shadow .55s}
+.stay:hover{transform:translateY(-8px);box-shadow:0 44px 80px -40px rgba(34,38,29,.55)}
+.stay .shot{aspect-ratio:4/3;overflow:hidden}
 .stay .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .stay:hover .ph img{transform:scale(1.06)}
 .stay .bd{padding:26px 26px 30px;display:flex;flex-direction:column;flex:1}
@@ -194,7 +195,7 @@ section{position:relative}
   padding-top:18px;border-top:1px solid rgba(42,38,34,.1)}
 .stay .rate b{font-family:var(--disp);font-weight:500;font-size:1.3rem}
 .stay .rate b small{font-family:var(--sans);font-size:.68rem;font-weight:400;color:#4C463F}
-.stay .rate a{font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+.stay .rate a,.stay .rate .reserve{border:0;background:none;font:inherit;cursor:pointer;font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
   color:var(--terra);border-bottom:1px solid rgba(201,122,93,.4);padding-bottom:2px;cursor:pointer}
 @media(max-width:960px){.stays{grid-template-columns:1fr}}
 
@@ -211,7 +212,7 @@ section{position:relative}
   aspect-ratio:3/4;color:var(--stone)}
 .exp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
 .exp:hover img{transform:scale(1.06)}
-.exp .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(30,42,53,.78))}
+.exp .ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(34,38,29,.78))}
 .exp .tx{position:absolute;left:22px;right:22px;bottom:20px;z-index:2}
 .exp .tx b{font-family:var(--disp);font-weight:500;font-size:1.4rem;display:block;line-height:1.15}
 .exp .tx span{font-size:.6rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--sand)}
@@ -219,7 +220,7 @@ section{position:relative}
 /* quote interstitial */
 .quote{position:relative;min-height:74vh;display:flex;align-items:center;overflow:hidden;color:var(--stone)}
 .quote .bg{position:absolute;inset:-14% 0;background:url(img/hero-alt.webp) center/cover;will-change:transform}
-.quote .tint{position:absolute;inset:0;background:rgba(30,42,53,.45)}
+.quote .tint{position:absolute;inset:0;background:rgba(34,38,29,.45)}
 .quote blockquote{position:relative;z-index:2;font-family:var(--disp);font-style:italic;font-weight:400;
   font-size:clamp(1.7rem,3.6vw,3rem);line-height:1.3;max-width:22ch;margin:0 auto;text-align:center}
 .quote cite{display:block;font-family:var(--sans);font-style:normal;font-size:.62rem;font-weight:600;
@@ -256,10 +257,10 @@ section{position:relative}
 .final{position:relative;min-height:88svh;display:flex;align-items:center;overflow:hidden;
   color:var(--stone);text-align:center}
 .final .bg{position:absolute;inset:-12% 0;background:url(img/night-sky.webp) center/cover;will-change:transform}
-.final .tint{position:absolute;inset:0;background:rgba(30,42,53,.5)}
+.final .tint{position:absolute;inset:0;background:rgba(34,38,29,.5)}
 .final .in{position:relative;z-index:2;width:100%}
 .final h2{font-size:clamp(2.6rem,6vw,5rem)}
-.final .lede{margin:20px auto 36px;text-align:center;color:rgba(233,228,219,.82)}
+.final .lede{line-height:1.6;margin:20px auto 36px;text-align:center;color:rgba(233,228,219,.82)}
 
 footer{background:var(--night);color:rgba(233,228,219,.7);padding:70px 0 calc(46px + env(safe-area-inset-bottom))}
 .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px}
@@ -279,9 +280,9 @@ footer a:hover{color:var(--terra)}
 /* ── booking overlay ── */
 #bk{position:fixed;inset:0;z-index:120;display:none;align-items:stretch;justify-content:flex-end}
 #bk.on{display:flex}
-#bk .veil{position:absolute;inset:0;background:rgba(30,42,53,.55);backdrop-filter:blur(4px)}
+#bk .veil{position:absolute;inset:0;background:rgba(34,38,29,.55);backdrop-filter:blur(4px)}
 #bk .panel{position:relative;width:min(560px,100%);background:var(--stone);height:100%;
-  overflow-y:auto;display:flex;flex-direction:column;box-shadow:-40px 0 90px -40px rgba(30,42,53,.6);
+  overflow-y:auto;display:flex;flex-direction:column;box-shadow:-40px 0 90px -40px rgba(34,38,29,.6);
   transform:translateX(100%);transition:transform .6s var(--ease)}
 #bk.on .panel{transform:none}
 .bk-hd{display:flex;align-items:center;gap:16px;padding:26px 34px;border-bottom:1px solid rgba(42,38,34,.1)}
@@ -329,7 +330,7 @@ footer a:hover{color:var(--terra)}
 /* mobile book fab */
 .mbook{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:80;display:none}
 @media(max-width:900px){.mbook{display:block}}
-.mbook .btn{width:100%;box-shadow:0 20px 50px -18px rgba(30,42,53,.6)}
+.mbook .btn{width:100%;box-shadow:0 20px 50px -18px rgba(34,38,29,.6)}
 
 /* reveal base */
 .rv{opacity:0;transform:translateY(40px)}
@@ -386,7 +387,7 @@ footer a:hover{color:var(--terra)}
 .after li{display:flex;gap:12px;font-size:.82rem;line-height:1.55;color:#4C463F}
 .after li span{font-weight:600;font-size:.6rem;letter-spacing:.12em;color:var(--terra);
   flex:none;padding-top:.28em}
-.cc-note{font-size:.66rem;line-height:1.5;color:#8A8478;padding:0 16px 10px;margin:0}
+.cc-note{font-size:.7rem;line-height:1.55;color:#6B655D;padding:0 16px 10px;margin:0}
 /* legal furniture */
 .flegal{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;padding:22px 0 6px;
   border-top:1px solid rgba(233,228,219,.14);margin-top:26px;
@@ -401,6 +402,22 @@ nav:not(.solid) .brand img.oak{filter:brightness(0) invert(1) opacity(.94)}
 #pre .pre-lock{width:min(230px,54vw);height:auto;opacity:0;animation:oakin 1s .1s var(--ease) forwards}
 .fbrand .f-lock{width:210px;height:auto;margin-bottom:18px}
 #ccOrb img{width:30px;height:auto}
+
+/* booking outcome states */
+#st4 .sent-no{display:none}
+#st4.nochannel .sent-ok{display:none}
+#st4.nochannel .sent-no{display:block}
+#st4 b{display:block;font-family:var(--disp);font-weight:500;font-size:1.3rem;margin-bottom:.5em}
+#st4 p{font-size:.86rem;line-height:1.65;color:#4C463F;margin-bottom:1.2em}
+#reqBody{white-space:pre-wrap;font-family:var(--sans);font-size:.76rem;line-height:1.6;
+  background:#fff;border:1px solid rgba(42,38,34,.14);border-radius:var(--r);
+  padding:14px 16px;margin-bottom:1em;max-height:230px;overflow:auto;color:#3A3630}
+
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:2px}
+#menu :focus-visible,.final :focus-visible,footer :focus-visible{outline-color:var(--sand)}
+.skip{position:absolute;left:-9999px;z-index:400;padding:12px 20px;background:var(--night);
+  color:var(--stone);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.skip:focus{left:var(--pad);top:12px}
 
 /* seasonal */
 .eyebrow #seasonTag{font-style:normal}
@@ -442,14 +459,14 @@ nav:not(.solid) .brand img.oak{filter:brightness(0) invert(1) opacity(.94)}
   width:36px;height:36px;border-radius:50%;transition:background .25s}
 .cal-nav:hover{background:var(--stone)}
 .cal-nav:disabled{opacity:.25;cursor:default}
-.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;
+.cal-dow{color:#6B655D;display:grid;grid-template-columns:repeat(7,1fr);text-align:center;
   font-size:.6rem;font-weight:700;letter-spacing:.08em;color:#9A938A;margin-bottom:6px}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:2px}
 .cal-d{position:relative;aspect-ratio:1;display:grid;place-items:center;font-size:.86rem;
   font-weight:500;cursor:pointer;border:0;background:none;color:var(--ink);border-radius:50%;
   transition:background .2s,color .2s}
 .cal-d:hover:not(:disabled):not(.in):not(.out){background:var(--stone)}
-.cal-d:disabled{color:#C9C2B8;cursor:default}
+.cal-d:disabled{color:#A79F94;cursor:default}
 .cal-d.pad{visibility:hidden}
 .cal-d.in,.cal-d.out{background:var(--night);color:var(--stone)}
 .cal-d.mid{border-radius:0;background:#F0E7D8;color:var(--ink)}
@@ -506,7 +523,7 @@ body.menu-open .m-view{opacity:1;transform:none}
 
 .chapter{position:relative;min-height:92svh;display:flex;align-items:flex-end;overflow:hidden;color:var(--stone)}
 .chapter .bg{position:absolute;inset:-12% 0;background-size:cover;background-position:center;will-change:transform}
-.chapter .tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,42,53,.15),rgba(30,42,53,.55))}
+.chapter .tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(34,38,29,.15),rgba(34,38,29,.55))}
 .ch-in{position:relative;z-index:2;padding-bottom:70px;display:flex;align-items:baseline;gap:26px}
 .ch-n{font-family:var(--disp);font-style:italic;font-size:1.2rem;color:var(--sand);
   border:1px solid rgba(220,201,178,.5);border-radius:50%;width:52px;height:52px;flex:none;
@@ -515,7 +532,7 @@ body.menu-open .m-view{opacity:1;transform:none}
 
 .collage{position:relative}
 .collage .detail{position:absolute;right:-9%;bottom:-9%;width:46%;border:6px solid var(--paper);
-  border-radius:var(--r);overflow:hidden;box-shadow:0 34px 70px -34px rgba(30,42,53,.55);
+  border-radius:var(--r);overflow:hidden;box-shadow:0 34px 70px -34px rgba(34,38,29,.55);
   aspect-ratio:4/3;will-change:transform}
 .collage .detail img{width:100%;height:100%;object-fit:cover}
 @media(max-width:900px){.collage .detail{right:0;bottom:-12%;width:52%}}
@@ -570,6 +587,8 @@ body.menu-open .m-view{opacity:1;transform:none}
   .exp{flex-basis:78vw}
 }
 </style>
+<noscript><style>#pre{display:none!important}.rv{opacity:1!important;transform:none!important}
+.hero .bg{opacity:1!important}</style></noscript>
 </head>
 <body>
 <div id="prog"></div>
@@ -580,7 +599,8 @@ body.menu-open .m-view{opacity:1;transform:none}
   <img class="pre-lock" src="img/logo-lockup.webp" alt="Herdade do Malhão Pardo · Turismo Rural">
 </div>
 
-<nav id="nav"><div class="nav-in">
+<a class="skip" href="#content">Skip to content</a>
+<nav id="nav" aria-label="Primary"><div class="nav-in">
   <a class="brand" href="#top" aria-label="Herdade do Malhão Pardo">
     <img class="oak" src="img/logo-mark.webp" alt="" width="34" height="32">
     <span class="bt">Herdade do Malhão Pardo<small>Turismo Rural</small></span>
@@ -608,8 +628,8 @@ body.menu-open .m-view{opacity:1;transform:none}
   <form class="bookbar" id="bookbar">
     <div class="bb-f" data-book><label>Arrive</label><span class="bb-d" id="bbIn">Add date</span></div>
     <div class="bb-f" data-book><label>Depart</label><span class="bb-d" id="bbOut">Add date</span></div>
-    <div class="bb-f"><label>Guests</label>
-      <select id="bbG"><option>2 guests</option><option>1 guest</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select></div>
+    <div class="bb-f"><label for="bbG">Guests</label>
+      <select id="bbG" aria-label="Guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5+ guests</option></select></div>
     <button class="bb-go" type="submit">Check availability</button>
   </form>
 </header>
@@ -621,15 +641,15 @@ body.menu-open .m-view{opacity:1;transform:none}
     <h2 class="disp rv" data-rv style="margin-top:.5em;max-width:17em">The Alentejo does not hurry.
       <em>Neither will you.</em></h2>
     <p class="lede rv" data-rv style="margin-top:1.4em">Malhão Pardo is a working estate turned
-    boutique resort — a handful of rooms, one long table, a pool that holds the evening light.
+    family estate in Turismo Rural — casas, a long table, and a pool that holds the evening light.
     Days begin with bread still warm and end under more stars than you remember existing.</p>
     <div class="sunarc rv" data-rv aria-hidden="true">
       <svg viewBox="0 0 900 210" preserveAspectRatio="xMidYMax meet">
         <path id="horizon" d="M0,196 H900" stroke="rgba(107,112,92,.35)" stroke-width="1" fill="none"/>
         <path id="arc" d="M60,196 C230,30 670,30 840,196" stroke="#4E5637" stroke-width="1.3" fill="none" stroke-linecap="round"/>
         <circle id="sun" cx="60" cy="196" r="7" fill="#A9834A"/>
-        <text x="60" y="188" text-anchor="middle" font-family="Montserrat" font-size="9" letter-spacing="2.5" fill="#4E5637">SUNRISE 06:12</text>
-        <text x="840" y="188" text-anchor="middle" font-family="Montserrat" font-size="9" letter-spacing="2.5" fill="#4E5637">SUNSET 21:04</text>
+        <text id="sunUp" x="60" y="188" text-anchor="middle" font-family="Montserrat" font-size="9" letter-spacing="2.5" fill="#4E5637">SUNRISE</text>
+        <text id="sunDown" x="840" y="188" text-anchor="middle" font-family="Montserrat" font-size="9" letter-spacing="2.5" fill="#4E5637">SUNSET</text>
       </svg>
     </div>
     <div class="pillars">
@@ -655,7 +675,7 @@ body.menu-open .m-view{opacity:1;transform:none}
       <p class="lede rv" data-rv style="margin-top:1.2em">Low white volumes sit lightly on the land,
       the way this region has always built — thick walls against the heat, blue shadow in the
       doorways, a pine holding the sky. Inside: linen, clay, timber. Nothing that shouts.</p>
-      <p class="lede rv" data-rv style="margin-top:1em">Twelve rooms across the monte. Never more.</p>
+      <p class="lede rv" data-rv style="margin-top:1em">Casas spread across the monte, far enough apart to keep the quiet. <span class="ph">[número — pendente]</span></p>
       <div class="rv" data-rv style="margin-top:2.2em"><button class="btn ghost" data-book>Plan a stay</button></div>
     </div>
   </div>
@@ -672,7 +692,7 @@ body.menu-open .m-view{opacity:1;transform:none}
       bar and stay until the swifts come out.</p>
     </div>
     <div class="frame wide rv" data-rv>
-        <video class="livevid" muted playsinline loop autoplay preload="metadata" poster="img/pool.webp" aria-label="The pool at golden hour">
+        <video class="livevid" muted playsinline loop preload="none" poster="img/pool.webp" aria-label="The pool at golden hour">
           <source src="media/pool-loop.mp4" type="video/mp4"></video>
         <span class="cap">Golden hour · live</span></div>
   </div>
@@ -699,27 +719,27 @@ body.menu-open .m-view{opacity:1;transform:none}
     </div>
     <div class="stays">
       <article class="stay rv" data-rv>
-        <div class="ph"><img src="img/room-1.webp" alt="Quarto — bright double room" loading="lazy" style="transform:scale(1.28);transform-origin:72% 12%"></div>
+        <div class="shot"><img src="img/room-1.webp" alt="Quarto — bright double room" loading="lazy" ></div>
         <div class="bd">
-          <h3>Quartos</h3><div class="meta">Sleeps 2 · Garden view · 28 m²</div>
+          <h3>Quartos</h3><div class="meta ph">[camas · área · vista — pendente]</div>
           <p>Light-washed rooms with linen beds, a reading chair and a door straight to the herbs.</p>
-          <div class="rate"><b>€160<small> / night</small></b><a data-book data-stay="Quarto">Reserve</a></div>
+          <div class="rate"><b>€160<small> / night</small></b><button type="button" class="reserve" data-book data-stay="Quarto">Reserve</button></div>
         </div>
       </article>
       <article class="stay rv" data-rv>
-        <div class="ph"><img src="img/room-2.webp" alt="Suite Montado — moody green suite" loading="lazy"></div>
+        <div class="shot"><img src="img/room-2.webp" alt="Suite Montado — moody green suite" loading="lazy"></div>
         <div class="bd">
-          <h3>Suites</h3><div class="meta">Sleeps 2–3 · Terrace · 45 m²</div>
+          <h3>Suites</h3><div class="meta ph">[camas · área · terraço — pendente]</div>
           <p>Deep colours, a fireplace for winter, a private terrace facing the cork oaks for summer.</p>
-          <div class="rate"><b>€240<small> / night</small></b><a data-book data-stay="Suite">Reserve</a></div>
+          <div class="rate"><b>€240<small> / night</small></b><button type="button" class="reserve" data-book data-stay="Suite">Reserve</button></div>
         </div>
       </article>
       <article class="stay rv" data-rv>
-        <div class="ph"><img src="img/casa-monte.webp" alt="Casa do Monte — the old farmhouse and its pool at night" loading="lazy"></div>
+        <div class="shot"><img src="img/casa-monte.webp" alt="Casa do Monte — the old farmhouse and its pool at night" loading="lazy"></div>
         <div class="bd">
-          <h3>Casa do Monte</h3><div class="meta">Sleeps 4–6 · Private pool · 120 m²</div>
+          <h3>Casa do Monte</h3><div class="meta ph">[camas · área — pendente]</div>
           <p>The old farmhouse, whole — kitchen, courtyard, your own slice of the estate.</p>
-          <div class="rate"><b>€420<small> / night</small></b><a data-book data-stay="Casa do Monte">Reserve</a></div>
+          <div class="rate"><b>€420<small> / night</small></b><button type="button" class="reserve" data-book data-stay="Casa do Monte">Reserve</button></div>
         </div>
       </article>
     </div>
@@ -729,8 +749,7 @@ body.menu-open .m-view{opacity:1;transform:none}
 <!-- ═══ QUOTE ═══ -->
 <section class="quote">
   <div class="bg" data-plx></div><div class="tint"></div>
-  <div class="wrap"><blockquote id="q1">“Somewhere between the second coffee and the third
-  cork oak, the week lets go of you.”<cite>A guest, last September</cite></blockquote></div>
+  <div class="wrap"><blockquote id="q1">The third day is the one people talk about.<cite class="ph">[Substituir por avaliação real, datada e consentida — pendente]</cite></blockquote></div>
 </section>
 
 <!-- ═══ THE TABLE ═══ -->
@@ -740,7 +759,7 @@ body.menu-open .m-view{opacity:1;transform:none}
       <span class="eyebrow rv" data-rv><i class="idx">05</i>The table</span>
       <h2 class="disp rv" data-rv style="margin-top:.4em">One long table.<br><em>One fire.</em></h2>
       <p class="lede rv" data-rv style="margin-top:1.2em">Dinner is a single seating, cooked from
-      the garden and the market in Estremoz, poured from small Alentejo producers. Strangers sit
+      the garden and small Alentejo producers. Strangers sit
       down; friends get up.</p>
       <div style="margin-top:2.4em">
         <div class="menu-line rv" data-rv><b>Breakfast</b><i></i><span>from the farm, 8–11</span></div>
@@ -763,10 +782,10 @@ body.menu-open .m-view{opacity:1;transform:none}
       old way — heat, cold water, warm stone, skilled hands, and then nothing at all under the
       olive trees.</p>
       <div class="ritual rv" data-rv>
-        <div class="rit"><i>01</i><b>Heat</b><span>Cedar sauna, eucalyptus from the garden</span></div>
+        <div class="rit"><i>01</i><b>Heat</b><span>Sauna, and an aromatic cut that morning <span class="ph">[confirmar]</span></span></div>
         <div class="rit"><i>02</i><b>Cold</b><span>The plunge — thirty brave seconds</span></div>
         <div class="rit"><i>03</i><b>Breathe</b><span>Guided breathing on the warm stone</span></div>
-        <div class="rit"><i>04</i><b>Touch</b><span>Fifty minutes of massage, olive oil from the estate</span></div>
+        <div class="rit"><i>04</i><b>Touch</b><span>Fifty minutes of massage <span class="ph">[óleo: confirmar origem]</span></span></div>
         <div class="rit"><i>05</i><b>Rest</b><span>Shade, infusions, and no clock</span></div>
       </div>
       <div class="vit-cta rv" data-rv>
@@ -853,7 +872,7 @@ body.menu-open .m-view{opacity:1;transform:none}
   <div class="wrap in">
     <span class="eyebrow rv" data-rv style="justify-content:center;color:var(--sand)">Rooted in nature · made for connection</span>
     <h2 class="disp rv" data-rv style="margin-top:.5em">The stars are<br><em>already out.</em></h2>
-    <p class="lede rv" data-rv>Twelve rooms, one long table, and the quietest sky in Portugal.</p>
+    <p class="lede rv" data-rv>Whitewash, umbrella pines, and a sky with no streetlight in it.</p>
     <div class="rv" data-rv><button class="btn light" data-book>Book your stay</button></div>
   </div>
 </section>
@@ -896,9 +915,9 @@ body.menu-open .m-view{opacity:1;transform:none}
 <div class="mbook"><button class="btn" data-book>Book your stay</button></div>
 
 <!-- ═══ MENU OVERLAY ═══ -->
-<div id="menu" aria-hidden="true">
+<div id="menu" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
   <div class="m-in">
-    <nav class="m-links">
+    <nav class="m-links" aria-label="Menu">
       <a href="#estate" data-mi="img/casa.webp"><i>01</i>The Estate</a>
       <a href="#stays" data-mi="img/casa-monte.webp"><i>02</i>Stays</a>
       <a href="#table" data-mi="img/table.webp"><i>03</i>The Table</a>
@@ -937,19 +956,19 @@ body.menu-open .m-view{opacity:1;transform:none}
         <label class="bk-l">Guests</label>
         <div class="gstep"><button type="button" class="gbtn" id="gMinus">−</button>
           <b><span id="gN">2</span> guests</b><button type="button" class="gbtn" id="gPlus">+</button></div>
-        <p class="bk-note" id="st1note">Free cancellation up to 7 days before arrival. You won't be charged now.</p>
+        <p class="bk-note" id="st1note">You won't be charged now — this sends a request. Cancellation terms come with our reply. <span class="ph">[POLÍTICA DE CANCELAMENTO — pendente]</span></p>
       </div>
 
       <div class="bk-step" id="st2">
         <div class="bk-opt" data-rate="160" data-name="Quartos">
           <img src="img/room-1.webp" alt="" style="object-position:72% 10%"><div class="t"><b>Quartos</b>
-          <span>Sleeps 2 · garden view</span><em>€160 / night</em></div></div>
+          <span class="ph">[capacidade — pendente]</span><em class="ph">[tarifa]</em></div></div>
         <div class="bk-opt" data-rate="240" data-name="Suites">
           <img src="img/room-2.webp" alt=""><div class="t"><b>Suites</b>
-          <span>Sleeps 2–3 · terrace · fireplace</span><em>€240 / night</em></div></div>
+          <span class="ph">[capacidade — pendente]</span><em class="ph">[tarifa]</em></div></div>
         <div class="bk-opt" data-rate="420" data-name="Casa do Monte">
           <img src="img/casa-monte.webp" alt=""><div class="t"><b>Casa do Monte</b>
-          <span>Sleeps 4–6 · private pool</span><em>€420 / night</em></div></div>
+          <span class="ph">[capacidade — pendente]</span><em class="ph">[tarifa]</em></div></div>
       </div>
 
       <div class="bk-step" id="stSlot">
@@ -962,9 +981,9 @@ body.menu-open .m-view{opacity:1;transform:none}
       </div>
 
       <div class="bk-step" id="st3">
-        <label class="bk-l">Name</label><input class="bk-in" id="bkName" placeholder="Your name">
-        <label class="bk-l">Email</label><input class="bk-in" type="email" id="bkMail" placeholder="you@email.com">
-        <label class="bk-l">Anything we should know?</label>
+        <label class="bk-l" for="bkName">Name</label><input class="bk-in" id="bkName" autocomplete="name" required placeholder="Your name">
+        <label class="bk-l" for="bkMail">Email</label><input class="bk-in" type="email" id="bkMail" placeholder="you@email.com">
+        <label class="bk-l" for="bkMsg">Anything we should know?</label>
         <input class="bk-in" id="bkMsg" placeholder="Allergies, arrivals after dark, celebrations…">
         <div class="after">
           <b>What happens next</b>
@@ -986,14 +1005,18 @@ body.menu-open .m-view{opacity:1;transform:none}
       </div>
 
       <div class="bk-step" id="st4">
-        <div class="bk-ok">
-          <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26"/><path d="M19 31l8 8 14-16"/></svg>
+        <div class="sent-ok">
           <b>Request on its way.</b>
-          <p>Your email is open with the details filled in — press send, and we'll answer within
-          24 hours with availability and a personal note.</p>
+          <p>Your email is open with the details filled in — press send and we reply personally within 24 hours.</p>
+        </div>
+        <div class="sent-no">
+          <b>Almost — one step by hand.</b>
+          <p>Our reservations address is not published yet, so nothing was sent automatically.
+          Copy the request below and send it to us, and we will confirm personally within 24 hours.</p>
+          <pre id="reqBody"></pre>
+          <button type="button" class="btn ghost" id="copyReq">Copy the request</button>
         </div>
       </div>
-
     </div>
     <div class="bk-ft" id="bkFt">
       <button class="btn ghost" id="bkBack" style="display:none">Back</button>
@@ -1003,7 +1026,15 @@ body.menu-open .m-view{opacity:1;transform:none}
 </div>
 
 <script>
-gsap.registerPlugin(ScrollTrigger);
+/* ── Put the estate's real reservations address here. Until it is a valid address,
+      the booking panel refuses to pretend anything was sent. ── */
+window.ESTATE_EMAIL = '';
+if(!window.gsap){                     /* CDN blocked: show the page rather than a blank splash */
+  document.addEventListener('DOMContentLoaded',()=>{
+    document.getElementById('pre')?.classList.add('gone');
+    document.querySelectorAll('[data-rv]').forEach(e=>{e.style.opacity=1;e.style.transform='none';});
+  });
+} else gsap.registerPlugin(ScrollTrigger);
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const TOUCH = matchMedia('(pointer:coarse)').matches;
 
@@ -1038,18 +1069,6 @@ if(!RM){
   },{passive:true});
 }
 
-/* ── magnetic buttons ── */
-if(!TOUCH && !RM){
-  document.querySelectorAll('.btn,.bb-go').forEach(b=>{
-    const qx=gsap.quickTo(b,'x',{duration:.4,ease:'power3.out'}),
-          qy=gsap.quickTo(b,'y',{duration:.4,ease:'power3.out'});
-    b.addEventListener('pointermove',e=>{
-      const r=b.getBoundingClientRect();
-      qx((e.clientX-r.left-r.width/2)*.25); qy((e.clientY-r.top-r.height/2)*.35);
-    });
-    b.addEventListener('pointerleave',()=>{qx(0);qy(0);});
-  });
-}
 
 /* ── preloader → hero choreography ── */
 window.addEventListener('load',()=>{
@@ -1249,7 +1268,11 @@ function openBk(prefStay,mode){
   document.querySelector('.bk-hd b').textContent =
     state.mode==='circuit' ? 'The Vitality Circuit' : 'Book your stay';
   if(prefStay){ state.stay=prefStay;
-    document.querySelectorAll('.bk-opt').forEach(o=>o.classList.toggle('sel',o.dataset.name.startsWith(prefStay)));
+    document.querySelectorAll('.bk-opt').forEach(o=>{
+      const on=o.dataset.name.startsWith(prefStay);
+      o.classList.toggle('sel',on);
+      if(on){ state.stay=o.dataset.name; state.rate=+o.dataset.rate||0; }   /* rate was never set */
+    });
   }
   go(1); renderCal();
 }
@@ -1309,7 +1332,7 @@ function renderCal(){
       ? `<span>${short(state.inD)} · the circuit · ${state.g} guest${state.g>1?'s':''}</span><b>€${(85*state.g).toLocaleString('en')}</b>`
       : 'Pick the day for your circuit';
   } else if(state.inD&&state.outD){
-    const n=nights(), from=160*n;
+    const n=nights(), from=(state.rate||160)*n;
     sum.innerHTML=`<span>${short(state.inD)} → ${short(state.outD)} · ${n} night${n>1?'s':''}</span>
       <b>from €${from.toLocaleString('en')}</b>`;
   } else if(state.inD){
@@ -1331,6 +1354,20 @@ document.getElementById('gPlus').onclick=()=>{state.g=Math.min(12,state.g+1);gN.
   document.documentElement.dataset.season=green?'green':'summer';
   if(tag) tag.textContent=green?'The green season':'High summer';
 })();
+
+/* copy the request when no channel is published yet */
+document.getElementById('copyReq')?.addEventListener('click',async e=>{
+  const t=document.getElementById('reqBody').textContent;
+  try{ await navigator.clipboard.writeText(t); e.target.textContent='Copied'; }
+  catch(_){ const r=document.createRange(); r.selectNodeContents(document.getElementById('reqBody'));
+            getSelection().removeAllRanges(); getSelection().addRange(r); e.target.textContent='Select and copy'; }
+});
+/* the hero guest selector fed nothing into the request */
+document.getElementById('bbG')?.addEventListener('change',e=>{
+  state.g=parseInt(e.target.value,10)||2;
+  const gv=document.getElementById('gVal'); if(gv) gv.textContent=state.g;
+  if(typeof renderCal==='function') renderCal();
+});
 
 /* slots */
 document.querySelectorAll('.slot').forEach(o=>o.addEventListener('click',()=>{
@@ -1446,7 +1483,15 @@ Vitality Circuit add-on: yes (${state.g} × €65 = €${circ})`:''}
 Estimate: €${(est+circ).toLocaleString('en')} (breakfast included)
 Notes: ${msg||'—'}`;
     }
-    location.href=`mailto:[EMAIL — pending]?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    /* ESTATE_EMAIL drives the whole handoff. While it is empty we must NOT
+       claim the request was sent — we show the guest their request to copy. */
+    const okAddr = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(window.ESTATE_EMAIL||'');
+    document.getElementById('reqBody').textContent = subject + '\n\n' + body;
+    document.getElementById('st4').classList.toggle('nochannel', !okAddr);
+    if(okAddr){
+      location.href = 'mailto:'+window.ESTATE_EMAIL+'?subject='+encodeURIComponent(subject)
+                    + '&body='+encodeURIComponent(body);
+    }
     go(4);
   }
 });
@@ -1458,6 +1503,7 @@ backB.addEventListener('click',()=>go(state.step-1));
         links=menu.querySelectorAll('.m-links a'), view=document.getElementById('mView');
   function open(){
     document.body.classList.add('menu-open'); btn.setAttribute('aria-expanded','true');
+    menu.setAttribute('aria-hidden','false');       /* it was hidden from screen readers always */
     if(lenis) lenis.stop();
     if(window.gsap && !RM) gsap.fromTo(links,{opacity:0,y:30},
       {opacity:1,y:0,duration:.8,ease:'power3.out',stagger:.07,delay:.15});
@@ -1465,8 +1511,10 @@ backB.addEventListener('click',()=>go(state.step-1));
   }
   function close(){
     document.body.classList.remove('menu-open'); btn.setAttribute('aria-expanded','false');
+    menu.setAttribute('aria-hidden','true');
     if(lenis) lenis.start();
   }
+  addEventListener('keydown',e=>{ if(e.key==='Escape'&&document.body.classList.contains('menu-open')) close(); });
   btn.addEventListener('click',()=>document.body.classList.contains('menu-open')?close():open());
   links.forEach(a=>{
     a.addEventListener('pointerenter',()=>{ if(view){view.style.opacity=0;
@@ -1494,8 +1542,15 @@ backB.addEventListener('click',()=>go(state.step-1));
     if(ml) ml.textContent=base;
   }
   paint(); setInterval(paint,30000);
-  fetch('https://api.open-meteo.com/v1/forecast?latitude=38.57&longitude=-7.91&current=temperature_2m')
-    .then(r=>r.json()).then(j=>{temp=j.current.temperature_2m;paint();}).catch(()=>{});
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=38.57&longitude=-7.91&current=temperature_2m&daily=sunrise,sunset&timezone=Europe%2FLisbon')
+    .then(r=>r.json()).then(j=>{
+      temp=j.current.temperature_2m; paint();
+      /* the arc used to carry hardcoded solstice times — these are today's, really */
+      const d=j.daily, hm=t=>String(t).slice(11,16),
+            up=document.getElementById('sunUp'), dn=document.getElementById('sunDown');
+      if(d&&d.sunrise&&up&&dn){ up.textContent='SUNRISE '+hm(d.sunrise[0]);
+                                dn.textContent='SUNSET '+hm(d.sunset[0]); }
+    }).catch(()=>{});
 })();
 
 /* detail image counter-parallax */
