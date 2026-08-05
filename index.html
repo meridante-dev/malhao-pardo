@@ -503,8 +503,16 @@ body.menu-open .m-view{opacity:1;transform:none}
   letter-spacing:.26em;text-transform:uppercase;color:var(--sand)}
 
 /* higgsfield layer */
+/* vimeo background film — adaptive streaming, the way the category does it */
+.vfilm{position:absolute;inset:0;overflow:hidden;z-index:1;opacity:0;
+  transition:opacity 1.4s var(--ease);pointer-events:none;filter:brightness(.94) saturate(.92)}
+.hero.filmon .vfilm{opacity:1}
+.hero.filmon .bg,.hero.filmon .herovid{opacity:0}
+.vfilm iframe{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border:0;
+  width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh}
 .herovid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;
-  opacity:0;z-index:1;transition:opacity 1.4s var(--ease)}
+  opacity:0;z-index:1;transition:opacity 1.4s var(--ease);
+  filter:brightness(.94) saturate(.92)}   /* graded at display time — the file stays untouched */
 .hero.vidon .herovid{opacity:1}
 .hero.vidon .bg{opacity:0;transition:opacity 1.4s var(--ease)}
 .frame video.livevid{width:100%;height:100%;object-fit:cover}
@@ -580,7 +588,8 @@ body.menu-open .m-view{opacity:1;transform:none}
 <!-- ═══ HERO ═══ -->
 <header class="hero" id="top">
   <div class="bg" data-plx></div>
-  <video class="herovid" id="heroVid" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.webp" aria-hidden="true" tabindex="-1"></video>
+  <div class="vfilm" id="heroFilm" aria-hidden="true"></div>
+  <video class="herovid" id="heroVid" autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate" poster="img/hero-poster.webp" aria-hidden="true" tabindex="-1"></video>
   <div class="tint"></div>
   <div class="wrap hero-in">
     <span class="eyebrow">Turismo Rural · Alentejo<i id="seasonTag"></i></span>
@@ -1121,17 +1130,37 @@ if(!RM){
       gsap.fromTo(cite,{opacity:0},{opacity:1,duration:1,delay:1});
     }});
   }
-  /* ── the estate, from the air: real drone footage, full-bleed loop ── */
+  /* ── the estate, from the air ──
+     VIMEO_ID: paste the numeric id of the hero film once it is on Vimeo (e.g. '1086008021').
+     With it set, the hero streams adaptively from Vimeo — instant start, quality scales to the
+     connection, no controls (background=1 needs a Plus plan or higher).
+     Left empty, the hero falls back to the self-hosted master below. */
+  const VIMEO_ID = '';
+
   (function(){
-    const hv=document.getElementById('heroVid'), hero=document.querySelector('.hero');
-    if(!hv||!hero) return;
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;  /* poster stays */
-    const light = innerWidth < 900 || TOUCH;   /* phones + tablets get the 960px cut */
-    hv.src = light ? 'media/hero-estate-720.mp4' : 'media/hero-estate.mp4';
+    const hv=document.getElementById('heroVid'), film=document.getElementById('heroFilm'),
+          hero=document.querySelector('.hero');
+    if(!hero) return;
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;   /* poster stays */
+    const c=navigator.connection||{};
+    if(c.saveData || /^(slow-)?2g$|^3g$/.test(c.effectiveType||'')) return;
+
+    if(VIMEO_ID){
+      const f=document.createElement('iframe');
+      f.src='https://player.vimeo.com/video/'+VIMEO_ID+
+            '?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1';
+      f.allow='autoplay; fullscreen'; f.setAttribute('frameborder','0');
+      f.setAttribute('tabindex','-1'); f.title='';
+      f.addEventListener('load',()=>hero.classList.add('filmon'),{once:true});
+      film.appendChild(f);
+      return;                                   /* never fetch the mp4 as well */
+    }
+
+    if(!hv) return;
+    hv.src = (innerWidth < 1000 || TOUCH) ? 'media/hero-estate-720.mp4' : 'media/hero-estate.mp4';
     hv.addEventListener('loadeddata',()=>{ hero.classList.add('vidon'); },{once:true});
-    const go=()=>hv.play().catch(()=>{});      /* some browsers refuse until a gesture */
+    const go=()=>hv.play().catch(()=>{});
     go(); addEventListener('touchstart',go,{once:true,passive:true});
-    /* stop decoding once the hero is behind you */
     new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?go():hv.pause()),{threshold:0})
       .observe(hero);
   })();
