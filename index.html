@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Herdade do Malhão Pardo — Turismo Rural, Alentejo</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 104 96'%3E%3Cg fill='%234E5637'%3E%3Ccircle cx='52' cy='34' r='21'/%3E%3Ccircle cx='33' cy='42' r='14'/%3E%3Ccircle cx='71' cy='42' r='14'/%3E%3Ccircle cx='40' cy='26' r='13'/%3E%3Ccircle cx='64' cy='26' r='13'/%3E%3Ccircle cx='52' cy='20' r='11'/%3E%3Ccircle cx='52' cy='50' r='15'/%3E%3C/g%3E%3Cpath d='M49 88 L49 60 M55 88 L55 62' stroke='%234E5637' stroke-width='5'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
 <meta name="description" content="A boutique resort in the Alentejo countryside. Rural soul, refined living — stays, slow food, starry nights and the quiet of the montado. Book directly.">
 <meta property="og:title" content="Herdade do Malhão Pardo — Rural soul. Refined living.">
 <meta property="og:description" content="A boutique resort in the Alentejo. Rooted in nature, made for connection.">
@@ -13,7 +14,8 @@
 <meta property="og:url" content="https://meridante-dev.github.io/malhao-pardo/">
 <link rel="canonical" href="https://meridante-dev.github.io/malhao-pardo/">
 <meta name="theme-color" content="#22261D">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23E9E4DB'/%3E%3Cpath d='M18 46C26 38 30 28 32 16M32 16c3 6 8 9 14 10M32 16c-6 3-12 3-16 1' stroke='%236B705C' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='40' cy='34' r='3.4' fill='%23C97A5D'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -64,8 +66,6 @@ h2 em,.disp em{font-style:italic;color:var(--terra)}
     linear-gradient(180deg,#F6EFE3 0%,#EFDFC8 100%);
   transition:opacity .6s var(--ease),visibility .6s}
 #pre.gone{opacity:0;visibility:hidden}
-#pre svg{width:64px;height:60px}
-#pre .pre-oak{color:var(--olive);opacity:0;animation:oakin .9s .1s var(--ease) forwards}
 @keyframes oakin{from{opacity:0;transform:translateY(6px) scale(.96)}to{opacity:1;transform:none}}
 #pre svg path{stroke:var(--olive);stroke-width:1.5;fill:none;stroke-linecap:round;
   stroke-dasharray:300;stroke-dashoffset:300;animation:draw .8s var(--ease) forwards}
@@ -348,9 +348,7 @@ footer a:hover{color:var(--terra)}
   display:grid;place-items:center;box-shadow:0 10px 30px rgba(34,38,29,.35);
   transition:transform .35s var(--ease),box-shadow .35s}
 #ccOrb:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(34,38,29,.45)}
-#ccOrb svg{width:30px;height:28px;color:#E8D5A8;
-  filter:drop-shadow(0 0 4px rgba(233,203,138,.55));
-  animation:oakglow 3.6s ease-in-out infinite}
+#ccOrb img{filter:drop-shadow(0 0 4px rgba(233,203,138,.5));animation:oakglow 3.6s ease-in-out infinite}
 @keyframes oakglow{
   0%,100%{filter:drop-shadow(0 0 3px rgba(233,203,138,.4)) drop-shadow(0 0 8px rgba(200,160,90,.18))}
   50%{filter:drop-shadow(0 0 6px rgba(240,214,150,.85)) drop-shadow(0 0 16px rgba(210,170,100,.4))}}
@@ -395,6 +393,14 @@ footer a:hover{color:var(--terra)}
   font-size:.66rem;letter-spacing:.08em;color:rgba(233,228,219,.62)}
 .flegal a{border-bottom:1px solid rgba(233,228,219,.28);padding-bottom:1px}
 .flegal a:hover{color:var(--sand);border-color:var(--sand)}
+
+
+/* approved logo assets */
+.brand img.oak{width:34px;height:auto;flex:none}
+nav:not(.solid) .brand img.oak{filter:brightness(0) invert(1) opacity(.94)}
+#pre .pre-lock{width:min(230px,54vw);height:auto;opacity:0;animation:oakin 1s .1s var(--ease) forwards}
+.fbrand .f-lock{width:210px;height:auto;margin-bottom:18px}
+#ccOrb img{width:30px;height:auto}
 
 /* seasonal */
 .eyebrow #seasonTag{font-style:normal}
@@ -570,29 +576,13 @@ body.menu-open .m-view{opacity:1;transform:none}
 <div id="grain" aria-hidden="true"></div>
 
 <!-- preloader -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<g id="oakMark">
-  <path d="M49 88 L49 60 M55 88 L55 62 M52 90 C 46 90 40 89 34 90 M52 90 C 58 90 64 89 70 90"
-    stroke="currentColor" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-  <g fill="currentColor">
-    <circle cx="52" cy="34" r="21"/>
-    <circle cx="33" cy="42" r="14"/><circle cx="71" cy="42" r="14"/>
-    <circle cx="40" cy="26" r="13"/><circle cx="64" cy="26" r="13"/>
-    <circle cx="52" cy="20" r="11"/>
-    <circle cx="26" cy="50" r="9"/><circle cx="78" cy="50" r="9"/>
-    <circle cx="52" cy="50" r="15"/>
-  </g>
-</g>
-</defs></svg>
 <div id="pre" aria-hidden="true">
-  <svg viewBox="0 0 104 96" class="pre-oak"><use href="#oakMark"/></svg>
-  <div class="pn">Herdade do<br>Malhão Pardo</div>
-  <div class="pt">Turismo Rural</div>
+  <img class="pre-lock" src="img/logo-lockup.webp" alt="Herdade do Malhão Pardo · Turismo Rural">
 </div>
 
 <nav id="nav"><div class="nav-in">
   <a class="brand" href="#top" aria-label="Herdade do Malhão Pardo">
-    <svg viewBox="0 0 104 96" class="oak" style="color:var(--olive)"><use href="#oakMark"/></svg>
+    <img class="oak" src="img/logo-mark.webp" alt="" width="34" height="32">
     <span class="bt">Herdade do Malhão Pardo<small>Turismo Rural</small></span>
   </a>
   <div class="navlive" id="navLive" aria-hidden="true"></div>
@@ -872,8 +862,7 @@ body.menu-open .m-view{opacity:1;transform:none}
   <div class="wrap">
     <div class="fgrid">
       <div class="fbrand">
-        <svg viewBox="0 0 104 96" class="oak f-oak" style="color:var(--sand);width:44px;height:40px;margin-bottom:14px"><use href="#oakMark"/></svg>
-        <span class="bt">Herdade do Malhão Pardo<small>Turismo Rural</small></span>
+        <img class="f-lock" src="img/logo-lockup-light.webp" alt="Herdade do Malhão Pardo · Turismo Rural">
         <p>Rural soul. Refined living.</p>
       </div>
       <div><h4>Visit</h4><ul>
@@ -1187,6 +1176,16 @@ if(!RM){
       f.setAttribute('tabindex','-1'); f.title='';
       f.addEventListener('load',()=>hero.classList.add('filmon'),{once:true});
       film.appendChild(f);
+      /* the browser pauses background-tab media and never resumes it on its own —
+         nudge the player back whenever the page becomes visible again */
+      const tell=m=>{ try{ f.contentWindow.postMessage(JSON.stringify({method:m}),
+                     'https://player.vimeo.com'); }catch(_){} };
+      const resume=()=>{ if(!document.hidden) tell('play'); };
+      document.addEventListener('visibilitychange',resume);
+      addEventListener('pageshow',resume);
+      f.addEventListener('load',()=>setTimeout(resume,600),{once:true});
+      new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?resume():tell('pause')),
+        {threshold:0}).observe(hero);
       return;                                   /* never fetch the mp4 as well */
     }
 
@@ -1554,7 +1553,7 @@ form.addEventListener('submit',async e=>{
 
 <!-- ═══ CONCIERGE ═══ -->
 <button id="ccOrb" aria-label="Ask the concierge" aria-expanded="false">
-  <svg viewBox="0 0 104 96"><use href="#oakMark"/></svg>
+  <img src="img/logo-mark-light.webp" alt="">
 </button>
 <div id="ccPanel" role="dialog" aria-label="Concierge" hidden>
   <div class="cc-hd">
