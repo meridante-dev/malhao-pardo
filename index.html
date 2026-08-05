@@ -9,7 +9,7 @@
 <meta property="og:title" content="Herdade do Malhão Pardo — Rural soul. Refined living.">
 <meta property="og:description" content="A boutique resort in the Alentejo. Rooted in nature, made for connection.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://meridante-dev.github.io/malhao-pardo/img/hero-land.jpg">
+<meta property="og:image" content="https://meridante-dev.github.io/malhao-pardo/img/social-card.jpg">
 <meta property="og:url" content="https://meridante-dev.github.io/malhao-pardo/">
 <link rel="canonical" href="https://meridante-dev.github.io/malhao-pardo/">
 <meta name="theme-color" content="#22261D">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/hero-land.webp" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-poster.webp" fetchpriority="high">
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
@@ -26,7 +26,7 @@
 "description":"Boutique resort in the Alentejo, Portugal. Rural soul, refined living.",
 "slogan":"Rooted in nature. Made for connection.",
 "address":{"@type":"PostalAddress","addressRegion":"Alentejo","addressCountry":"PT"},
-"image":"https://meridante-dev.github.io/malhao-pardo/img/hero-land.jpg","priceRange":"€€€"}
+"image":"https://meridante-dev.github.io/malhao-pardo/img/social-card.jpg","priceRange":"€€€"}
 </script>
 <style>
 :root{
@@ -79,6 +79,8 @@ h2 em,.disp em{font-style:italic;color:var(--terra)}
 
 /* ── nav ── */
 nav{position:fixed;inset:0 0 auto;z-index:90;transition:background .5s,box-shadow .5s,transform .5s}
+nav:not(.solid)::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(34,38,29,.55),rgba(34,38,29,0));z-index:-1}
 nav.solid{background:rgba(233,228,219,.92);backdrop-filter:blur(14px);
   box-shadow:0 1px 0 rgba(42,38,34,.08)}
 nav.hide{transform:translateY(-100%)}
@@ -112,13 +114,18 @@ nav:not(.solid) .btn{background:rgba(30,42,53,.6);border-color:rgba(233,228,219,
 
 /* ── hero ── */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;color:var(--stone)}
-.hero .bg{position:absolute;inset:-12% 0;background:url(img/hero-land.webp) center/cover;will-change:transform}
+.hero .bg{position:absolute;inset:-12% 0;background:url(img/hero-poster.webp) center/cover;will-change:transform}
 .hero .tint{position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(30,42,53,.42),rgba(30,42,53,.06) 45%,rgba(30,42,53,.6) 100%)}
+  linear-gradient(180deg,rgba(34,38,29,.58),rgba(34,38,29,.14) 40%,rgba(34,38,29,.78) 100%),
+  linear-gradient(90deg,rgba(34,38,29,.68) 0%,rgba(34,38,29,.38) 46%,rgba(34,38,29,0) 78%)}
+@media(max-width:900px){.hero .tint{background:
+  linear-gradient(180deg,rgba(34,38,29,.66),rgba(34,38,29,.42) 34%,rgba(34,38,29,.86) 100%)}
+  .hero h1,.hero .sub{text-shadow:0 2px 22px rgba(20,24,16,.5)}
+  .hero .eyebrow #seasonTag{display:none}}
 .hero-in{position:relative;z-index:2;width:100%;padding-bottom:clamp(120px,17vh,180px)}
-.hero .eyebrow{color:var(--sand)}
+.hero .eyebrow{color:var(--sand);text-shadow:0 1px 14px rgba(20,24,16,.6)}
 .hero .eyebrow::before{background:var(--sand)}
-.hero h1{font-family:var(--disp);font-weight:400;font-size:clamp(3rem,7.6vw,6.6rem);
+.hero h1{text-shadow:0 2px 30px rgba(20,24,16,.28);font-family:var(--disp);font-weight:400;font-size:clamp(3rem,7.6vw,6.6rem);
   line-height:1.02;letter-spacing:-.012em;margin:.32em 0 .3em;max-width:11em}
 .hero h1 em{font-style:italic}
 .hero .sub{font-weight:300;font-size:clamp(.98rem,1.2vw,1.12rem);max-width:44ch;color:rgba(233,228,219,.88)}
@@ -496,22 +503,20 @@ body.menu-open .m-view{opacity:1;transform:none}
   letter-spacing:.26em;text-transform:uppercase;color:var(--sand)}
 
 /* higgsfield layer */
-.herovid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;z-index:1}
-.hero.scrub .herovid{opacity:1}
-.hero.scrub .bg{opacity:0}
+.herovid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;
+  opacity:0;z-index:1;transition:opacity 1.4s var(--ease)}
+.hero.vidon .herovid{opacity:1}
+.hero.vidon .bg{opacity:0;transition:opacity 1.4s var(--ease)}
 .frame video.livevid{width:100%;height:100%;object-fit:cover}
 .sunarc{margin-top:64px;max-width:900px}
 .sunarc svg{width:100%;height:auto;display:block}
 
 /* ── fable layer ── */
-#cursor{position:fixed;left:0;top:0;z-index:300;pointer-events:none;mix-blend-mode:difference}
-#cursor .dot{width:8px;height:8px;border-radius:50%;background:#fff;transform:translate(-50%,-50%)}
-#ring{position:fixed;left:0;top:0;z-index:299;pointer-events:none;width:38px;height:38px;
-  border:1px solid rgba(255,255,255,.7);border-radius:50%;transform:translate(-50%,-50%);
-  mix-blend-mode:difference;display:flex;align-items:center;justify-content:center}
-#ring span{font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-  color:#fff;opacity:0;transition:opacity .3s}
-@media(pointer:coarse){#cursor,#ring{display:none}}
+/* a drop in still water — soft bubble where you click */
+.ripple{position:fixed;z-index:300;pointer-events:none;width:40px;height:40px;border-radius:50%;
+  transform:translate(-50%,-50%);will-change:transform,opacity;
+  background:radial-gradient(circle,rgba(233,203,138,.40) 0%,rgba(233,203,138,.13) 46%,rgba(233,203,138,0) 70%)}
+.ripple.rim{background:none;border:1px solid rgba(233,203,138,.30)}
 #grain{position:fixed;inset:-100%;z-index:250;pointer-events:none;opacity:.05;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:grain 7s steps(10) infinite}
@@ -538,8 +543,6 @@ body.menu-open .m-view{opacity:1;transform:none}
 <body>
 <div id="prog"></div>
 <div id="grain" aria-hidden="true"></div>
-<div id="cursor"><span class="dot"></span></div>
-<div id="ring"><span>View</span></div>
 
 <!-- preloader -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -577,7 +580,7 @@ body.menu-open .m-view{opacity:1;transform:none}
 <!-- ═══ HERO ═══ -->
 <header class="hero" id="top">
   <div class="bg" data-plx></div>
-  <video class="herovid" id="heroVid" muted playsinline preload="auto" poster="img/hero-land.webp"></video>
+  <video class="herovid" id="heroVid" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.webp" aria-hidden="true" tabindex="-1"></video>
   <div class="tint"></div>
   <div class="wrap hero-in">
     <span class="eyebrow">Turismo Rural · Alentejo<i id="seasonTag"></i></span>
@@ -986,29 +989,21 @@ if(!RM && window.Lenis){
   }));
 }
 
-/* ── custom cursor: dot leads, ring trails ── */
-if(!TOUCH && !RM){
-  const cur=document.getElementById('cursor'), ring=document.getElementById('ring'),
-        rlab=ring.querySelector('span');
-  const cx=gsap.quickTo(cur,'x',{duration:.12,ease:'power2.out'}),
-        cy=gsap.quickTo(cur,'y',{duration:.12,ease:'power2.out'}),
-        rx=gsap.quickTo(ring,'x',{duration:.45,ease:'power3.out'}),
-        ry=gsap.quickTo(ring,'y',{duration:.45,ease:'power3.out'});
-  addEventListener('pointermove',e=>{cx(e.clientX);cy(e.clientY);rx(e.clientX);ry(e.clientY);},{passive:true});
-  const grow=(scale,label)=>{gsap.to(ring,{scale,duration:.35,ease:'power3.out'});
-    rlab.textContent=label||'';rlab.style.opacity=label?1:0;};
-  document.querySelectorAll('a,button,.bk-opt,summary').forEach(el=>{
-    el.addEventListener('pointerenter',()=>grow(1.9,''));
-    el.addEventListener('pointerleave',()=>grow(1,''));
-  });
-  document.querySelectorAll('.exp-outer').forEach(el=>{
-    el.addEventListener('pointerenter',()=>grow(2.6,'Drag'));
-    el.addEventListener('pointerleave',()=>grow(1,''));
-  });
-  document.querySelectorAll('.frame').forEach(el=>{
-    el.addEventListener('pointerenter',()=>grow(2.2,'View'));
-    el.addEventListener('pointerleave',()=>grow(1,''));
-  });
+/* ── soft bubble on click (no cursor furniture) ── */
+if(!RM){
+  addEventListener('pointerdown',e=>{
+    if(e.button>0) return;                       /* left / touch only */
+    const make=(cls,scale,dur,delay)=>{
+      const b=document.createElement('span');
+      b.className='ripple'+(cls?' '+cls:'');
+      b.style.left=e.clientX+'px'; b.style.top=e.clientY+'px';
+      document.body.appendChild(b);
+      gsap.fromTo(b,{scale:.25,opacity:1},
+        {scale,opacity:0,duration:dur,delay,ease:'power2.out',onComplete:()=>b.remove()});
+    };
+    make('',3.1,.72,0);
+    make('rim',5.4,1.15,.08);                    /* the wider, slower ring behind it */
+  },{passive:true});
 }
 
 /* ── magnetic buttons ── */
@@ -1126,22 +1121,20 @@ if(!RM){
       gsap.fromTo(cite,{opacity:0},{opacity:1,duration:1,delay:1});
     }});
   }
-  /* ── the higgsfield move: hero dolly scrubbed by scroll ── */
-  if(!TOUCH){
+  /* ── the estate, from the air: real drone footage, full-bleed loop ── */
+  (function(){
     const hv=document.getElementById('heroVid'), hero=document.querySelector('.hero');
-    fetch('media/hero-dolly.mp4').then(r=>r.blob()).then(b=>{
-      hv.src=URL.createObjectURL(b);   /* blob = always seekable, no range requests needed */
-      hv.addEventListener('loadedmetadata',()=>{
-        hero.classList.add('scrub');
-        const D=hv.duration-0.05;
-        ScrollTrigger.create({
-          trigger:hero,start:'top top',end:'+=120%',pin:true,scrub:.5,
-          onUpdate(self){ hv.currentTime = D*self.progress; }
-        });
-        ScrollTrigger.refresh();
-      },{once:true});
-    }).catch(()=>{});
-  }
+    if(!hv||!hero) return;
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;  /* poster stays */
+    const light = innerWidth < 900 || TOUCH;   /* phones + tablets get the 960px cut */
+    hv.src = light ? 'media/hero-estate-720.mp4' : 'media/hero-estate.mp4';
+    hv.addEventListener('loadeddata',()=>{ hero.classList.add('vidon'); },{once:true});
+    const go=()=>hv.play().catch(()=>{});      /* some browsers refuse until a gesture */
+    go(); addEventListener('touchstart',go,{once:true,passive:true});
+    /* stop decoding once the hero is behind you */
+    new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?go():hv.pause()),{threshold:0})
+      .observe(hero);
+  })();
 
   /* ── the day, measured in light: sun travels its arc as you scroll ── */
   (function(){
