@@ -341,9 +341,14 @@ footer a:hover{color:var(--terra)}
   display:grid;place-items:center;box-shadow:0 10px 30px rgba(34,38,29,.35);
   transition:transform .35s var(--ease),box-shadow .35s}
 #ccOrb:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(34,38,29,.45)}
-#ccOrb svg{width:30px;height:28px;color:var(--sand)}
+#ccOrb svg{width:30px;height:28px;color:#E8D5A8;
+  filter:drop-shadow(0 0 4px rgba(233,203,138,.55));
+  animation:oakglow 3.6s ease-in-out infinite}
+@keyframes oakglow{
+  0%,100%{filter:drop-shadow(0 0 3px rgba(233,203,138,.4)) drop-shadow(0 0 8px rgba(200,160,90,.18))}
+  50%{filter:drop-shadow(0 0 6px rgba(240,214,150,.85)) drop-shadow(0 0 16px rgba(210,170,100,.4))}}
 #ccOrb::after{content:'';position:absolute;inset:-5px;border-radius:50%;
-  border:1px solid rgba(169,131,74,.35);animation:ccb 3.2s ease-in-out infinite}
+  border:1px solid rgba(190,152,90,.4);animation:ccb 3.6s ease-in-out infinite}
 @keyframes ccb{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.1);opacity:.2}}
 #ccPanel{position:fixed;right:26px;bottom:98px;z-index:120;width:min(360px,calc(100vw - 40px));
   background:var(--paper);border:1px solid rgba(42,38,34,.12);border-radius:10px;
