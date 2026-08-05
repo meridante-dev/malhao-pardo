@@ -379,6 +379,23 @@ footer a:hover{color:var(--terra)}
 .cc-in button svg{width:16px;height:16px}
 @media(max-width:640px){#ccOrb{right:18px;bottom:18px}#ccPanel{right:12px;bottom:86px}}
 
+
+/* what happens next */
+.after{border:1px solid rgba(42,38,34,.14);border-radius:var(--r);background:#fff;
+  padding:18px 20px;margin-top:20px}
+.after>b{display:block;font-family:var(--disp);font-weight:500;font-size:1rem;margin-bottom:12px}
+.after ol{list-style:none;display:flex;flex-direction:column;gap:10px}
+.after li{display:flex;gap:12px;font-size:.82rem;line-height:1.55;color:#4C463F}
+.after li span{font-weight:600;font-size:.6rem;letter-spacing:.12em;color:var(--terra);
+  flex:none;padding-top:.28em}
+.cc-note{font-size:.66rem;line-height:1.5;color:#8A8478;padding:0 16px 10px;margin:0}
+/* legal furniture */
+.flegal{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;padding:22px 0 6px;
+  border-top:1px solid rgba(233,228,219,.14);margin-top:26px;
+  font-size:.66rem;letter-spacing:.08em;color:rgba(233,228,219,.62)}
+.flegal a{border-bottom:1px solid rgba(233,228,219,.28);padding-bottom:1px}
+.flegal a:hover{color:var(--sand);border-color:var(--sand)}
+
 /* seasonal */
 .eyebrow #seasonTag{font-style:normal}
 .eyebrow #seasonTag:not(:empty)::before{content:'·';margin:0 .7em;opacity:.5}
@@ -871,9 +888,17 @@ body.menu-open .m-view{opacity:1;transform:none}
       </div>
     </div>
     <div class="flive" id="footLive" aria-live="off"></div>
+    <div class="flegal">
+      <span class="ph">[ENTIDADE LEGAL — pendente]</span>
+      <span class="ph">[NIPC — pendente]</span>
+      <span class="ph">[N.º RNET — pendente]</span>
+      <a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener">Livro de Reclamações</a>
+      <a href="https://www.cniacc.pt/pt/" target="_blank" rel="noopener">Resolução de litígios · CNIACC</a>
+      <a href="privacidade.html">Privacidade &amp; RGPD</a>
+    </div>
     <div class="fbot">
-      <span>© Herdade do Malhão Pardo · <span class="ph">[ENTITY · pending]</span></span>
-      <span>Sustainable by habit, not by hashtag.</span>
+      <span>© Herdade do Malhão Pardo · <span class="ph">[ENTIDADE — pendente]</span></span>
+      <span>Alentejo, Portugal</span>
     </div>
   </div>
 </footer>
@@ -952,6 +977,15 @@ body.menu-open .m-view{opacity:1;transform:none}
         <label class="bk-l">Email</label><input class="bk-in" type="email" id="bkMail" placeholder="you@email.com">
         <label class="bk-l">Anything we should know?</label>
         <input class="bk-in" id="bkMsg" placeholder="Allergies, arrivals after dark, celebrations…">
+        <div class="after">
+          <b>What happens next</b>
+          <ol>
+            <li><span>01</span>Nothing is charged. This sends a request, not a payment.</li>
+            <li><span>02</span>A person here reads it and replies personally within 24 hours.</li>
+            <li><span>03</span>You get exact availability and a full price — VAT and any tourist tax included, nothing added later.</li>
+            <li><span>04</span>Only then do you decide. Confirmation terms come with that reply.</li>
+          </ol>
+        </div>
         <div class="addon" id="addonCard" style="display:none">
           <span class="cb">✓</span>
           <span class="t"><b>Add the Vitality Circuit</b><span>2h30 · heat, cold, massage, rest</span></span>
@@ -1530,6 +1564,8 @@ form.addEventListener('submit',async e=>{
   <div class="cc-log" id="ccLog">
     <div class="cc-m cc-a">Welcome to the herdade. Ask me anything about the estate, the stays or the Vitality Circuit.</div>
   </div>
+  <p class="cc-note">An AI assistant — it can be wrong about details. Rates, availability and
+  policies are always confirmed by a person.</p>
   <form class="cc-in" id="ccForm">
     <input id="ccT" autocomplete="off" placeholder="Ask about your stay…" maxlength="400">
     <button type="submit" aria-label="Send"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M12 5l5 5-5 5"/></svg></button>
