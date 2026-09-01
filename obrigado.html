@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Thank you — Herdade do Malhão Pardo</title>
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#A9834A;--olive:#4E5637;--stone:#EFEAE0;--ink:#2B2C22;--night:#22261D;
+  --disp:'Playfair Display',Georgia,serif;--sans:'Montserrat',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--stone);color:var(--ink);min-height:100svh;
+  display:grid;place-items:center;padding:30px;text-align:center;font-weight:300}
+.card{max-width:520px}
+img{width:56px;margin:0 auto 22px;display:block}
+.eyebrow{font-size:.62rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--terra)}
+h1{font-family:var(--disp);font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1.1;margin:.35em 0 .5em}
+h1 em{font-style:italic;color:var(--terra)}
+p{line-height:1.75;color:#4C463F;font-size:.95rem}
+.ref{margin-top:18px;font-size:.68rem;letter-spacing:.12em;color:#8A8478;word-break:break-all}
+a.btn{display:inline-block;margin-top:30px;background:var(--night);color:var(--stone);
+  font-weight:600;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  padding:15px 34px;border-radius:3px;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="card">
+  <img src="img/logo-mark.webp" alt="">
+  <span class="eyebrow">Herdade do Malhão Pardo</span>
+  <h1>Thank you.<br><em>It's done.</em></h1>
+  <p>Your payment went through and Stripe is sending you the receipt by email.
+  A person here will follow up personally to arrange the details — dates, times,
+  and anything you'd like us to know.</p>
+  <p class="ref" id="sid"></p>
+  <a class="btn" href="index.html">Back to the herdade</a>
+</div>
+<script>
+const sid=new URLSearchParams(location.search).get('sid');
+if(sid) document.getElementById('sid').textContent='Reference: '+sid;
+</script>
+</body>
+</html>

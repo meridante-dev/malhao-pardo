@@ -424,6 +424,14 @@ nav:not(.solid) .brand img.oak{filter:brightness(0) invert(1) opacity(.94)}
   text-transform:uppercase;color:var(--olive)}
 .sunline span{color:var(--terra-ink)}
 
+/* stripe layer */
+.vgift{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px;
+  padding-top:16px;border-top:1px solid var(--line)}
+.vg-l{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--olive)}
+.vgift button{border:1px solid rgba(42,38,34,.2);background:#fff;font:600 .74rem var(--sans);
+  padding:9px 16px;border-radius:99px;cursor:pointer;transition:all .25s;color:var(--ink)}
+.vgift button:hover{border-color:var(--terra);color:var(--terra-ink)}
+
 /* seasonal */
 .eyebrow #seasonTag{font-style:normal}
 .eyebrow #seasonTag:not(:empty)::before{content:'·';margin:0 .7em;opacity:.5}
@@ -779,6 +787,10 @@ body.menu-open .m-view{opacity:1;transform:none}
         <button class="btn ghost" data-book data-addon>Add to a stay</button>
         <span class="vit-price">€85 <small>per person · €65 as an add-on to your stay</small></span>
       </div>
+      <div class="vgift rv" data-rv id="vgift" hidden>
+        <span class="vg-l">Offer it — gift vouchers:</span>
+        <span id="vgBtns"></span>
+      </div>
     </div>
     <div class="frame tall rv" data-rv><img src="img/spa.webp" alt="The Vitality Circuit — warm towels and quiet" loading="lazy" data-kb><span class="cap">The circuit · 2h30</span></div>
   </div>
@@ -967,6 +979,10 @@ body.menu-open .m-view{opacity:1;transform:none}
       </div>
 
       <div class="bk-step" id="st3">
+        <div id="payRow" hidden>
+          <button type="button" class="btn" id="payNow" style="width:100%">Pay &amp; book now — secure card payment</button>
+          <p class="bk-note" style="text-align:center;margin-top:8px">Instant confirmation via Stripe · or send a request below and pay later</p>
+        </div>
         <label class="bk-l" for="bkName">Name</label><input class="bk-in" id="bkName" autocomplete="name" required placeholder="Your name">
         <label class="bk-l" for="bkMail">Email</label><input class="bk-in" type="email" id="bkMail" placeholder="you@email.com">
         <label class="bk-l" for="bkMsg">Anything we should know?</label>
@@ -1334,6 +1350,34 @@ document.getElementById('bbG')?.addEventListener('change',e=>{
   if(typeof renderCal==='function') renderCal();
 });
 
+/* ── stripe payments (self-arming: UI appears only when the gateway is configured) ── */
+const PAY='https://malhao-pay.edenrise.workers.dev';
+window.__applyPayConfig=function(cfg){
+  if(!cfg||!cfg.enabled) return;
+  const vg=document.getElementById('vgift');
+  if(vg){ vg.hidden=false;
+    document.getElementById('vgBtns').innerHTML=(cfg.voucher_eur||[50,85,150]).map(a=>
+      `<button type="button" data-amt="${a*100}">€${a}</button>`).join(' ');
+    vg.addEventListener('click',e=>{
+      const b=e.target.closest('button[data-amt]'); if(!b) return;
+      fetch(PAY+'/checkout',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({product:'voucher',amount:+b.dataset.amt})})
+        .then(r=>r.json()).then(d=>{ if(d.url) location.href=d.url; });
+    });
+  }
+  window.__payEnabled=true;
+};
+fetch(PAY+'/config').then(r=>r.json()).then(window.__applyPayConfig).catch(()=>{});
+document.getElementById('payNow')?.addEventListener('click',()=>{
+  const btn=document.getElementById('payNow'); btn.disabled=true; btn.textContent='One moment…';
+  fetch(PAY+'/checkout',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({product:'circuit',qty:state.g,day:fmt(state.inD),slot:state.slot||''})})
+    .then(r=>r.json()).then(d=>{
+      if(d.url) location.href=d.url;
+      else { btn.disabled=false; btn.textContent='Pay & book now — secure card payment'; }
+    }).catch(()=>{ btn.disabled=false; btn.textContent='Pay & book now — secure card payment'; });
+});
+
 /* slots */
 document.querySelectorAll('.slot').forEach(o=>o.addEventListener('click',()=>{
   document.querySelectorAll('.slot').forEach(x=>x.classList.remove('sel'));
@@ -1373,6 +1417,8 @@ function go(n){
   const ac=document.getElementById('addonCard');
   ac.style.display = state.mode==='stay' ? '' : 'none';
   if(state.mode==='stay') ac.classList.toggle('sel',state.addCircuit);
+  const pr=document.getElementById('payRow');
+  if(pr) pr.hidden=!(window.__payEnabled && state.mode==='circuit' && n===3);
   if(n===3) summary();
 }
 function summary(){
