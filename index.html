@@ -1,48 +1,195 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="robots" content="noindex,nofollow"><!-- lift this once the legal block, rates and contact are real -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta charset="utf-8"/>
+<meta content="noindex,nofollow" name="robots"/><!-- lift this once the legal block, rates and contact are real -->
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>Herdade do Malhão Pardo — Turismo Rural, Alentejo</title>
-<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
-<meta name="description" content="Turismo Rural no Alentejo — casas caiadas, pinheiros-mansos, piscina e o silêncio do montado. Pedido de reserva directo.">
-<meta property="og:title" content="Herdade do Malhão Pardo — Rural soul. Refined living.">
-<meta property="og:description" content="Turismo Rural no Alentejo. Enraizado na natureza, feito para a ligação.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Herdade do Malhão Pardo — Turismo Rural, Alentejo">
-<meta name="twitter:description" content="Turismo Rural no Alentejo — casas caiadas, pinheiros-mansos e o silêncio do montado.">
-<meta name="twitter:image" content="https://meridante-dev.github.io/malhao-pardo/img/social-card.jpg">
-<meta property="og:site_name" content="Herdade do Malhão Pardo">
-<meta property="og:locale" content="pt_PT">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="675">
-<meta property="og:image:alt" content="A herdade vista do ar, ao fim da tarde">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://meridante-dev.github.io/malhao-pardo/img/social-card.jpg">
-<meta property="og:url" content="https://meridante-dev.github.io/malhao-pardo/">
-<link rel="canonical" href="https://meridante-dev.github.io/malhao-pardo/">
-<meta name="theme-color" content="#22261D">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/hero-poster.webp" fetchpriority="high">
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<link href="img/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="img/favicon-180.png" rel="apple-touch-icon" sizes="180x180"/>
+<meta content="Turismo Rural no Alentejo — casas caiadas, pinheiros-mansos, piscina e o silêncio do montado. Pedido de reserva directo." name="description"/>
+<meta content="Herdade do Malhão Pardo — Rural soul. Refined living." property="og:title"/>
+<meta content="Turismo Rural no Alentejo. Enraizado na natureza, feito para a ligação." property="og:description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Herdade do Malhão Pardo — Turismo Rural, Alentejo" name="twitter:title"/>
+<meta content="Turismo Rural no Alentejo — casas caiadas, pinheiros-mansos e o silêncio do montado." name="twitter:description"/>
+<meta content="https://malhaopardo.pt/img/social-card.jpg" name="twitter:image"/>
+<meta content="Herdade do Malhão Pardo" property="og:site_name"/>
+<meta content="pt_PT" property="og:locale"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="675" property="og:image:height"/>
+<meta content="A herdade vista do ar, ao fim da tarde" property="og:image:alt"/>
+<meta content="website" property="og:type"/>
+<meta content="https://malhaopardo.pt/img/social-card.jpg" property="og:image"/>
+<meta content="https://malhaopardo.pt/" property="og:url"/>
+<link href="https://malhaopardo.pt/" rel="canonical"/>
+<meta content="#22261D" name="theme-color"/>
+<link as="image" fetchpriority="high" href="img/hero-poster-1200.webp" imagesizes="100vw" imagesrcset="img/hero-poster-800.webp 800w, img/hero-poster-1200.webp 1200w, img/hero-poster.webp 1920w" rel="preload"/>
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script src="js/lenis.min.js"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":["Resort","FarmStay"],"url":"https://meridante-dev.github.io/malhao-pardo/","geo":{"@type":"GeoCoordinates","latitude":38.57,"longitude":-7.91},"name":"Herdade do Malhão Pardo","alternateName":"Malhão Pardo","additionalType":"https://schema.org/FarmStay",
+{"@context":"https://schema.org","@type":["Resort","FarmStay"],"url":"https://malhaopardo.pt/","geo":{"@type":"GeoCoordinates","latitude":38.57,"longitude":-7.91},"name":"Herdade do Malhão Pardo","alternateName":"Malhão Pardo","additionalType":"https://schema.org/FarmStay",
 "description":"Boutique resort in the Alentejo, Portugal. Rural soul, refined living.",
 "slogan":"Rooted in nature. Made for connection.",
 "address":{"@type":"PostalAddress","addressRegion":"Alentejo","addressCountry":"PT"},
-"image":"https://meridante-dev.github.io/malhao-pardo/img/social-card.jpg","priceRange":"€€€"}
+"image":"https://malhaopardo.pt/img/social-card.jpg","priceRange":"€€€"}
 </script>
+<link as="font" crossorigin="" href="fonts/PlayfairDisplay-400-lat.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="fonts/Montserrat-400-lat.woff2" rel="preload" type="font/woff2"/>
 <style>
+/* Self-hosted 2026-09-02: the type no longer travels to Google.
+   Removes two external hosts from the critical path and one recipient of every
+   visitor's IP from the privacy policy. unicode-range means a browser fetches only
+   the subset it actually needs — latin for PT and EN. */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(fonts/Montserrat-300-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(fonts/Montserrat-300-lat.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/Montserrat-400-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/Montserrat-400-lat.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/Montserrat-500-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/Montserrat-500-lat.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/Montserrat-600-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(fonts/Montserrat-600-lat.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/PlayfairDisplay-400i-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/PlayfairDisplay-400i-lat.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/PlayfairDisplay-500i-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/PlayfairDisplay-500i-lat.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/PlayfairDisplay-400-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/PlayfairDisplay-400-lat.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/PlayfairDisplay-500-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/PlayfairDisplay-500-lat.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/Montserrat-700-lat.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/Montserrat-700-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root{
-  --terra:#A9834A; --terra-ink:#8A6835; --olive:#4E5637; --sand:#DCC9B2; --stone:#EFEAE0; --night:#22261D;
+  --terra:#A68049;--terra-text:#826539; --terra-ink:#8A6835; --olive:#4E5637; --sand:#DCC9B2; --stone:#EFEAE0; --night:#22261D;
   --ink:#2B2C22; --paper:#FBF8F1; --line:rgba(42,38,34,.12);
   --disp:'Playfair Display',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
   --pad:clamp(22px,5vw,72px); --ease:cubic-bezier(.25,.8,.25,1); --r:4px;
@@ -120,6 +267,8 @@ nav:not(.solid) .btn{background:rgba(34,38,29,.6);border-color:rgba(233,228,219,
 /* ── hero ── */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;color:var(--stone)}
 .hero .bg{position:absolute;inset:-12% 0;background:url(img/hero-poster.webp) center/cover;will-change:transform}
+@media (max-width:800px){.hero .bg{background-image:url(img/hero-poster-800.webp)}}
+@media (min-width:801px) and (max-width:1300px){.hero .bg{background-image:url(img/hero-poster-1200.webp)}}
 .hero .tint{position:absolute;inset:0;background:
   linear-gradient(180deg,rgba(34,38,29,.58),rgba(34,38,29,.14) 40%,rgba(34,38,29,.78) 100%),
   linear-gradient(90deg,rgba(34,38,29,.72) 0%,rgba(34,38,29,.46) 46%,rgba(34,38,29,.06) 78%)}
@@ -273,7 +422,7 @@ footer{background:var(--night);color:rgba(233,228,219,.7);padding:70px 0 calc(46
 .fbrand .bt small{display:block;font-family:var(--sans);font-size:.52rem;font-weight:600;
   letter-spacing:.44em;color:var(--sand);margin-top:6px}
 .fbrand p{font-family:var(--disp);font-style:italic;font-size:1.02rem;margin-top:18px;color:var(--sand)}
-footer h4{font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--sand);margin-bottom:16px}
+footer h3{font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--sand);margin-bottom:16px}
 footer li{list-style:none;margin-bottom:9px;font-size:.86rem;font-weight:300}
 footer a:hover{color:var(--terra)}
 .fbot{margin-top:54px;padding-top:24px;border-top:1px solid rgba(233,228,219,.12);
@@ -590,443 +739,481 @@ body.menu-open .m-view{opacity:1;transform:none}
   .band{padding-block:80px}
   .exp{flex-basis:78vw}
 }
+
+/* ── direct-booking block ── */
+.direct{border:1px solid rgba(42,38,34,.16);background:rgba(255,255,255,.5);
+  padding:16px 18px;margin:4px 0 18px}
+.direct>b{font-family:var(--disp);font-weight:500;font-size:.98rem;display:block;margin-bottom:.6em}
+.direct ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.direct li{font-size:.86rem;line-height:1.5;padding-left:0;color:var(--ink)}
+.direct li i{font-style:normal;font-weight:600;color:var(--terra)}
+.bk-opt .conf{display:block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--olive);margin-top:2px;opacity:.85}
+/* ── waitlist ── */
+.wl{max-width:620px}
+.wl h2{margin-bottom:.35em}
+.wl-sub{max-width:52ch;opacity:.85}
+.wl-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.6em}
+.wl-in{flex:1 1 240px;min-width:0;border:0;border-bottom:1px solid rgba(42,38,34,.3);
+  background:none;font-family:var(--sans);font-size:1rem;color:var(--ink);padding:10px 2px}
+.wl-in:focus{outline:0;border-bottom-color:var(--terra)}
+.wl-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.wl-note{font-size:.78rem;opacity:.6;margin-top:1.1em}
+.wl-note.ok{opacity:1;color:var(--olive);font-weight:500}
+.wl-note.err{opacity:1;color:#9A3412}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.langb{background:none;border:0;font-family:var(--sans);font-size:.68rem;font-weight:600;
+  letter-spacing:.16em;color:inherit;opacity:.72;cursor:pointer;padding:6px 8px;
+  border-bottom:1px solid transparent}
+.langb:hover,.langb:focus-visible{opacity:1;border-bottom-color:currentColor}
+
+/* WCAG 2.2 SC 2.5.8 — pointer targets need 24×24 CSS px. These sat at 17–20px. */
+footer a,.flegal a{display:inline-block;padding-block:4px;min-height:24px}
+.reserve{padding-block:3px;min-height:24px}
+
+/* WCAG 1.4.3 — the brand terracotta reads at 3.5:1 on light grounds, under the 4.5:1
+   small-text minimum. Decorative uses keep --terra; text switches to --terra-text (4.5:1+).
+   Large display italics stay on --terra, which now clears the 3:1 large-text threshold. */
+.stay .rate a,.stay .rate .reserve{color:var(--terra-text)}
+.faq .pm{color:var(--terra-text)}
+.rt b small{color:var(--terra-text)}
+.sunline span{color:var(--terra-text)}
 </style>
 <noscript><style>#pre{display:none!important}.rv{opacity:1!important;transform:none!important}
 .hero .bg{opacity:1!important}</style></noscript>
 </head>
 <body>
 <div id="prog"></div>
-
 <!-- preloader -->
-<div id="pre" aria-hidden="true">
-  <img class="pre-lock" src="img/logo-lockup.webp" alt="Herdade do Malhão Pardo · Turismo Rural">
+<div aria-hidden="true" id="pre">
+<img alt="Herdade do Malhão Pardo · Turismo Rural" class="pre-lock" decoding="async" height="377" src="img/logo-lockup.webp" width="560"/>
 </div>
-
-<a class="skip" href="#content">Skip to content</a>
-<nav id="nav" aria-label="Primary"><div class="nav-in">
-  <a class="brand" href="#top" aria-label="Herdade do Malhão Pardo">
-    <img class="oak" src="img/logo-mark.webp" alt="" width="34" height="32">
-    <span class="bt">Herdade do Malhão Pardo<small>Turismo Rural</small></span>
-  </a>
-  <div class="navlive" id="navLive" aria-hidden="true"></div>
-  <button class="btn" data-book>Book your stay</button>
-  <button class="menub" id="menuB" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span class="mtxt">Menu</span>
-  </button>
+<a class="skip" data-i="k0a4470d6" href="#content">Skip to content</a>
+<nav aria-label="Primary" data-i-al="ka9a96ec0" id="nav"><div class="nav-in">
+<a aria-label="Herdade do Malhão Pardo" class="brand" data-i-al="k8c4157c4" href="#top">
+<img alt="" class="oak" decoding="async" height="32" src="img/logo-mark.webp" width="34"/>
+<span class="bt"><span data-i="k8c4157c4">Herdade do Malhão Pardo</span><small data-i="k3cc8bc8a">Turismo Rural</small></span>
+</a>
+<div aria-hidden="true" class="navlive" id="navLive"></div>
+<button class="btn" data-book="" data-i="k92bdc393">Book your stay</button>
+<button aria-label="Mudar para português" class="langb" data-langbtn="" type="button">PT</button>
+<button aria-expanded="false" aria-label="Menu" class="menub" data-i-al="k57f5f5ef" id="menuB">
+<span></span><span></span><span class="mtxt" data-i="k57f5f5ef">Menu</span>
+</button>
 </div></nav>
-
 <!-- ═══ HERO ═══ -->
-<header class="hero" id="top">
-  <div class="bg" data-plx></div>
-  <div class="vfilm" id="heroFilm" aria-hidden="true"></div>
-  <video class="herovid" id="heroVid" autoplay muted loop playsinline preload="auto" disablepictureinpicture controlslist="nodownload noplaybackrate" poster="img/hero-poster.webp" aria-hidden="true" tabindex="-1"></video>
-  <div class="tint"></div>
-  <div class="wrap hero-in">
-    <span class="eyebrow">Turismo Rural · Alentejo<i id="seasonTag"></i></span>
-    <h1 id="h1">Rural soul.<br><em>Refined living.</em></h1>
-    <p class="sub rv" data-rv>An estate of cork oaks, whitewash and long horizons — where the
+<main id="content"><header class="hero" id="top">
+<div class="bg" data-plx=""></div>
+<div aria-hidden="true" class="vfilm" id="heroFilm"></div>
+<video aria-hidden="true" autoplay="" class="herovid" controlslist="nodownload noplaybackrate" disablepictureinpicture="" id="heroVid" loop="" muted="" playsinline="" poster="img/hero-poster.webp" preload="auto" tabindex="-1"><source src="media/hero.mp4" type="video/mp4"/></video>
+<div class="tint"></div>
+<div class="wrap hero-in">
+<span class="eyebrow"><span data-i="k658b923d">Turismo Rural · Alentejo</span><i id="seasonTag"></i></span>
+<h1 id="h1"><span data-i="kc11de73d">Rural soul.</span><br/><em data-i="kbceaa91c">Refined living.</em></h1>
+<p class="sub rv" data-i="k109ace4d" data-rv="">An estate of cork oaks, whitewash and long horizons — where the
     day is measured in light, not hours.</p>
-  </div>
-  <div class="scue"><span>Scroll</span><i></i></div>
-  <form class="bookbar" id="bookbar">
-    <div class="bb-f" data-book><label>Arrive</label><span class="bb-d" id="bbIn">Add date</span></div>
-    <div class="bb-f" data-book><label>Depart</label><span class="bb-d" id="bbOut">Add date</span></div>
-    <div class="bb-f"><label for="bbG">Guests</label>
-      <select id="bbG" aria-label="Guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5+ guests</option></select></div>
-    <button class="bb-go" type="submit">Check availability</button>
-  </form>
-</header>
-
-<!-- ═══ MANIFESTO ═══ -->
-<section class="band" id="soul">
-  <div class="wrap">
-    <span class="eyebrow rv" data-rv><i class="idx">01</i>Rooted in nature · made for connection</span>
-    <h2 class="disp rv" data-rv style="margin-top:.5em;max-width:17em">The Alentejo does not hurry.
-      <em>Neither will you.</em></h2>
-    <p class="lede rv" data-rv style="margin-top:1.4em">Malhão Pardo is a family estate in Turismo Rural — casas, a long table, and a pool that holds the evening light.
+</div>
+<div class="scue"><span data-i="k090a3c80">Scroll</span><i></i></div>
+<form class="bookbar" id="bookbar">
+<div class="bb-f" data-book=""><label data-i="k342a8575">Arrive</label><span class="bb-d" data-i="k3ae74694" id="bbIn">Add date</span></div>
+<div class="bb-f" data-book=""><label data-i="ke45f20fb">Depart</label><span class="bb-d" data-i="k3ae74694" id="bbOut">Add date</span></div>
+<div class="bb-f"><label data-i="k3c23a670" for="bbG">Guests</label>
+<select aria-label="Guests" data-i-al="k3c23a670" id="bbG"><option data-i="k096c8f61" value="1">1 guest</option><option data-i="kb72a8362" selected="" value="2">2 guests</option><option data-i="ka06d4e03" value="3">3 guests</option><option data-i="k343b51d6" value="4">4 guests</option><option data-i="k3f1222df" value="5">5+ guests</option></select></div>
+<button class="bb-go" data-i="k8bfdae52" type="submit">Check availability</button>
+</form>
+</header><section class="band" id="soul">
+<div class="wrap">
+<span class="eyebrow rv" data-rv=""><i class="idx">01</i><span data-i="k43465a03">Rooted in nature · made for connection</span></span>
+<h2 class="disp rv" data-rv="" style="margin-top:.5em;max-width:17em"><span data-i="kab4ceb18">The Alentejo does not hurry.</span> <em data-i="k582927e3">Neither will you.</em></h2>
+<p class="lede rv" data-i="k1f1dfc8c" data-rv="" style="margin-top:1.4em">Malhão Pardo is a family estate in Turismo Rural — casas, a long table, and a pool that holds the evening light.
     Days begin with bread still warm and end under more stars than you remember existing.</p>
-    <p class="sunline rv" data-rv>The day, measured in light — <span id="sunUp">sunrise</span> to <span id="sunDown">sunset</span>.</p>
-    <div class="pillars">
-      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><path d="M20 34V10M20 30c-4-1-7-4-8-8M20 26c-4-1-6-3-7-6M20 22c-3-1-5-2-6-5M20 30c4-1 7-4 8-8M20 26c4-1 6-3 7-6M20 22c3-1 5-2 6-5M20 14c-2-1-3-2-3-4M20 14c2-1 3-2 3-4"/></svg><span lang="pt">Enraizado na<br>Natureza</span></div>
-      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><path d="M4 26c5-6 9-6 13 0s8 6 12 0M4 33c5-6 9-6 13 0s8 6 12 0" transform="translate(3 -4)"/></svg><span lang="pt">Paisagens<br>Autênticas</span></div>
-      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><path d="M8 28a12 12 0 0 1 24 0M20 10v-4M8 16l-3-3M32 16l3-3M4 28h32M10 33h20"/></svg><span lang="pt">Tempo que<br>Inspira</span></div>
-      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><circle cx="20" cy="12" r="4"/><circle cx="9" cy="16" r="3.4"/><circle cx="31" cy="16" r="3.4"/><path d="M13 32c0-5 3-8 7-8s7 3 7 8M3 30c.6-4 2.6-6.4 6-6.4M37 30c-.6-4-2.6-6.4-6-6.4"/></svg><span lang="pt">Conexão<br>Verdadeira</span></div>
-      <div class="pillar rv" data-rv><svg viewBox="0 0 40 40"><path d="M12 33V18a8 8 0 0 1 16 0v15M8 33h24"/></svg><span lang="pt">Luxo Discreto<br>e Atemporal</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ THE ESTATE ═══ -->
-<section class="band paper-band" id="estate" style="padding-top:clamp(70px,10vh,130px)">
-  <div class="wrap split">
-    <div class="collage rv" data-rv>
-      <div class="frame tall"><img src="img/casa.webp" alt="Whitewashed architecture of the estate under a stone pine" loading="lazy" data-kb><span class="cap">The white houses</span></div>
-      <div class="detail" data-float><img src="img/breakfast.webp" alt="Morning table detail" loading="lazy"></div>
-    </div>
-    <div>
-      <span class="eyebrow rv" data-rv><i class="idx">02</i>The estate</span>
-      <h2 class="disp rv" data-rv style="margin-top:.4em">Whitewash, cork<br>and <em>quiet geometry.</em></h2>
-      <p class="lede rv" data-rv style="margin-top:1.2em">Low white volumes sit lightly on the land,
+<p class="sunline rv" data-rv=""><span data-i="k90546d1c">The day, measured in light —</span> <span data-i="k54bf3dc2" id="sunUp">sunrise</span> <span data-i="k4374aaee">to</span> <span data-i="ka812ce79" id="sunDown">sunset</span>.</p>
+<div class="pillars">
+<div class="pillar rv" data-rv=""><svg viewbox="0 0 40 40"><path d="M20 34V10M20 30c-4-1-7-4-8-8M20 26c-4-1-6-3-7-6M20 22c-3-1-5-2-6-5M20 30c4-1 7-4 8-8M20 26c4-1 6-3 7-6M20 22c3-1 5-2 6-5M20 14c-2-1-3-2-3-4M20 14c2-1 3-2 3-4"></path></svg><span lang="pt"><span data-i="k45391146">Enraizado na</span><br/><span data-i="kfb1ed9a7">Natureza</span></span></div>
+<div class="pillar rv" data-rv=""><svg viewbox="0 0 40 40"><path d="M4 26c5-6 9-6 13 0s8 6 12 0M4 33c5-6 9-6 13 0s8 6 12 0" transform="translate(3 -4)"></path></svg><span lang="pt"><span data-i="k3f8dd6c0">Paisagens</span><br/><span data-i="k312901c6">Autênticas</span></span></div>
+<div class="pillar rv" data-rv=""><svg viewbox="0 0 40 40"><path d="M8 28a12 12 0 0 1 24 0M20 10v-4M8 16l-3-3M32 16l3-3M4 28h32M10 33h20"></path></svg><span lang="pt"><span data-i="k38875fe5">Tempo que</span><br/><span data-i="k7c38e2ab">Inspira</span></span></div>
+<div class="pillar rv" data-rv=""><svg viewbox="0 0 40 40"><circle cx="20" cy="12" r="4"></circle><circle cx="9" cy="16" r="3.4"></circle><circle cx="31" cy="16" r="3.4"></circle><path d="M13 32c0-5 3-8 7-8s7 3 7 8M3 30c.6-4 2.6-6.4 6-6.4M37 30c-.6-4-2.6-6.4-6-6.4"></path></svg><span lang="pt"><span data-i="kef46fe6e">Conexão</span><br/><span data-i="kf1c7d830">Verdadeira</span></span></div>
+<div class="pillar rv" data-rv=""><svg viewbox="0 0 40 40"><path d="M12 33V18a8 8 0 0 1 16 0v15M8 33h24"></path></svg><span lang="pt"><span data-i="k041ff1aa">Luxo Discreto</span><br/><span data-i="kd2c5c428">e Atemporal</span></span></div>
+</div>
+</div>
+</section><section class="band paper-band" id="estate" style="padding-top:clamp(70px,10vh,130px)">
+<div class="wrap split">
+<div class="collage rv" data-rv="">
+<div class="frame tall"><img alt="Whitewashed architecture of the estate under a stone pine" data-kb="" decoding="async" height="1200" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/casa.webp" srcset="img/casa-800.webp 800w, img/casa-1200.webp 1200w, img/casa.webp 1600w" width="1600"/><span class="cap" data-i="k5ac5f77f">The white houses</span></div>
+<div class="detail" data-float=""><img alt="Morning table detail" decoding="async" height="1600" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/breakfast.webp" srcset="img/breakfast-800.webp 800w, img/breakfast.webp 1200w" width="1200"/></div>
+</div>
+<div>
+<span class="eyebrow rv" data-rv=""><i class="idx">02</i><span data-i="k157f3bf5">The estate</span></span>
+<h2 class="disp rv" data-rv="" style="margin-top:.4em"><span data-i="kc373e666">Whitewash, cork</span><br/><span data-i="kcffa50a3">and</span> <em data-i="k1051df08">quiet geometry.</em></h2>
+<p class="lede rv" data-i="k74a22c9e" data-rv="" style="margin-top:1.2em">Low white volumes sit lightly on the land,
       the way this region has always built — thick walls against the heat, blue shadow in the
       doorways, a pine holding the sky. Inside: linen, clay, timber. Nothing that shouts.</p>
-      <p class="lede rv" data-rv style="margin-top:1em">Casas spread across the monte, far enough apart to keep the quiet. <span class="ph">[número — pendente]</span></p>
-      <div class="rv" data-rv style="margin-top:2.2em"><button class="btn ghost" data-book>Plan a stay</button></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ THE POOL ═══ -->
-<section class="band paper-band" style="padding-top:0">
-  <div class="wrap split rev">
-    <div>
-      <span class="eyebrow rv" data-rv><i class="idx">03</i>The pool</span>
-      <h2 class="disp rv" data-rv style="margin-top:.4em">Where the evening<br><em>comes to swim.</em></h2>
-      <p class="lede rv" data-rv style="margin-top:1.2em">Warm stone underfoot, a long still line of
+<p class="lede rv" data-rv="" style="margin-top:1em"><span data-i="k215585c1">Casas spread across the monte, far enough apart to keep the quiet.</span> <span class="ph" data-fill="estate.houseCount" data-i="kb3b5df3b">[número — pendente]</span></p>
+<div class="rv" data-rv="" style="margin-top:2.2em"><button class="btn ghost" data-book="" data-i="k88c33d9f">Plan a stay</button></div>
+</div>
+</div>
+</section><section class="band paper-band" style="padding-top:0">
+<div class="wrap split rev">
+<div>
+<span class="eyebrow rv" data-rv=""><i class="idx">03</i><span data-i="k80fa626c">The pool</span></span>
+<h2 class="disp rv" data-rv="" style="margin-top:.4em"><span data-i="kf3c2acfe">Where the evening</span><br/><em data-i="k5c4d53fd">comes to swim.</em></h2>
+<p class="lede rv" data-i="k914130e5" data-rv="" style="margin-top:1.2em">Warm stone underfoot, a long still line of
       water, umbrellas leaning into the last sun. Order a glass of something cold from the honesty
       bar and stay until the swifts come out.</p>
-    </div>
-    <div class="frame wide rv" data-rv>
-        <video class="livevid" muted playsinline loop preload="none" poster="img/pool.webp" aria-label="The pool at golden hour">
-          <source src="media/pool-loop.mp4" type="video/mp4"></video>
-        <span class="cap">Golden hour · live</span></div>
-  </div>
-</section>
-
-<!-- ═══ CHAPTER I ═══ -->
-<section class="chapter">
-  <div class="bg" data-plx style="background-image:url(img/forest.webp)"></div>
-  <div class="tint"></div>
-  <div class="wrap ch-in">
-    <span class="ch-n">I</span>
-    <p class="ch-t disp">The land comes first.</p>
-  </div>
-</section>
-
-<!-- ═══ STAYS ═══ -->
-<section class="band" id="stays">
-  <div class="wrap">
-    <div class="shead">
-      <span class="eyebrow rv" data-rv><i class="idx">04</i>Stays</span>
-      <h2 class="disp rv" data-rv style="margin-top:.4em">Rooms that<br><em>let you rest.</em></h2>
-      <p class="lede rv" data-rv style="margin-top:1.2em">Every stay includes breakfast from the farm,
+</div>
+<div class="frame wide rv" data-rv="">
+<video aria-label="The pool at golden hour" class="livevid" data-i-al="k9b9dbc94" loop="" muted="" playsinline="" poster="img/pool.webp" preload="none">
+<source src="media/pool-loop.mp4" type="video/mp4"/></video>
+<span class="cap" data-i="k2f95b333">Golden hour · live</span></div>
+</div>
+</section><section class="chapter">
+<div class="bg" data-plx="" style="background-image:url(img/forest.webp)"></div>
+<div class="tint"></div>
+<div class="wrap ch-in">
+<span class="ch-n">I</span>
+<p class="ch-t disp" data-i="k97199bf1">The land comes first.</p>
+</div>
+</section><section class="band" id="stays">
+<div class="wrap">
+<div class="shead">
+<span class="eyebrow rv" data-rv=""><i class="idx">04</i><span data-i="k89c41b15">Stays</span></span>
+<h2 class="disp rv" data-rv="" style="margin-top:.4em"><span data-i="k18d73029">Rooms that</span><br/><em data-i="k8060c767">let you rest.</em></h2>
+<p class="lede rv" data-i="k67a06a11" data-rv="" style="margin-top:1.2em">Every stay includes breakfast from the farm,
       the pool, the gardens and the silence.</p>
-    </div>
-    <div class="stays">
-      <article class="stay rv" data-rv>
-        <div class="shot"><img src="img/room-1.webp" alt="Quarto — bright double room" loading="lazy" ></div>
-        <div class="bd">
-          <h3>Quartos</h3><div class="meta ph">[camas · área · vista — pendente]</div>
-          <p>Light-washed rooms with linen beds, a reading chair and a door straight to the herbs.</p>
-          <div class="rate"><b>€160<small> / night</small></b><button type="button" class="reserve" data-book data-stay="Quarto">Reserve</button></div>
-        </div>
-      </article>
-      <article class="stay rv" data-rv>
-        <div class="shot"><img src="img/room-2.webp" alt="Suite Montado — moody green suite" loading="lazy"></div>
-        <div class="bd">
-          <h3>Suites</h3><div class="meta ph">[camas · área · terraço — pendente]</div>
-          <p>Deep colours, a fireplace for winter, a private terrace facing the cork oaks for summer.</p>
-          <div class="rate"><b>€240<small> / night</small></b><button type="button" class="reserve" data-book data-stay="Suite">Reserve</button></div>
-        </div>
-      </article>
-      <article class="stay rv" data-rv>
-        <div class="shot"><img src="img/casa-monte.webp" alt="Casa do Monte — the old farmhouse and its pool at night" loading="lazy"></div>
-        <div class="bd">
-          <h3>Casa do Monte</h3><div class="meta ph">[camas · área — pendente]</div>
-          <p>The old farmhouse, whole — kitchen, courtyard, your own slice of the estate.</p>
-          <div class="rate"><b>€420<small> / night</small></b><button type="button" class="reserve" data-book data-stay="Casa do Monte">Reserve</button></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ QUOTE ═══ -->
-<section class="quote">
-  <div class="bg" data-plx></div><div class="tint"></div>
-  <div class="wrap"><blockquote id="q1">The third day is the one people talk about.<cite class="ph">[Substituir por avaliação real, datada e consentida — pendente]</cite></blockquote></div>
-</section>
-
-<!-- ═══ THE TABLE ═══ -->
-<section class="band night-band" id="table">
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow rv" data-rv><i class="idx">05</i>The table</span>
-      <h2 class="disp rv" data-rv style="margin-top:.4em">One long table.<br><em>One fire.</em></h2>
-      <p class="lede rv" data-rv style="margin-top:1.2em">Dinner is a single seating, cooked from
+</div>
+<div class="stays">
+<article class="stay rv" data-rv="">
+<div class="shot"><img alt="Quarto — bright double room" decoding="async" height="1400" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/room-1.webp" srcset="img/room-1-800.webp 800w, img/room-1.webp 1050w" width="1050"/></div>
+<div class="bd">
+<h3 data-i="ke1c7e25c">Quartos</h3><div class="meta ph" data-fill="stays.quartos.detail" data-i="k53b51b59">[camas · área · vista — pendente]</div>
+<p data-i="kdecfda9e">Light-washed rooms with linen beds, a reading chair and a door straight to the herbs.</p>
+<div class="rate"><b>€160<small data-i="k5df9bc59"> / night</small></b><button class="reserve" data-book="" data-i="k187579e3" data-stay="Quarto" type="button">Reserve</button></div>
+</div>
+</article>
+<article class="stay rv" data-rv="">
+<div class="shot"><img alt="Suite Montado — moody green suite" decoding="async" height="1400" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/room-2.webp" srcset="img/room-2-800.webp 800w, img/room-2.webp 1050w" width="1050"/></div>
+<div class="bd">
+<h3 data-i="kb4e883d3">Suites</h3><div class="meta ph" data-fill="stays.suites.detail" data-i="k22c11157">[camas · área · terraço — pendente]</div>
+<p data-i="k08c67267">Deep colours, a fireplace for winter, a private terrace facing the cork oaks for summer.</p>
+<div class="rate"><b>€240<small data-i="k5df9bc59"> / night</small></b><button class="reserve" data-book="" data-i="k187579e3" data-stay="Suite" type="button">Reserve</button></div>
+</div>
+</article>
+<article class="stay rv" data-rv="">
+<div class="shot"><img alt="Casa do Monte — the old farmhouse and its pool at night" decoding="async" height="1200" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/casa-monte.webp" srcset="img/casa-monte-800.webp 800w, img/casa-monte-1200.webp 1200w, img/casa-monte.webp 1600w" width="1600"/></div>
+<div class="bd">
+<h3 data-i="k390cad77">Casa do Monte</h3><div class="meta ph" data-fill="stays.casa.detail" data-i="kd0b96b7e">[camas · área — pendente]</div>
+<p data-i="kfac7d75a">The old farmhouse, whole — kitchen, courtyard, your own slice of the estate.</p>
+<div class="rate"><b>€420<small data-i="k5df9bc59"> / night</small></b><button class="reserve" data-book="" data-i="k187579e3" data-stay="Casa do Monte" type="button">Reserve</button></div>
+</div>
+</article>
+</div>
+</div>
+</section><section class="quote">
+<div class="bg" data-plx=""></div><div class="tint"></div>
+<div class="wrap"><blockquote id="q1"><span data-i="k5f965ce5">The third day is the one people talk about.</span><cite class="ph" data-fill="testimonial.quote" data-i="k4d09aa58">[Substituir por avaliação real, datada e consentida — pendente]</cite></blockquote></div>
+</section><section class="band night-band" id="table">
+<div class="wrap split">
+<div>
+<span class="eyebrow rv" data-rv=""><i class="idx">05</i><span data-i="kd46091d2">The table</span></span>
+<h2 class="disp rv" data-rv="" style="margin-top:.4em"><span data-i="k3cb875eb">One long table.</span><br/><em data-i="kc1a82ef0">One fire.</em></h2>
+<p class="lede rv" data-i="k6a3791e8" data-rv="" style="margin-top:1.2em">Dinner is a single seating, cooked from
       the garden and small Alentejo producers. Strangers sit
       down; friends get up.</p>
-      <div style="margin-top:2.4em">
-        <div class="menu-line rv" data-rv><b>Breakfast</b><i></i><span>from the farm, 8–11</span></div>
-        <div class="menu-line rv" data-rv><b>Lunch by the pool</b><i></i><span>simple, seasonal</span></div>
-        <div class="menu-line rv" data-rv><b>Dinner at the long table</b><i></i><span>one seating, 20:00</span></div>
-        <div class="menu-line rv" data-rv><b>The cellar</b><i></i><span>Alentejo, mostly small</span></div>
-      </div>
-    </div>
-    <div class="frame tall rv" data-rv><img src="img/table.webp" alt="Candlelit dinner table" loading="lazy" data-kb><span class="cap">Dinner, 20:00</span></div>
-  </div>
-</section>
-
-<!-- ═══ VITALITY CIRCUIT ═══ -->
-<section class="band paper-band" id="vitality">
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow rv" data-rv><i class="idx">06</i>Wellness · signature experience</span>
-      <h2 class="disp rv" data-rv style="margin-top:.4em">The Vitality<br><em>Circuit.</em></h2>
-      <p class="lede rv" data-rv style="margin-top:1.2em">Two and a half hours to reset the body the
+<div style="margin-top:2.4em">
+<div class="menu-line rv" data-rv=""><b data-i="k364653cd">Breakfast</b><i></i><span data-i="kb6869868">from the farm, 8–11</span></div>
+<div class="menu-line rv" data-rv=""><b data-i="kaac3e23c">Lunch by the pool</b><i></i><span data-i="k9e614720">simple, seasonal</span></div>
+<div class="menu-line rv" data-rv=""><b data-i="k81165bfc">Dinner at the long table</b><i></i><span data-i="k09c9d9d9">one seating, 20:00</span></div>
+<div class="menu-line rv" data-rv=""><b data-i="k2b6fc918">The cellar</b><i></i><span data-i="k50f60674">Alentejo, mostly small</span></div>
+</div>
+</div>
+<div class="frame tall rv" data-rv=""><img alt="Candlelit dinner table" data-kb="" decoding="async" height="1600" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/table.webp" srcset="img/table-800.webp 800w, img/table.webp 1200w" width="1200"/><span class="cap" data-i="kbf1c6c47">Dinner, 20:00</span></div>
+</div>
+</section><section class="band paper-band" id="vitality">
+<div class="wrap split">
+<div>
+<span class="eyebrow rv" data-rv=""><i class="idx">06</i><span data-i="k7f69da1c">Wellness · signature experience</span></span>
+<h2 class="disp rv" data-rv="" style="margin-top:.4em"><span data-i="kd49b7d22">The Vitality</span><br/><em data-i="kd4d76f41">Circuit.</em></h2>
+<p class="lede rv" data-i="k2ea29033" data-rv="" style="margin-top:1.2em">Two and a half hours to reset the body the
       old way — heat, cold water, warm stone, skilled hands, and then nothing at all under the
       olive trees.</p>
-      <div class="ritual rv" data-rv>
-        <div class="rit"><i>01</i><b>Heat</b><span>Sauna, and an aromatic cut that morning <span class="ph">[confirmar]</span></span></div>
-        <div class="rit"><i>02</i><b>Cold</b><span>The plunge — thirty brave seconds</span></div>
-        <div class="rit"><i>03</i><b>Breathe</b><span>Guided breathing on the warm stone</span></div>
-        <div class="rit"><i>04</i><b>Touch</b><span>Fifty minutes of massage <span class="ph">[óleo: confirmar origem]</span></span></div>
-        <div class="rit"><i>05</i><b>Rest</b><span>Shade, infusions, and no clock</span></div>
-      </div>
-      <div class="vit-cta rv" data-rv>
-        <button class="btn" data-book-circuit>Book the circuit</button>
-        <button class="btn ghost" data-book data-addon>Add to a stay</button>
-        <span class="vit-price">€85 <small>per person · €65 as an add-on to your stay</small></span>
-      </div>
-      <div class="vgift rv" data-rv id="vgift" hidden>
-        <span class="vg-l">Offer it — gift vouchers:</span>
-        <span id="vgBtns"></span>
-      </div>
-    </div>
-    <div class="frame tall rv" data-rv><img src="img/spa.webp" alt="The Vitality Circuit — warm towels and quiet" loading="lazy" data-kb><span class="cap">The circuit · 2h30</span></div>
-  </div>
-</section>
-
-<!-- ═══ DAYS HERE / EXPERIENCES ═══ -->
-<section class="band" id="days" style="padding-bottom:clamp(60px,9vh,120px)">
-  <div class="wrap shead" style="margin-bottom:56px">
-    <span class="eyebrow rv" data-rv><i class="idx">07</i>Days here</span>
-    <h2 class="disp rv" data-rv style="margin-top:.4em">Do nothing,<br><em>beautifully.</em></h2>
-    <p class="lede rv" data-rv style="margin-top:1.2em">Or do something. The estate and the region
+<div class="ritual rv" data-rv="">
+<div class="rit"><i>01</i><b data-i="k64c6caa5">Heat</b><span><span data-i="ka0e6932e">Sauna, and an aromatic cut that morning</span> <span class="ph" data-fill="circuit.aromatic" data-i="kfec5a472">[confirmar]</span></span></div>
+<div class="rit"><i>02</i><b data-i="k591f787e">Cold</b><span data-i="ka0cd6c3a">The plunge — thirty brave seconds</span></div>
+<div class="rit"><i>03</i><b data-i="k282be568">Breathe</b><span data-i="kd78f41a4">Guided breathing on the warm stone</span></div>
+<div class="rit"><i>04</i><b data-i="ke3f139ab">Touch</b><span><span data-i="k4f8987a6">Fifty minutes of massage</span> <span class="ph" data-fill="circuit.oilOrigin" data-i="k507f23a2">[óleo: confirmar origem]</span></span></div>
+<div class="rit"><i>05</i><b data-i="kb79e5f48">Rest</b><span data-i="k3951eefd">Shade, infusions, and no clock</span></div>
+</div>
+<div class="vit-cta rv" data-rv="">
+<button class="btn" data-book-circuit="" data-i="ke92c4276">Book the circuit</button>
+<button class="btn ghost" data-addon="" data-book="" data-i="ke4ad9228">Add to a stay</button>
+<span class="vit-price">€85 <small data-i="ka7b4264f">per person · €65 as an add-on to your stay</small></span>
+</div>
+<div class="vgift rv" data-rv="" hidden="" id="vgift">
+<span class="vg-l" data-i="kf44b2715">Offer it — gift vouchers:</span>
+<span id="vgBtns"></span>
+</div>
+</div>
+<div class="frame tall rv" data-rv=""><img alt="The Vitality Circuit — warm towels and quiet" data-kb="" decoding="async" height="1200" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/spa.webp" srcset="img/spa-800.webp 800w, img/spa-1200.webp 1200w, img/spa.webp 1800w" width="1800"/><span class="cap" data-i="ke62f2609">The circuit · 2h30</span></div>
+</div>
+</section><section class="band" id="days" style="padding-bottom:clamp(60px,9vh,120px)">
+<div class="wrap shead" style="margin-bottom:56px">
+<span class="eyebrow rv" data-rv=""><i class="idx">07</i><span data-i="k87e562be">Days here</span></span>
+<h2 class="disp rv" data-rv="" style="margin-top:.4em"><span data-i="k3ceb7f9e">Do nothing,</span><br/><em data-i="k58d01478">beautifully.</em></h2>
+<p class="lede rv" data-i="kf819a4cb" data-rv="" style="margin-top:1.2em">Or do something. The estate and the region
     oblige either mood.</p>
-  </div>
-  <div class="exp-outer">
-    <div class="exp-track" id="expTrack">
-      <figure class="exp"><img src="img/forest.webp" alt="" loading="lazy"><span class="ov"></span>
-        <figcaption class="tx"><span>On the estate</span><b>Walks in the montado</b></figcaption></figure>
-      <figure class="exp"><img src="img/breakfast.webp" alt="" loading="lazy"><span class="ov"></span>
-        <figcaption class="tx"><span>Slow mornings</span><b>Breakfast that lingers</b></figcaption></figure>
-      <figure class="exp"><img src="img/night-sky.webp" alt="" loading="lazy"><span class="ov"></span>
-        <figcaption class="tx"><span>After dinner</span><b>Dark-sky stargazing</b></figcaption></figure>
-      <figure class="exp"><img src="img/spa.webp" alt="" loading="lazy"><span class="ov"></span>
-        <figcaption class="tx"><span>Wellness</span><b>Massages in the olive shade</b></figcaption></figure>
-      <figure class="exp"><img src="img/landscape-2.webp" alt="" loading="lazy"><span class="ov"></span>
-        <figcaption class="tx"><span>Out &amp; about</span><b>Évora &amp; the marble towns</b></figcaption></figure>
-      <figure class="exp"><img src="img/coast.webp" alt="" loading="lazy"><span class="ov"></span>
-        <figcaption class="tx"><span>Day trip</span><b>The wild coast, one hour west</b></figcaption></figure>
-      <figure class="exp"><img src="img/food.webp" alt="" loading="lazy"><span class="ov"></span>
-        <figcaption class="tx"><span>Hands in</span><b>Cooking with the kitchen</b></figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<div class="marquee" aria-hidden="true"><div class="mtrack">
-  <span>Cork harvest in June</span><span>Wine from single hills</span><span>Bread at dawn</span>
-  <span>Storks on the chimneys</span><span>The coldest pool in August</span><span>Fires in December</span>
-  <span>Cork harvest in June</span><span>Wine from single hills</span><span>Bread at dawn</span>
-  <span>Storks on the chimneys</span><span>The coldest pool in August</span><span>Fires in December</span>
-</div></div>
-
-<!-- ═══ FIND US ═══ -->
-<section class="band paper-band" id="find">
-  <div class="wrap">
-    <div class="shead">
-      <span class="eyebrow rv" data-rv><i class="idx">08</i>Find us</span>
-      <h2 class="disp rv" data-rv style="margin-top:.4em">Far enough.<br><em>Not too far.</em></h2>
-    </div>
-    <div class="route">
-      <div class="rt rv" data-rv><span>From Lisbon</span><b>1h45 <small>by car</small></b>
-        <p>A12 over the Tejo, then the A6 east. The last twenty minutes are the prettiest.</p></div>
-      <div class="rt rv" data-rv><span>From Évora</span><b>40min <small>by car</small></b>
-        <p>UNESCO streets, then cork oaks all the way to our gate.</p></div>
-      <div class="rt rv" data-rv><span>From the coast</span><b>1h05 <small>by car</small></b>
-        <p>Melides and Comporta for the day; dinner back at the long table.</p></div>
-    </div>
-    <div class="faq">
-      <details><summary>When is the best time to come? <span class="pm">+</span></summary>
-        <div class="a">Every season argues its case. Spring for wildflowers, June for the cork harvest,
+</div>
+<div class="exp-outer">
+<div class="exp-track" id="expTrack">
+<figure class="exp"><img alt="" decoding="async" height="1200" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/forest.webp" srcset="img/forest-800.webp 800w, img/forest-1200.webp 1200w, img/forest.webp 1800w" width="1800"/><span class="ov"></span>
+<figcaption class="tx"><span data-i="k50e5b801">On the estate</span><b data-i="kcfeeb5ae">Walks in the montado</b></figcaption></figure>
+<figure class="exp"><img alt="" decoding="async" height="1600" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/breakfast.webp" srcset="img/breakfast-800.webp 800w, img/breakfast.webp 1200w" width="1200"/><span class="ov"></span>
+<figcaption class="tx"><span data-i="k3ed9b50f">Slow mornings</span><b data-i="kc7b14a45">Breakfast that lingers</b></figcaption></figure>
+<figure class="exp"><img alt="" decoding="async" height="1201" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/night-sky.webp" srcset="img/night-sky-800.webp 800w, img/night-sky-1200.webp 1200w, img/night-sky.webp 1800w" width="1800"/><span class="ov"></span>
+<figcaption class="tx"><span data-i="k311446d1">After dinner</span><b data-i="kdd0710c2">Dark-sky stargazing</b></figcaption></figure>
+<figure class="exp"><img alt="" decoding="async" height="1200" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/spa.webp" srcset="img/spa-800.webp 800w, img/spa-1200.webp 1200w, img/spa.webp 1800w" width="1800"/><span class="ov"></span>
+<figcaption class="tx"><span data-i="k3ac645f1">Wellness</span><b data-i="k2ed84509">Massages in the olive shade</b></figcaption></figure>
+<figure class="exp"><img alt="" decoding="async" height="1200" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/landscape-2.webp" srcset="img/landscape-2-800.webp 800w, img/landscape-2-1200.webp 1200w, img/landscape-2.webp 1800w" width="1800"/><span class="ov"></span>
+<figcaption class="tx"><span data-i="kfed1833b">Out &amp; about</span><b data-i="k1beb0345">Évora &amp; the marble towns</b></figcaption></figure>
+<figure class="exp"><img alt="" decoding="async" height="1197" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/coast.webp" srcset="img/coast-800.webp 800w, img/coast-1200.webp 1200w, img/coast.webp 1800w" width="1800"/><span class="ov"></span>
+<figcaption class="tx"><span data-i="ka3f1b68c">Day trip</span><b data-i="ke3b50427">The wild coast, one hour west</b></figcaption></figure>
+<figure class="exp"><img alt="" decoding="async" height="2700" loading="lazy" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/food.webp" srcset="img/food-800.webp 800w, img/food-1200.webp 1200w, img/food.webp 1800w" width="1800"/><span class="ov"></span>
+<figcaption class="tx"><span data-i="kf8b5e730">Hands in</span><b data-i="k7f3d568e">Cooking with the kitchen</b></figcaption></figure>
+</div>
+</div>
+</section><div aria-hidden="true" class="marquee"><div class="mtrack">
+<span data-i="k1a68dc03">Cork harvest in June</span><span data-i="k88119eb8">Wine from single hills</span><span data-i="k09fa4ddf">Bread at dawn</span>
+<span data-i="k3968efcb">Storks on the chimneys</span><span data-i="k2dc69ca3">The coldest pool in August</span><span data-i="k7201f2be">Fires in December</span>
+<span data-i="k1a68dc03">Cork harvest in June</span><span data-i="k88119eb8">Wine from single hills</span><span data-i="k09fa4ddf">Bread at dawn</span>
+<span data-i="k3968efcb">Storks on the chimneys</span><span data-i="k2dc69ca3">The coldest pool in August</span><span data-i="k7201f2be">Fires in December</span>
+</div></div><section class="band" id="list">
+<div class="wrap wl">
+<div class="shead">
+<span class="eyebrow rv" data-rv=""><i class="idx">08</i><span data-i="wl_eye">The list</span></span>
+<h2 class="disp rv" data-rv="" style="margin-top:.4em"><span data-i="wl_h1">Dates open</span><br/><em data-i="wl_h2">a few at a time.</em></h2>
+</div>
+<p class="wl-sub rv" data-i="wl_sub" data-rv="">We are a small estate and we open quietly — a handful of dates
+    at a time, told first to the people on this list. No newsletter, no noise. A short note when
+    there is something real to say.</p>
+<form class="wl-form rv" data-rv="" id="wlForm" novalidate="">
+<label class="sr-only" data-i="wl_lab" for="wlMail">Your email</label>
+<input autocomplete="email" class="wl-in" data-i-ph="wl_ph" id="wlMail" placeholder="you@email.com" required="" type="email"/>
+<input aria-hidden="true" aria-label="Leave this field empty" autocomplete="off" class="wl-hp" id="wlCo" tabindex="-1" type="text"/>
+<button class="btn" data-i="wl_go" id="wlGo" type="submit">Keep me told</button>
+</form>
+<p aria-live="polite" class="wl-note rv" data-i="wl_note" data-rv="" id="wlNote">One or two notes a year.
+    Leave whenever you like — every note carries the link.</p>
+</div>
+</section><section class="band paper-band" id="find">
+<div class="wrap">
+<div class="shead">
+<span class="eyebrow rv" data-rv=""><i class="idx">09</i><span data-i="kd561f1ac">Find us</span></span>
+<h2 class="disp rv" data-rv="" style="margin-top:.4em"><span data-i="kd5772be1">Far enough.</span><br/><em data-i="kd84810a7">Not too far.</em></h2>
+</div>
+<div class="route">
+<div class="rt rv" data-rv=""><span data-i="kc402bf60">From Lisbon</span><b><span data-i="kbaff39b6">1h45</span> <small data-i="ke63b6dfe">by car</small></b>
+<p data-i="k6f5bb94c">A12 over the Tejo, then the A6 east. The last twenty minutes are the prettiest.</p></div>
+<div class="rt rv" data-rv=""><span data-i="kf2e92f58">From Évora</span><b><span data-i="keecb2c37">40min</span> <small data-i="ke63b6dfe">by car</small></b>
+<p data-i="k412efd54">UNESCO streets, then cork oaks all the way to our gate.</p></div>
+<div class="rt rv" data-rv=""><span data-i="kea7d43c3">From the coast</span><b><span data-i="kd90319d2">1h05</span> <small data-i="ke63b6dfe">by car</small></b>
+<p data-i="kc131b78e">Melides and Comporta for the day; dinner back at the long table.</p></div>
+</div>
+<div class="faq">
+<details><summary><span data-i="k41569d20">When is the best time to come?</span> <span class="pm">+</span></summary>
+<div class="a" data-i="k637a1551">Every season argues its case. Spring for wildflowers, June for the cork harvest,
         high summer for pool days and warm nights, autumn for the light, winter for fires and
         near-total silence. The estate stays open all year.</div></details>
-      <details><summary>Can we book the whole estate? <span class="pm">+</span></summary>
-        <div class="a">Yes — for gatherings, weddings and retreats the twelve rooms and the Casa do
+<details><summary><span data-i="ke66207d0">Can we book the whole estate?</span> <span class="pm">+</span></summary>
+<div class="a" data-i="k2af81bf5">Yes — for gatherings, weddings and retreats the twelve rooms and the Casa do
         Monte take up to 30 guests. Write to us and we'll plan it properly.</div></details>
-      <details><summary>Are children and dogs welcome? <span class="pm">+</span></summary>
-        <div class="a">Children, always. Dogs, by arrangement in the Casa do Monte — the estate has
+<details><summary><span data-i="k7fcc1efd">Are children and dogs welcome?</span> <span class="pm">+</span></summary>
+<div class="a" data-i="kfb3819d2">Children, always. Dogs, by arrangement in the Casa do Monte — the estate has
         sheep for neighbours, so we plan it together.</div></details>
-      <details><summary>How does dinner work? <span class="pm">+</span></summary>
-        <div class="a">One seating at 20:00, one menu from what the garden and market gave us that
+<details><summary><span data-i="k102d6788">How does dinner work?</span> <span class="pm">+</span></summary>
+<div class="a" data-i="k81fad64e">One seating at 20:00, one menu from what the garden and market gave us that
         day. Tell us about allergies when you book; the kitchen takes them seriously.</div></details>
-    </div>
-  </div>
-</section>
-
+</div>
+</div>
+</section><section class="final">
+<div class="bg" data-plx=""></div><div class="tint"></div>
+<div class="wrap in">
+<span class="eyebrow rv" data-i="k43465a03" data-rv="" style="justify-content:center;color:var(--sand)">Rooted in nature · made for connection</span>
+<h2 class="disp rv" data-rv="" style="margin-top:.5em"><span data-i="kcdce051a">The stars are</span><br/><em data-i="kb292e133">already out.</em></h2>
+<p class="lede rv" data-i="kc9ab0bf0" data-rv="">Whitewash, umbrella pines, and a sky with no streetlight in it.</p>
+<div class="rv" data-rv=""><button class="btn light" data-book="" data-i="k92bdc393">Book your stay</button></div>
+</div>
+</section></main>
+<!-- ═══ MANIFESTO ═══ -->
+<!-- ═══ THE ESTATE ═══ -->
+<!-- ═══ THE POOL ═══ -->
+<!-- ═══ CHAPTER I ═══ -->
+<!-- ═══ STAYS ═══ -->
+<!-- ═══ QUOTE ═══ -->
+<!-- ═══ THE TABLE ═══ -->
+<!-- ═══ VITALITY CIRCUIT ═══ -->
+<!-- ═══ DAYS HERE / EXPERIENCES ═══ -->
+<!-- ═══ FIND US ═══ -->
 <!-- ═══ FINAL ═══ -->
-<section class="final">
-  <div class="bg" data-plx></div><div class="tint"></div>
-  <div class="wrap in">
-    <span class="eyebrow rv" data-rv style="justify-content:center;color:var(--sand)">Rooted in nature · made for connection</span>
-    <h2 class="disp rv" data-rv style="margin-top:.5em">The stars are<br><em>already out.</em></h2>
-    <p class="lede rv" data-rv>Whitewash, umbrella pines, and a sky with no streetlight in it.</p>
-    <div class="rv" data-rv><button class="btn light" data-book>Book your stay</button></div>
-  </div>
-</section>
-
 <footer>
-  <div class="wrap">
-    <div class="fgrid">
-      <div class="fbrand">
-        <img class="f-lock" src="img/logo-lockup-light.webp" alt="Herdade do Malhão Pardo · Turismo Rural">
-        <p>Rural soul. Refined living.</p>
-      </div>
-      <div><h4>Visit</h4><ul>
-        <li><a href="#estate">The estate</a></li><li><a href="#stays">Stays</a></li>
-        <li><a href="#table">The table</a></li><li><a href="#days">Days here</a></li></ul>
-      </div>
-      <div><h4>Contact</h4><ul>
-        <li><span class="ph">[EMAIL — pending]</span></li>
-        <li><span class="ph">[PHONE — pending]</span></li>
-        <li><span class="ph">[INSTAGRAM — pending]</span></li>
-        <li>Alentejo, Portugal</li></ul>
-      </div>
-    </div>
-    <div class="flive" id="footLive" aria-live="off"></div>
-    <div class="flegal">
-      <span class="ph">[ENTIDADE LEGAL — pendente]</span>
-      <span class="ph">[NIPC — pendente]</span>
-      <span class="ph">[N.º RNET — pendente]</span>
-      <a href="https://www.livroreclamacoes.pt/inicio" target="_blank" rel="noopener"lang="pt">Livro de Reclamações</a>
-      <a href="https://www.cniacc.pt/pt/" target="_blank" rel="noopener"lang="pt">Resolução de litígios · CNIACC</a>
-      <a href="privacidade.html"lang="pt">Privacidade &amp; RGPD</a>
-    </div>
-    <div class="fbot">
-      <span>© Herdade do Malhão Pardo · <span class="ph">[ENTIDADE — pendente]</span></span>
-      <span>Alentejo, Portugal</span>
-    </div>
-  </div>
+<div class="wrap">
+<div class="fgrid">
+<div class="fbrand">
+<img alt="Herdade do Malhão Pardo · Turismo Rural" class="f-lock" decoding="async" height="323" src="img/logo-lockup-light.webp" width="480"/>
+<p data-i="k85109f5d">Rural soul. Refined living.</p>
+</div>
+<div><h3 data-i="k7c9a8664">Visit</h3><ul>
+<li><a data-i="k157f3bf5" href="#estate">The estate</a></li><li><a data-i="k89c41b15" href="#stays">Stays</a></li>
+<li><a data-i="kd46091d2" href="#table">The table</a></li><li><a data-i="k87e562be" href="#days">Days here</a></li></ul>
+</div>
+<div><h3 data-i="kb37456c4">Contact</h3><ul>
+<li><span class="ph" data-fill="contact.email" data-i="k2786e6da">[EMAIL — pending]</span></li>
+<li><span class="ph" data-fill="contact.phone" data-i="kbd220223">[PHONE — pending]</span></li>
+<li><span class="ph" data-fill="contact.instagram" data-i="kdb9cdc24">[INSTAGRAM — pending]</span></li>
+<li data-i="k90ab5093">Alentejo, Portugal</li></ul>
+</div>
+</div>
+<div aria-live="off" class="flive" id="footLive"></div>
+<div class="flegal">
+<span class="ph" data-fill="entity.legalName" data-i="k597ae772">[ENTIDADE LEGAL — pendente]</span>
+<span class="ph" data-fill="entity.nipc" data-i="k10e3ec98">[NIPC — pendente]</span>
+<span class="ph" data-fill="entity.rnet" data-i="k61b5c618">[N.º RNET — pendente]</span>
+<a data-i="k5d016f52" href="https://www.livroreclamacoes.pt/inicio" lang="pt" rel="noopener" target="_blank">Livro de Reclamações</a>
+<a data-i="kcca005cc" href="https://www.cniacc.pt/pt/" lang="pt" rel="noopener" target="_blank">Resolução de litígios · CNIACC</a>
+<a data-i="lp_q" href="stay.html?unit=quartos">Quartos</a>
+        <a data-i="lp_s" href="stay.html?unit=suites">Suites</a>
+        <a data-i="lp_c" href="stay.html?unit=casa">Casa do Monte</a>
+        <a data-i="lp_circ" href="circuit.html">The Vitality Circuit</a>
+<a data-i="lp_vou" href="vouchers.html">Gift vouchers</a>
+<a data-i="k06810f51" href="privacidade.html" lang="pt">Privacidade &amp; RGPD</a>
+<a data-i="kd6108691" href="termos.html" lang="pt">Termos e Condições</a>
+<a data-i="k9fbb901c" href="terms.html" lang="en">Terms &amp; Conditions (EN)</a>
+</div>
+<div class="fbot">
+<span><span data-i="keadedf49">© Herdade do Malhão Pardo ·</span> <span class="ph" data-fill="entity.legalName" data-i="kca06a6d4">[ENTIDADE — pendente]</span></span>
+<span data-i="k90ab5093">Alentejo, Portugal</span>
+</div>
+</div>
 </footer>
-
 <!-- mobile book -->
-<div class="mbook"><button class="btn" data-book>Book your stay</button></div>
-
+<div class="mbook"><button class="btn" data-book="" data-i="k92bdc393">Book your stay</button></div>
 <!-- ═══ MENU OVERLAY ═══ -->
-<div id="menu" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
-  <div class="m-in">
-    <nav class="m-links" aria-label="Menu">
-      <a href="#estate" data-mi="img/casa.webp"><i>01</i>The Estate</a>
-      <a href="#stays" data-mi="img/casa-monte.webp"><i>02</i>Stays</a>
-      <a href="#table" data-mi="img/table.webp"><i>03</i>The Table</a>
-      <a href="#vitality" data-mi="img/spa.webp"><i>04</i>Vitality Circuit</a>
-      <a href="#days" data-mi="img/forest.webp"><i>05</i>Days Here</a>
-      <a href="#find" data-mi="img/hero-land.webp"><i>06</i>Find Us</a>
-    </nav>
-    <div class="m-view"><img id="mView" src="img/casa.webp" alt=""></div>
-  </div>
-  <div class="m-foot">
-    <span class="ph">[EMAIL — pending]</span>
-    <span>38°34′N · 7°54′W</span>
-    <span id="menuLive"></span>
-  </div>
+<div aria-hidden="true" aria-label="Menu" aria-modal="true" data-i-al="k57f5f5ef" id="menu" role="dialog">
+<div class="m-in">
+<nav aria-label="Menu" class="m-links" data-i-al="k57f5f5ef">
+<a data-mi="img/casa.webp" href="#estate"><i>01</i><span data-i="k5636ba23">The Estate</span></a>
+<a data-mi="img/casa-monte.webp" href="#stays"><i>02</i><span data-i="k89c41b15">Stays</span></a>
+<a data-mi="img/table.webp" href="#table"><i>03</i><span data-i="k5808e0fb">The Table</span></a>
+<a data-mi="img/spa.webp" href="#vitality"><i>04</i><span data-i="k5d96e21a">Vitality Circuit</span></a>
+<a data-mi="img/forest.webp" href="#days"><i>05</i><span data-i="k57f6f726">Days Here</span></a>
+<a data-mi="img/hero-land.webp" href="#find"><i>06</i><span data-i="k2a7e4815">Find Us</span></a>
+</nav>
+<div class="m-view"><img alt="" decoding="async" height="1200" id="mView" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/casa.webp" srcset="img/casa-800.webp 800w, img/casa-1200.webp 1200w, img/casa.webp 1600w" width="1600"/></div>
 </div>
-
+<div class="m-foot">
+<span class="ph" data-fill="contact.email" data-i="k2786e6da">[EMAIL — pending]</span>
+<span data-i="k7839b99e">38°34′N · 7°54′W</span>
+<span id="menuLive"></span>
+</div>
+</div>
 <!-- ═══ BOOKING OVERLAY ═══ -->
-<div id="bk" role="dialog" aria-modal="true" aria-label="Book your stay">
-  <div class="veil" data-bkx></div>
-  <div class="panel">
-    <div class="bk-hd"><b>Book your stay</b><span class="steps" id="bkSteps">1 / 3</span>
-      <button class="bk-x" data-bkx aria-label="Close">✕</button></div>
-    <div class="bk-bd">
-
-      <div class="bk-step on" id="st1">
-        <div class="cal" id="cal">
-          <div class="cal-hd">
-            <button type="button" class="cal-nav" id="calPrev" aria-label="Previous month">←</button>
-            <b id="calTitle"></b>
-            <button type="button" class="cal-nav" id="calNext" aria-label="Next month">→</button>
-          </div>
-          <div class="cal-dow"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
-          <div class="cal-grid" id="calGrid"></div>
-        </div>
-        <div class="cal-sum" id="calSum" aria-live="polite">Select your arrival date</div>
-        <label class="bk-l">Guests</label>
-        <div class="gstep"><button type="button" class="gbtn" id="gMinus">−</button>
-          <b><span id="gN">2</span> guests</b><button type="button" class="gbtn" id="gPlus">+</button></div>
-        <p class="bk-note" id="st1note">You won't be charged now — this sends a request. Cancellation terms come with our reply. <span class="ph">[POLÍTICA DE CANCELAMENTO — pendente]</span></p>
-      </div>
-
-      <div class="bk-step" id="st2">
-        <div class="bk-opt" data-rate="160" data-name="Quartos">
-          <img src="img/room-1.webp" alt="" style="object-position:72% 10%"><div class="t"><b>Quartos</b>
-          <span class="ph">[capacidade — pendente]</span><em class="ph">[tarifa]</em></div></div>
-        <div class="bk-opt" data-rate="240" data-name="Suites">
-          <img src="img/room-2.webp" alt=""><div class="t"><b>Suites</b>
-          <span class="ph">[capacidade — pendente]</span><em class="ph">[tarifa]</em></div></div>
-        <div class="bk-opt" data-rate="420" data-name="Casa do Monte">
-          <img src="img/casa-monte.webp" alt=""><div class="t"><b>Casa do Monte</b>
-          <span class="ph">[capacidade — pendente]</span><em class="ph">[tarifa]</em></div></div>
-      </div>
-
-      <div class="bk-step" id="stSlot">
-        <label class="bk-l">Choose your time</label>
-        <div class="slots">
-          <button type="button" class="slot" data-slot="Morning · 09:30"><b>Morning</b><span>09:30 — cool air, quiet estate</span></button>
-          <button type="button" class="slot" data-slot="Golden hour · 17:30"><b>Golden hour</b><span>17:30 — heat, cold, then the sunset</span></button>
-        </div>
-        <p class="bk-note">The circuit takes about 2h30. Maximum six people per session.</p>
-      </div>
-
-      <div class="bk-step" id="st3">
-        <div id="payRow" hidden>
-          <button type="button" class="btn" id="payNow" style="width:100%">Pay &amp; book now — secure card payment</button>
-          <p class="bk-note" style="text-align:center;margin-top:8px">Instant confirmation via Stripe · or send a request below and pay later</p>
-        </div>
-        <label class="bk-l" for="bkName">Name</label><input class="bk-in" id="bkName" autocomplete="name" required placeholder="Your name">
-        <label class="bk-l" for="bkMail">Email</label><input class="bk-in" type="email" id="bkMail" placeholder="you@email.com">
-        <label class="bk-l" for="bkMsg">Anything we should know?</label>
-        <input class="bk-in" id="bkMsg" placeholder="Allergies, arrivals after dark, celebrations…">
-        <div class="after">
-          <b>What happens next</b>
-          <ol>
-            <li><span>01</span>Nothing is charged. This sends a request, not a payment.</li>
-            <li><span>02</span>A person here reads it and replies personally within 24 hours.</li>
-            <li><span>03</span>You get exact availability and a full price — VAT and any tourist tax included, nothing added later.</li>
-            <li><span>04</span>Only then do you decide. Confirmation terms come with that reply.</li>
-          </ol>
-        </div>
-        <div class="addon" id="addonCard" style="display:none">
-          <span class="cb">✓</span>
-          <span class="t"><b>Add the Vitality Circuit</b><span>2h30 · heat, cold, massage, rest</span></span>
-          <em>€65 <small>/ person</small></em>
-        </div>
-        <div class="bk-sum" id="bkSum"></div>
-        <p class="bk-note">This sends a <b>request</b>, not a charge — we confirm personally within
-        24 hours. No payment details now.</p>
-      </div>
-
-      <div class="bk-step" id="st4">
-        <div class="sent-ok">
-          <b>Request on its way.</b>
-          <p>Your email is open with the details filled in — press send and we reply personally within 24 hours.</p>
-        </div>
-        <div class="sent-no">
-          <b>Almost — one step by hand.</b>
-          <p>Our reservations address is not published yet, so nothing was sent automatically.
-          Copy the request below and send it to us, and we will confirm personally within 24 hours.</p>
-          <pre id="reqBody"></pre>
-          <button type="button" class="btn ghost" id="copyReq">Copy the request</button>
-        </div>
-      </div>
-    </div>
-    <div class="bk-ft" id="bkFt">
-      <button class="btn ghost" id="bkBack" style="display:none">Back</button>
-      <button class="btn" id="bkNext">Continue</button>
-    </div>
-  </div>
+<div aria-label="Book your stay" aria-modal="true" data-i-al="k92bdc393" id="bk" role="dialog">
+<div class="veil" data-bkx=""></div>
+<div class="panel">
+<div class="bk-hd"><b data-i="k92bdc393">Book your stay</b><span class="steps" id="bkSteps">1 / 3</span>
+<button aria-label="Close" class="bk-x" data-bkx="" data-i-al="kbbfa773e">✕</button></div>
+<div class="bk-bd">
+<div class="bk-step on" id="st1">
+<div class="cal" id="cal">
+<div class="cal-hd">
+<button aria-label="Previous month" class="cal-nav" data-i-al="k46a29921" id="calPrev" type="button">←</button>
+<b id="calTitle"></b>
+<button aria-label="Next month" class="cal-nav" data-i-al="k8abf7cf1" id="calNext" type="button">→</button>
 </div>
-
+<div class="cal-dow"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+<div class="cal-grid" id="calGrid"></div>
+</div>
+<div aria-live="polite" class="cal-sum" data-i="ka2881c9f" id="calSum">Select your arrival date</div>
+<label class="bk-l" data-i="k3c23a670">Guests</label>
+<div class="gstep"><button class="gbtn" id="gMinus" type="button">−</button>
+<b><span id="gN">2</span> <span data-i="kf8122851">guests</span></b><button class="gbtn" id="gPlus" type="button">+</button></div>
+<p class="bk-note" id="st1note"><span data-i="kf88eeebd">You won't be charged now — this sends a request. Cancellation terms come with our reply.</span> <span class="ph" data-fill="policies.cancellation" data-i="kd46c910b">[POLÍTICA DE CANCELAMENTO — pendente]</span></p>
+</div>
+<div class="bk-step" id="st2">
+<div class="bk-opt" data-name="Quartos" data-rate="160">
+<img alt="" decoding="async" height="1400" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/room-1.webp" srcset="img/room-1-800.webp 800w, img/room-1.webp 1050w" style="object-position:72% 10%" width="1050"/><div class="t"><b data-i="ke1c7e25c">Quartos</b><span class="conf" data-i="bk_qconf">Personally confirmed · 24h</span>
+<span class="ph" data-fill="stays.quartos.capacity" data-i="kf466f06a">[capacidade — pendente]</span><em class="ph" data-fill="stays.quartos.rate" data-i="k12ab2e32">[tarifa]</em></div></div>
+<div class="bk-opt" data-name="Suites" data-rate="240">
+<img alt="" decoding="async" height="1400" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/room-2.webp" srcset="img/room-2-800.webp 800w, img/room-2.webp 1050w" width="1050"/><div class="t"><b data-i="kb4e883d3">Suites</b><span class="conf" data-i="bk_sconf">Personally confirmed · 24h</span>
+<span class="ph" data-fill="stays.suites.capacity" data-i="kf466f06a">[capacidade — pendente]</span><em class="ph" data-fill="stays.suites.rate" data-i="k12ab2e32">[tarifa]</em></div></div>
+<div class="bk-opt" data-name="Casa do Monte" data-rate="420">
+<img alt="" decoding="async" height="1200" sizes="(max-width: 700px) 100vw, (max-width: 1200px) 60vw, 900px" src="img/casa-monte.webp" srcset="img/casa-monte-800.webp 800w, img/casa-monte-1200.webp 1200w, img/casa-monte.webp 1600w" width="1600"/><div class="t"><b data-i="k390cad77">Casa do Monte</b><span class="conf" data-i="bk_cconf">Personally confirmed · 24h</span>
+<span class="ph" data-fill="stays.casa.capacity" data-i="kf466f06a">[capacidade — pendente]</span><em class="ph" data-fill="stays.casa.rate" data-i="k12ab2e32">[tarifa]</em></div></div>
+</div>
+<div class="bk-step" id="stSlot">
+<label class="bk-l" data-i="kf7535623">Choose your time</label>
+<div class="slots">
+<button class="slot" data-slot="Morning · 09:30" type="button"><b data-i="ka0cf4247">Morning</b><span data-i="k590ea264">09:30 — cool air, quiet estate</span></button>
+<button class="slot" data-slot="Golden hour · 17:30" type="button"><b data-i="k1e3dc73a">Golden hour</b><span data-i="kdeb45345">17:30 — heat, cold, then the sunset</span></button>
+</div>
+<p class="bk-note" data-i="kc048bd03">The circuit takes about 2h30. Maximum six people per session.</p>
+</div>
+<div class="bk-step" id="st3">
+<div hidden="" id="payRow">
+<button class="btn" data-i="k85f270d4" id="payNow" style="width:100%" type="button">Pay &amp; book now — secure card payment</button>
+<p class="bk-note" data-i="kaf5b98d2" style="text-align:center;margin-top:8px">Instant confirmation via Stripe · or send a request below and pay later</p>
+</div>
+<label class="bk-l" data-i="k709a2322" for="bkName">Name</label><input autocomplete="name" class="bk-in" data-i-ph="kab42293e" id="bkName" placeholder="Your name" required=""/>
+<label class="bk-l" data-i="k84add5b2" for="bkMail">Email</label><input class="bk-in" data-i-ph="k36695bcb" id="bkMail" placeholder="you@email.com" type="email"/>
+<label class="bk-l" data-i="k11149163" for="bkMsg">Anything we should know?</label>
+<input class="bk-in" data-i-ph="k7a9de31a" id="bkMsg" placeholder="Allergies, arrivals after dark, celebrations…"/>
+<div class="direct">
+<b data-i="dir_h">Booking with us directly</b>
+<ul>
+<li data-i="dir_1"><i>€25</i> credit at the estate table, on every stay booked here.</li>
+<li data-i="dir_2"><i data-i="k0e3121bc">Longer</i> free cancellation than any platform allows.</li>
+<li data-i="dir_3"><i>14:00</i> late checkout, guaranteed — not subject to availability.</li>
+<li data-i="dir_4"><i data-i="k916a78d7">First</i> choice of Vitality Circuit hours. Six places per session.</li>
+<li data-i="dir_5"><i data-i="k9e4b60c3">A person</i> from the house replies, within 24 hours.</li>
+</ul>
+</div>
+<div class="after">
+<b data-i="k51ecc5b2">What happens next</b>
+<ol>
+<li><span>01</span><span data-i="k263cc15c">Nothing is charged. This sends a request, not a payment.</span></li>
+<li><span>02</span><span data-i="k34e25e65">A person here reads it and replies personally within 24 hours.</span></li>
+<li><span>03</span><span data-i="kccb0ed25">You get exact availability and a full price — VAT and any tourist tax included, nothing added later.</span></li>
+<li><span>04</span><span data-i="k58ef2a11">Only then do you decide. Confirmation terms come with that reply.</span></li>
+</ol>
+</div>
+<div class="addon" id="addonCard" style="display:none">
+<span class="cb">✓</span>
+<span class="t"><b data-i="kf4dc085f">Add the Vitality Circuit</b><span data-i="k54fa6e31">2h30 · heat, cold, massage, rest</span></span>
+<em>€65 <small data-i="kbb4805a0">/ person</small></em>
+</div>
+<div class="bk-sum" id="bkSum"></div>
+<p class="bk-note"><span data-i="k88f4226f">This sends a</span> <b data-i="k088e29b0">request</b><span data-i="ka1c3fdb7">, not a charge — we confirm personally within 24 hours. No payment details now.</span></p>
+</div>
+<div class="bk-step" id="st4">
+<div class="sent-ok">
+<b data-i="kda27895c">Request on its way.</b>
+<p data-i="ka7e9bc72">Your email is open with the details filled in — press send and we reply personally within 24 hours.</p>
+</div>
+<div class="sent-no">
+<b data-i="k174fa979">Almost — one step by hand.</b>
+<p data-i="kcbfb5d4d">Our reservations address is not published yet, so nothing was sent automatically.
+          Copy the request below and send it to us, and we will confirm personally within 24 hours.</p>
+<pre id="reqBody"></pre>
+<button class="btn ghost" data-i="k7588126d" id="copyReq" type="button">Copy the request</button>
+</div>
+</div>
+</div>
+<div class="bk-ft" id="bkFt">
+<button class="btn ghost" data-i="kb52b36b7" id="bkBack" style="display:none">Back</button>
+<button class="btn" data-i="k2e026239" id="bkNext">Continue</button>
+</div>
+</div>
+</div>
 <script>
 /* ── Put the estate's real reservations address here. Until it is a valid address,
       the booking panel refuses to pretend anything was sent. ── */
@@ -1167,7 +1354,17 @@ if(!RM){
      With it set, the hero streams adaptively from Vimeo — instant start, quality scales to the
      connection, no controls (background=1 needs a Plus plan or higher).
      Left empty, the hero simply keeps its poster still. */
-  const VIMEO_ID = '1215812106';
+  /* HERO FILM — two mutually exclusive paths.
+       VIMEO_ID empty  → the local <video> plays media/hero.mp4 (self-hosted, no third party).
+       VIMEO_ID set    → adaptive streaming from Vimeo; the code returns early and the mp4 is
+                         NEVER fetched, so media/hero.mp4 becomes dead weight and need not ship.
+                         (background=1 requires a Vimeo Plus plan or higher.)
+
+     ⚠️ LEGAL COUPLING — do not set this id without also editing privacidade.html:
+        Vimeo then becomes a recipient of every visitor's IP and must go back into the
+        processors table (it was removed on 2026-09-02 when the film became self-hosted).
+        The cookies section must also regain the `dnt=1` explanation. See LEGAL-CHECKLIST.md. */
+  const VIMEO_ID = '';
 
   (function(){
     const hv=document.getElementById('heroVid'), film=document.getElementById('heroFilm'),
@@ -1240,14 +1437,16 @@ function animStep(el){
 /* ══ BOOKING FLOW ══ */
 const bk=document.getElementById('bk');
 const state={step:1,inD:'',outD:'',g:2,stay:null,rate:0,mode:'stay',slot:null,addCircuit:false};
-const fmt=d=>d? new Date(d+'T12:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}):'—';
+const LOC=()=>(window.__lang==='pt'?'pt-PT':'en-GB');
+const fmt=d=>d? new Date(d+'T12:00').toLocaleDateString(LOC(),{day:'numeric',month:'short',year:'numeric'}):'—';
 const nights=()=> (state.inD&&state.outD)? Math.max(0,Math.round((new Date(state.outD)-new Date(state.inD))/86400000)) : 0;
 
 function openBk(prefStay,mode){
   bk.classList.add('on'); document.body.style.overflow='hidden';
   state.mode=mode||'stay';
-  document.querySelector('.bk-hd b').textContent =
-    state.mode==='circuit' ? 'The Vitality Circuit' : 'Book your stay';
+  const _hd=document.querySelector('.bk-hd b');
+  _hd.dataset.i = state.mode==='circuit' ? 'bk_hd_circuit' : 'k92bdc393';
+  if(window.__setLang) window.__setLang(window.__lang||'en');
   if(prefStay){ state.stay=prefStay;
     document.querySelectorAll('.bk-opt').forEach(o=>{
       const on=o.dataset.name.startsWith(prefStay);
@@ -1269,6 +1468,9 @@ document.querySelectorAll('[data-book-circuit]').forEach(b=>b.addEventListener('
 document.querySelectorAll('[data-bkx]').forEach(b=>b.addEventListener('click',closeBk));
 addEventListener('keydown',e=>{ if(e.key==='Escape') closeBk(); });
 
+(function(){ const q=new URLSearchParams(location.search).get('book');
+     if(q==='circuit') addEventListener('load',()=>openBk(null,'circuit'));
+     else if(q==='stay') addEventListener('load',()=>openBk()); })();
 document.getElementById('bookbar').addEventListener('submit',e=>{e.preventDefault();const g=document.getElementById('bbG');if(g)state.g=parseInt(g.value,10)||2;openBk();});
 
 /* ══ the calendar ══ */
@@ -1278,7 +1480,7 @@ const TODAY=new Date(); TODAY.setHours(0,0,0,0);
 function renderCal(){
   const grid=document.getElementById('calGrid'), title=document.getElementById('calTitle');
   if(!grid) return;
-  title.textContent=calM.toLocaleDateString('en-GB',{month:'long',year:'numeric'});
+  title.textContent=calM.toLocaleDateString(LOC(),{month:'long',year:'numeric'});
   document.getElementById('calPrev').disabled =
     calM.getFullYear()===TODAY.getFullYear() && calM.getMonth()===TODAY.getMonth();
   grid.innerHTML='';
@@ -1310,12 +1512,12 @@ function renderCal(){
   if(bbOut) bbOut.textContent=short(state.outD);
   if(state.mode==='circuit'){
     sum.innerHTML = state.inD
-      ? `<span>${short(state.inD)} · the circuit · ${state.g} guest${state.g>1?'s':''}</span><b>€${(85*state.g).toLocaleString('en')}</b>`
+      ? `<span>${short(state.inD)} · the circuit · ${state.g} guest${state.g>1?'s':''}</span><b>€${(85*state.g).toLocaleString(LOC())}</b>`
       : 'Pick the day for your circuit';
   } else if(state.inD&&state.outD){
     const n=nights(), from=(state.rate||160)*n;
     sum.innerHTML=`<span>${short(state.inD)} → ${short(state.outD)} · ${n} night${n>1?'s':''}</span>
-      <b>from €${from.toLocaleString('en')}</b>`;
+      <b>from €${from.toLocaleString(LOC())}</b>`;
   } else if(state.inD){
     sum.textContent='Now choose your departure date';
   } else sum.textContent='Select your arrival date';
@@ -1368,6 +1570,43 @@ window.__applyPayConfig=function(cfg){
   window.__payEnabled=true;
 };
 fetch(PAY+'/config').then(r=>r.json()).then(window.__applyPayConfig).catch(()=>{});
+
+/* ── waitlist ───────────────────────────────────────────────────────────────── */
+(function(){
+  const f=document.getElementById('wlForm'); if(!f) return;
+  const inp=document.getElementById('wlMail'), note=document.getElementById('wlNote'),
+        btn=document.getElementById('wlGo'), hp=document.getElementById('wlCo');
+  const T=(en,pt)=> (window.__lang==='pt'?pt:en);
+  f.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const email=(inp.value||'').trim();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)){
+      note.className='wl-note err';
+      note.textContent=T('That address does not look right — could you check it?',
+                         'Esse endereço parece incompleto — pode confirmar?');
+      inp.focus(); return;
+    }
+    btn.disabled=true; const was=btn.textContent;
+    btn.textContent=T('One moment…','Um momento…');
+    try{
+      const r=await fetch(PAY+'/waitlist',{method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email, lang:(window.__lang||'en'), source:'waitlist',
+                             company:(hp&&hp.value)||''})});
+      if(!r.ok) throw 0;
+      f.style.display='none';
+      note.className='wl-note ok';
+      note.textContent=T('You are on the list. We will write when dates open — nothing before that.',
+                         'Está na lista. Escrevemos quando abrirem datas — nada antes disso.');
+    }catch(_){
+      btn.disabled=false; btn.textContent=was;
+      note.className='wl-note err';
+      note.textContent=T('That did not go through. Try again in a moment.',
+                         'Não foi possível enviar. Tente novamente daqui a pouco.');
+    }
+  });
+})();
+
 document.getElementById('payNow')?.addEventListener('click',()=>{
   const btn=document.getElementById('payNow'); btn.disabled=true; btn.textContent='One moment…';
   fetch(PAY+'/checkout',{method:'POST',headers:{'Content-Type':'application/json'},
@@ -1429,7 +1668,7 @@ function summary(){
       <div class="row"><span>Date</span><b>${fmt(state.inD)}</b></div>
       <div class="row"><span>Time</span><b>${state.slot||'—'}</b></div>
       <div class="row"><span>Guests</span><b>${state.g}</b></div>
-      <div class="row"><span>Estimate</span><b>€${total.toLocaleString('en')}</b></div>`;
+      <div class="row"><span>Estimate</span><b>€${total.toLocaleString(LOC())}</b></div>`;
     return;
   }
   const nn=nights(), rate=state.rate||160, est=nn*rate,
@@ -1439,8 +1678,8 @@ function summary(){
     <div class="row"><span>Nights</span><b>${nn||'—'}</b></div>
     <div class="row"><span>Guests</span><b>${state.g}</b></div>
     <div class="row"><span>Stay</span><b>${state.stay||'—'}</b></div>
-    ${state.addCircuit?`<div class="row"><span>Vitality Circuit</span><b>+ €${circ.toLocaleString('en')}<span style="font-weight:400"> · ${state.g} × €65</span></b></div>`:''}
-    <div class="row"><span>Estimate</span><b>${nn? '€'+(est+circ).toLocaleString('en') : '—'}<span style="font-weight:400"> · breakfast incl.</span></b></div>`;
+    ${state.addCircuit?`<div class="row"><span>Vitality Circuit</span><b>+ €${circ.toLocaleString(LOC())}<span style="font-weight:400"> · ${state.g} × €65</span></b></div>`:''}
+    <div class="row"><span>Estimate</span><b>${nn? '€'+(est+circ).toLocaleString(LOC()) : '—'}<span style="font-weight:400"> · breakfast incl.</span></b></div>`;
 }
 nextB.addEventListener('click',()=>{
   if(state.step===1){
@@ -1466,6 +1705,20 @@ nextB.addEventListener('click',()=>{
     const name=document.getElementById('bkName').value.trim()||'—';
     const mail=document.getElementById('bkMail').value.trim();
     const msg=document.getElementById('bkMsg').value.trim();
+
+    /* Capture the enquiry server-side FIRST. This is what stands between a guest's
+       request and the void while ESTATE_EMAIL is still empty. */
+    let captured = Promise.resolve(false);
+    if(/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(mail)){
+      captured = fetch(PAY+'/lead',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          name, email:mail, message:msg, lang:(window.__lang||'en'),
+          stay: state.mode==='circuit' ? 'Vitality Circuit' : (state.stay||'Quartos'),
+          arrive: state.inD?fmt(state.inD):'', depart: state.outD?fmt(state.outD):'',
+          guests: state.g, source: state.mode==='circuit'?'circuit':'stay'
+        })}).then(r=>r.ok).catch(()=>false);
+    }
+
     let body,subject;
     if(state.mode==='circuit'){
       const total=85*state.g;
@@ -1478,7 +1731,7 @@ Email: ${mail}
 Date: ${fmt(state.inD)}
 Time: ${state.slot}
 Guests: ${state.g}
-Estimate: €${total.toLocaleString('en')} (€85 pp)
+Estimate: €${total.toLocaleString(LOC())} (€85 pp)
 Notes: ${msg||'—'}`;
     } else {
       const nn=nights(), est=nn*(state.rate||160), circ=state.addCircuit?65*state.g:0;
@@ -1491,19 +1744,25 @@ Dates: ${fmt(state.inD)} → ${fmt(state.outD)} (${nn} nights)
 Guests: ${state.g}
 Stay: ${state.stay}${state.addCircuit?`
 Vitality Circuit add-on: yes (${state.g} × €65 = €${circ})`:''}
-Estimate: €${(est+circ).toLocaleString('en')} (breakfast included)
+Estimate: €${(est+circ).toLocaleString(LOC())} (breakfast included)
 Notes: ${msg||'—'}`;
     }
     /* ESTATE_EMAIL drives the whole handoff. While it is empty we must NOT
        claim the request was sent — we show the guest their request to copy. */
     const okAddr = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(window.ESTATE_EMAIL||'');
     document.getElementById('reqBody').textContent = subject + '\n\n' + body;
-    document.getElementById('st4').classList.toggle('nochannel', !okAddr);
     if(okAddr){
       location.href = 'mailto:'+window.ESTATE_EMAIL+'?subject='+encodeURIComponent(subject)
                     + '&body='+encodeURIComponent(body);
     }
     go(4);
+    /* Only claim the request reached us if it actually did. If the capture succeeded the
+       guest goes to the thank-you page; if it failed AND there is no mail address, we fall
+       back to the honest "copy this and send it" screen. */
+    captured.then(ok=>{
+      document.getElementById('st4').classList.toggle('nochannel', !ok && !okAddr);
+      if(ok && !okAddr) location.href = 'obrigado.html?type=enquiry';
+    });
   }
 });
 backB.addEventListener('click',()=>go(state.step-1));
@@ -1619,26 +1878,78 @@ form.addEventListener('submit',async e=>{
 });
 });
 </script>
-
 <!-- ═══ CONCIERGE ═══ -->
-<button id="ccOrb" aria-label="Ask the concierge" aria-expanded="false">
-  <img src="img/logo-mark-light.webp" alt="">
+<button aria-expanded="false" aria-label="Ask the concierge" data-i-al="k4401cc53" id="ccOrb">
+<img alt="" decoding="async" height="89" src="img/logo-mark-light.webp" width="96"/>
 </button>
-<div id="ccPanel" role="dialog" aria-label="Concierge" hidden>
-  <div class="cc-hd">
-    <span>Concierge</span>
-    <button id="ccX" aria-label="Close">✕</button>
-  </div>
-  <div class="cc-log" id="ccLog">
-    <div class="cc-m cc-a">Welcome to the herdade. Ask me anything about the estate, the stays or the Vitality Circuit.</div>
-  </div>
-  <p class="cc-note">An AI assistant — it can be wrong about details. Rates, availability and
-  policies are always confirmed by a person.</p>
-  <form class="cc-in" id="ccForm">
-    <input id="ccT" autocomplete="off" placeholder="Ask about your stay…" maxlength="400">
-    <button type="submit" aria-label="Send"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h13M12 5l5 5-5 5"/></svg></button>
-  </form>
+<div aria-label="Concierge" data-i-al="k80c316f8" hidden="" id="ccPanel" role="dialog">
+<div class="cc-hd">
+<span data-i="k80c316f8">Concierge</span>
+<button aria-label="Close" data-i-al="kbbfa773e" id="ccX">✕</button>
 </div>
+<div class="cc-log" id="ccLog">
+<div class="cc-m cc-a" data-i="k5937dd35">Welcome to the herdade. Ask me anything about the estate, the stays or the Vitality Circuit.</div>
+</div>
+<p class="cc-note" data-i="k10909874">An AI assistant — it can be wrong about details. Rates, availability and
+  policies are always confirmed by a person.</p>
+<form class="cc-in" id="ccForm">
+<input autocomplete="off" data-i-ph="k5cc08b21" id="ccT" maxlength="400" placeholder="Ask about your stay…"/>
+<button aria-label="Send" data-i-al="k9bc2575c" type="submit"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewbox="0 0 20 20"><path d="M3 10h13M12 5l5 5-5 5"></path></svg></button>
+</form>
+</div>
+<script>
+/* ── Português / English ─────────────────────────────────────────────────────
+   English lives in the DOM and is cached on load; Portuguese comes from the map
+   below. Every translatable run carries data-i (text), data-i-ph (placeholder)
+   or data-i-al (aria-label), so a translation can never overwrite sibling markup. */
+const I18N_PT = {"k0a4470d6":"Saltar para o conteúdo","k8c4157c4":"Herdade do Malhão Pardo","k3cc8bc8a":"Turismo Rural","k92bdc393":"Reservar a sua estadia","k57f5f5ef":"Menu","k658b923d":"Turismo Rural · Alentejo","kc11de73d":"Alma rural.","kbceaa91c":"Vida refinada.","k109ace4d":"Uma herdade de sobreiros, cal branca e horizontes longos — onde o dia se mede pela luz, não pelas horas.","k090a3c80":"Descer","k342a8575":"Chegada","k3ae74694":"Escolher data","ke45f20fb":"Partida","k3c23a670":"Hóspedes","k096c8f61":"1 hóspede","kb72a8362":"2 hóspedes","ka06d4e03":"3 hóspedes","k343b51d6":"4 hóspedes","k3f1222df":"5+ hóspedes","k8bfdae52":"Ver disponibilidade","k43465a03":"Enraizado na natureza · feito para a ligação","kab4ceb18":"O Alentejo não tem pressa.","k582927e3":"O senhor também não terá.","k1f1dfc8c":"O Malhão Pardo é uma herdade de família em Turismo Rural — casas, uma mesa comprida e uma piscina que guarda a luz do fim da tarde. Os dias começam com pão ainda quente e acabam sob mais estrelas do que julgava existirem.","k90546d1c":"O dia, medido em luz —","k4374aaee":"a","k54bf3dc2":"nascer do sol","ka812ce79":"pôr do sol","k45391146":"Enraizado na","kfb1ed9a7":"Natureza","k3f8dd6c0":"Paisagens","k312901c6":"Autênticas","k38875fe5":"Tempo que","k7c38e2ab":"Inspira","kef46fe6e":"Conexão","kf1c7d830":"Verdadeira","k041ff1aa":"Luxo Discreto","kd2c5c428":"e Atemporal","k5ac5f77f":"As casas brancas","k157f3bf5":"A herdade","kc373e666":"Cal, cortiça","kcffa50a3":"e","k1051df08":"geometria serena.","k74a22c9e":"Volumes brancos e baixos pousam ao de leve sobre a terra, como sempre se construiu nesta região — paredes grossas contra o calor, sombra azul nas soleiras, um pinheiro a segurar o céu. Lá dentro: linho, barro, madeira. Nada que grite.","k215585c1":"Casas espalhadas pelo monte, suficientemente afastadas para guardar o silêncio.","kb3b5df3b":"[número — pendente]","k88c33d9f":"Planear uma estadia","k80fa626c":"A piscina","kf3c2acfe":"Onde a tarde","k5c4d53fd":"vem nadar.","k914130e5":"Pedra morna debaixo dos pés, uma linha longa e parada de água, chapéus de sol inclinados para o último sol. Peça um copo de algo fresco no bar de honra e fique até saírem os andorinhões.","k2f95b333":"Hora dourada · em direto","k97199bf1":"A terra vem primeiro.","k89c41b15":"Estadias","k18d73029":"Quartos que","k8060c767":"deixam descansar.","k67a06a11":"Todas as estadias incluem pequeno-almoço da herdade, a piscina, os jardins e o silêncio.","ke1c7e25c":"Quartos","k53b51b59":"[camas · área · vista — pendente]","kdecfda9e":"Quartos lavados de luz, camas de linho, um cadeirão para ler e uma porta que dá direto para as ervas.","k5df9bc59":"/ noite","k187579e3":"Reservar","kb4e883d3":"Suites","k22c11157":"[camas · área · terraço — pendente]","k08c67267":"Cores profundas, lareira para o inverno, terraço privado virado aos sobreiros para o verão.","k390cad77":"Casa do Monte","kd0b96b7e":"[camas · área — pendente]","kfac7d75a":"O monte antigo, inteiro — cozinha, pátio, a sua própria fatia da herdade.","k5f965ce5":"O terceiro dia é aquele de que as pessoas falam.","k4d09aa58":"[Substituir por avaliação real, datada e consentida — pendente]","kd46091d2":"A mesa","k3cb875eb":"Uma mesa comprida.","kc1a82ef0":"Uma fogueira.","k6a3791e8":"O jantar é servido de uma só vez, cozinhado com a horta e com pequenos produtores alentejanos. Sentam-se desconhecidos; levantam-se amigos.","k364653cd":"Pequeno-almoço","kb6869868":"da herdade, 8h–11h","kaac3e23c":"Almoço à beira da piscina","k9e614720":"simples, da estação","k81165bfc":"Jantar na mesa comprida","k09c9d9d9":"um só serviço, 20h00","k2b6fc918":"A adega","k50f60674":"Alentejo, sobretudo pequenos","kbf1c6c47":"Jantar, 20h00","k7f69da1c":"Bem-estar · experiência de assinatura","kd49b7d22":"O Vitality","kd4d76f41":"Circuit.","k2ea29033":"Duas horas e meia para repor o corpo à maneira antiga — calor, água fria, pedra morna, mãos com ofício, e depois nada de nada debaixo das oliveiras.","k64c6caa5":"Calor","ka0e6932e":"Sauna, e um corte aromático dessa manhã","kfec5a472":"[confirmar]","k591f787e":"Frio","ka0cd6c3a":"O mergulho — trinta segundos de coragem","k282be568":"Respirar","kd78f41a4":"Respiração guiada sobre a pedra morna","ke3f139ab":"Toque","k4f8987a6":"Cinquenta minutos de massagem","k507f23a2":"[óleo: confirmar origem]","kb79e5f48":"Repouso","k3951eefd":"Sombra, infusões, e nenhum relógio","ke92c4276":"Reservar o circuito","ke4ad9228":"Juntar a uma estadia","ka7b4264f":"por pessoa · €65 como complemento da sua estadia","kf44b2715":"Oferecer — vales-presente:","ke62f2609":"O circuito · 2h30","k87e562be":"Os dias aqui","k3ceb7f9e":"Não fazer nada,","k58d01478":"com beleza.","kf819a4cb":"Ou fazer alguma coisa. A herdade e a região servem qualquer um dos estados de espírito.","k50e5b801":"Na herdade","kcfeeb5ae":"Caminhadas no montado","k3ed9b50f":"Manhãs lentas","kc7b14a45":"Pequenos-almoços que se demoram","k311446d1":"Depois do jantar","kdd0710c2":"Observar estrelas em céu escuro","k3ac645f1":"Bem-estar","k2ed84509":"Massagens à sombra das oliveiras","kfed1833b":"Sair um pouco","k1beb0345":"Évora e as vilas do mármore","ka3f1b68c":"Passeio de um dia","ke3b50427":"A costa selvagem, a uma hora para poente","kf8b5e730":"Mãos na massa","k7f3d568e":"Cozinhar com a cozinha","k1a68dc03":"A tiragem da cortiça em junho","k88119eb8":"Vinho de encostas únicas","k09fa4ddf":"Pão de madrugada","k3968efcb":"Cegonhas nas chaminés","k2dc69ca3":"A piscina mais fria de agosto","k7201f2be":"Lareiras em dezembro","wl_eye":"A lista","wl_h1":"As datas abrem","wl_h2":"poucas de cada vez.","wl_sub":"Somos uma herdade pequena e abrimos com discrição — um punhado de datas de cada vez, contadas primeiro a quem está nesta lista. Sem newsletter, sem ruído. Uma nota curta quando houver algo verdadeiro para dizer.","wl_lab":"O seu e-mail","wl_ph":"seu@email.com","wl_go":"Quero ser avisado","wl_note":"Uma ou duas notas por ano. Pode sair quando quiser — a ligação vai em todas.","kd561f1ac":"Onde estamos","kd5772be1":"Longe q.b.","kd84810a7":"Não longe demais.","kc402bf60":"De Lisboa","kbaff39b6":"1h45","ke63b6dfe":"de carro","k6f5bb94c":"A12 sobre o Tejo, depois a A6 para nascente. Os últimos vinte minutos são os mais bonitos.","kf2e92f58":"De Évora","keecb2c37":"40min","k412efd54":"Ruas classificadas pela UNESCO e, depois, sobreiros até ao nosso portão.","kea7d43c3":"Da costa","kd90319d2":"1h05","kc131b78e":"Melides e Comporta durante o dia; jantar de volta à mesa comprida.","k41569d20":"Qual é a melhor altura para vir?","k637a1551":"Cada estação defende a sua causa. A primavera pelas flores do campo, junho pela tiragem da cortiça, o alto verão pelos dias de piscina e noites mornas, o outono pela luz, o inverno pelas lareiras e por um silêncio quase total. A herdade está aberta todo o ano.","ke66207d0":"Podemos reservar a herdade inteira?","k2af81bf5":"Sim — para encontros, casamentos e retiros, os doze quartos e a Casa do Monte acolhem até 30 hóspedes. Escreva-nos e planeamos isso como deve ser.","k7fcc1efd":"São bem-vindas crianças e cães?","kfb3819d2":"Crianças, sempre. Cães, mediante combinação, na Casa do Monte — a herdade tem ovelhas por vizinhas, por isso planeamos em conjunto.","k102d6788":"Como funciona o jantar?","k81fad64e":"Um só serviço às 20h00, um menu feito do que a horta e o mercado deram nesse dia. Diga-nos das alergias ao reservar; a cozinha leva-as a sério.","kcdce051a":"As estrelas já","kb292e133":"estão cá fora.","kc9ab0bf0":"Cal branca, pinheiros-mansos e um céu sem um único candeeiro.","k85109f5d":"Alma rural. Vida refinada.","k7c9a8664":"Visitar","kb37456c4":"Contacto","k2786e6da":"[EMAIL — pendente]","kbd220223":"[TELEFONE — pendente]","kdb9cdc24":"[INSTAGRAM — pendente]","k90ab5093":"Alentejo, Portugal","k597ae772":"[ENTIDADE LEGAL — pendente]","k10e3ec98":"[NIPC — pendente]","k61b5c618":"[N.º RNET — pendente]","k5d016f52":"Livro de Reclamações","kcca005cc":"Resolução de litígios · CNIACC","k06810f51":"Privacidade & RGPD","kd6108691":"Termos e Condições","k9fbb901c":"Terms & Conditions (EN)","keadedf49":"© Herdade do Malhão Pardo ·","kca06a6d4":"[ENTIDADE — pendente]","k5636ba23":"A Herdade","k5808e0fb":"A Mesa","k5d96e21a":"Vitality Circuit","k57f6f726":"Os Dias Aqui","k2a7e4815":"Onde Estamos","k7839b99e":"38°34′N · 7°54′W","ka2881c9f":"Escolha a data de chegada","kf8122851":"hóspedes","kf88eeebd":"Nada lhe é cobrado agora — isto envia um pedido. As condições de cancelamento seguem na nossa resposta.","kd46c910b":"[POLÍTICA DE CANCELAMENTO — pendente]","bk_qconf":"Confirmado por uma pessoa · 24h","kf466f06a":"[capacidade — pendente]","k12ab2e32":"[tarifa]","bk_sconf":"Confirmado por uma pessoa · 24h","bk_cconf":"Confirmado por uma pessoa · 24h","bk_hd_circuit":"O Vitality Circuit","lp_q":"Quartos","lp_s":"Suites","lp_c":"Casa do Monte","lp_circ":"O Vitality Circuit","lp_vou":"Vales-presente","kf7535623":"Escolha a sua hora","ka0cf4247":"Manhã","k590ea264":"09h30 — ar fresco, herdade tranquila","k1e3dc73a":"Hora dourada","kdeb45345":"17h30 — calor, frio, e depois o pôr do sol","kc048bd03":"O circuito demora cerca de 2h30. Máximo de seis pessoas por sessão.","k85f270d4":"Pagar e reservar agora — pagamento seguro com cartão","kaf5b98d2":"Confirmação imediata via Stripe · ou envie um pedido abaixo e pague mais tarde","k709a2322":"Nome","k84add5b2":"E-mail","k11149163":"Há algo que devamos saber?","dir_h":"Reservar diretamente connosco","dir_1":"€25 de crédito à mesa da herdade, em todas as estadias reservadas aqui.","dir_2":"Cancelamento livre durante mais tempo do que em qualquer plataforma.","k0e3121bc":"Mais tempo","dir_3":"Saída tardia até às 14h00, garantida — não sujeita a disponibilidade.","dir_4":"Primeira escolha dos horários do Vitality Circuit. Seis lugares por sessão.","k916a78d7":"Primeira","dir_5":"Responde-lhe uma pessoa da casa, no prazo de 24 horas.","k9e4b60c3":"Uma pessoa","k51ecc5b2":"O que acontece a seguir","k263cc15c":"Nada é cobrado. Isto envia um pedido, não um pagamento.","k34e25e65":"Uma pessoa daqui lê o pedido e responde pessoalmente em 24 horas.","kccb0ed25":"Recebe disponibilidade exata e um preço completo — IVA e eventual taxa turística incluídos, sem nada acrescentado depois.","k58ef2a11":"Só então decide. As condições de confirmação seguem nessa resposta.","kf4dc085f":"Juntar o Vitality Circuit","k54fa6e31":"2h30 · calor, frio, massagem, repouso","kbb4805a0":"/ pessoa","k88f4226f":"Isto envia um","ka1c3fdb7":", não uma cobrança — confirmamos pessoalmente em 24 horas. Sem dados de pagamento agora.","k088e29b0":"pedido","kda27895c":"Pedido a caminho.","ka7e9bc72":"O seu e-mail está aberto com os dados preenchidos — carregue em enviar e respondemos pessoalmente em 24 horas.","k174fa979":"Quase — falta um passo à mão.","kcbfb5d4d":"O nosso endereço de reservas ainda não está publicado, por isso nada foi enviado automaticamente. Copie o pedido abaixo e envie-nos, e confirmamos pessoalmente em 24 horas.","k7588126d":"Copiar o pedido","kb52b36b7":"Voltar","k2e026239":"Continuar","k80c316f8":"Concierge","k5937dd35":"Bem-vindo à herdade. Pergunte-me o que quiser sobre a herdade, as estadias ou o Vitality Circuit.","k10909874":"Um assistente de IA — pode errar em pormenores. Tarifas, disponibilidade e políticas são sempre confirmadas por uma pessoa.","kab42293e":"O seu nome","k36695bcb":"seu@email.com","k7a9de31a":"Alergias, chegadas depois de escurecer, celebrações…","k5cc08b21":"Pergunte sobre a sua estadia…","ka9a96ec0":"Principal","k9b9dbc94":"A piscina à hora dourada","kbbfa773e":"Fechar","k46a29921":"Mês anterior","k8abf7cf1":"Mês seguinte","k4401cc53":"Falar com o concierge","k9bc2575c":"Enviar"};
+(function(){
+  const EN = Object.create(null);
+  /* keys set by script, so never present in the DOM to be cached from */
+  EN.bk_hd_circuit = 'The Vitality Circuit';
+  const DOW = { en:['M','T','W','T','F','S','S'], pt:['S','T','Q','Q','S','S','D'] };
+  const all = () => document.querySelectorAll('[data-i],[data-i-ph],[data-i-al]');
 
+  all().forEach(el => {                       // cache the English original once
+    const d = el.dataset;
+    if (d.i   && !(d.i   in EN)) EN[d.i]   = el.textContent;
+    if (d.iPh && !(d.iPh in EN)) EN[d.iPh] = el.getAttribute('placeholder') || '';
+    if (d.iAl && !(d.iAl in EN)) EN[d.iAl] = el.getAttribute('aria-label')  || '';
+  });
+
+  function apply(lang){
+    const D = lang === 'pt' ? I18N_PT : EN;
+    all().forEach(el => {
+      const d = el.dataset;
+      if (d.i   && D[d.i]   != null) el.textContent = D[d.i];
+      if (d.iPh && D[d.iPh] != null) el.setAttribute('placeholder', D[d.iPh]);
+      if (d.iAl && D[d.iAl] != null) el.setAttribute('aria-label',  D[d.iAl]);
+    });
+    document.querySelectorAll('.cal-dow span').forEach((sp,i) => { sp.textContent = DOW[lang][i]; });
+    document.documentElement.lang = lang;
+    window.__lang = lang;
+    document.querySelectorAll('[data-langbtn]').forEach(b => {
+      b.textContent = lang === 'pt' ? 'EN' : 'PT';
+      b.setAttribute('aria-label', lang === 'pt' ? 'Switch to English' : 'Mudar para português');
+    });
+    if (typeof renderCal === 'function') renderCal();   // month name follows the language
+    if (window.__fill && window.__content) window.__fill(window.__content);
+    try { localStorage.setItem('mp-lang', lang); } catch(_) {}
+  }
+
+  let saved = null; try { saved = localStorage.getItem('mp-lang'); } catch(_) {}
+  const guess = (navigator.language || '').toLowerCase().startsWith('pt') ? 'pt' : 'en';
+  window.__setLang = apply;
+  apply(saved || guess);
+
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-langbtn]');
+    if (!b) return;
+    e.preventDefault();
+    apply(window.__lang === 'pt' ? 'en' : 'pt');
+  });
+})();
+</script>
+<script src="js/estate.js" defer></script>
 </body>
 </html>

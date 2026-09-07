@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel da herdade — Malhão Pardo</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preload" as="font" type="font/woff2" href="fonts/Montserrat-400-lat.woff2" crossorigin>
+<link rel="stylesheet" href="_lp.css">
+<style>
+  body{font-size:15px}
+  .wrap{max-width:900px}
+  h1{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.2em}
+  .lede{color:#5C5850;max-width:60ch;font-size:.95rem}
+  .gate{background:var(--paper);border:1px solid rgba(42,38,34,.12);padding:24px;margin-top:2em}
+  fieldset{border:0;padding:0;margin:2.4em 0 0}
+  legend{font-family:var(--disp);font-size:1.25rem;font-weight:500;padding:0 0 .5em}
+  .hint{font-size:.82rem;color:#6B655D;margin:-.3em 0 1.2em;max-width:62ch}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px 20px}
+  label{display:block;font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--olive);margin-bottom:5px}
+  input,textarea{width:100%;font-family:var(--sans);font-size:.95rem;color:var(--ink);
+    background:#fff;border:1px solid rgba(42,38,34,.18);padding:10px 12px;border-radius:0}
+  input:focus,textarea:focus{outline:0;border-color:var(--terra);box-shadow:0 0 0 3px rgba(169,131,74,.15)}
+  textarea{min-height:74px;resize:vertical;line-height:1.55}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .pair .tag{font-size:.62rem;letter-spacing:.12em;color:#8A8478;margin-bottom:4px;display:block}
+  .field{margin-bottom:16px}
+  .bar[hidden]{display:none}
+  .bar{position:sticky;bottom:0;background:rgba(239,234,224,.94);backdrop-filter:blur(8px);
+    border-top:1px solid rgba(42,38,34,.14);padding:14px 0;margin-top:2.6em;display:flex;
+    gap:14px;align-items:center;flex-wrap:wrap}
+  .msg{font-size:.85rem}
+  .msg.ok{color:var(--olive);font-weight:600}
+  .msg.err{color:#9A3412;font-weight:600}
+  .count{font-size:.8rem;color:#6B655D;margin-left:auto}
+  .count b{color:var(--terra)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="brand" href="index.html">
+      <img src="img/logo-mark.webp" alt="" width="30" height="32">
+      <b>Herdade do Malhão Pardo<small>Painel</small></b>
+    </a>
+  </div>
+
+  <h1>Painel da herdade</h1>
+  <p class="lede">Tudo o que está por preencher no site vive aqui. Escreva, guarde, e o site
+  atualiza-se — sem programador. O que deixar em branco continua a aparecer no site como uma
+  marca amarela, de propósito: um facto por confirmar nunca deve parecer terminado.</p>
+
+  <div class="gate" id="gate">
+    <label for="key">Chave de acesso</label>
+    <input id="key" type="password" autocomplete="current-password" placeholder="••••••••">
+    <p class="hint" style="margin:.8em 0 0">A mesma chave do painel de reservas. Fica guardada
+    apenas neste navegador.</p>
+    <button class="btn" id="unlock" style="margin-top:14px">Entrar</button>
+    <p class="msg err" id="gateMsg"></p>
+  </div>
+
+  <form id="form" hidden></form>
+
+  <div class="bar" id="bar" hidden>
+    <button class="btn" id="save" type="button">Guardar</button>
+    <span class="msg" id="msg"></span>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<script>
+const API='https://malhao-pay.edenrise.workers.dev';
+
+/* The shape of the estate. Every path here matches a data-fill on the public pages —
+   change one and the site changes. `bi` marks a field guests read, so it needs both languages. */
+const SCHEMA=[
+ {legend:'Identificação legal', hint:'Aparece no rodapé, nos Termos e na Política de Privacidade. Sem isto o site não pode ir para o ar.', fields:[
+   ['entity.legalName','Denominação social'],['entity.nipc','NIF / NIPC'],
+   ['entity.address','Sede (morada completa)'],['entity.rnet','N.º de registo RNET'],
+   ['entity.forum','Comarca (foro)'],['entity.insurer','Seguradora e apólice (resp. civil)'],
+ ]},
+ {legend:'Contactos', hint:'Publicados no site. O e-mail de reservas é para onde seguem os pedidos.', fields:[
+   ['contact.email','E-mail de reservas'],['contact.phone','Telefone'],
+   ['contact.instagram','Instagram'],['contact.emailProvider','Fornecedor de e-mail (para a política de privacidade)'],
+   ['contact.emailProviderLocation','Localização desse fornecedor'],
+ ]},
+ {legend:'Tarifas e capacidade', hint:'A tarifa é o valor por noite, em euros, com IVA incluído. A capacidade é o que aparece ao escolher a estadia.', fields:[
+   ['stays.quartos.rate','Quartos — tarifa/noite'],['stays.quartos.capacity','Quartos — capacidade'],
+   ['stays.quartos.detail','Quartos — camas · área · vista',1],
+   ['stays.suites.rate','Suites — tarifa/noite'],['stays.suites.capacity','Suites — capacidade'],
+   ['stays.suites.detail','Suites — camas · área · terraço',1],
+   ['stays.casa.rate','Casa do Monte — tarifa/noite'],['stays.casa.capacity','Casa do Monte — capacidade'],
+   ['stays.casa.detail','Casa do Monte — camas · área',1],
+   ['estate.houseCount','Número de casas no monte'],
+ ]},
+ {legend:'Condições', hint:'Escreva como falaria a um hóspede. Estes textos entram nos Termos e Condições — reveja com o advogado antes de publicar.', bi:1, fields:[
+   ['policies.deposit','Sinal e forma de pagamento',2],
+   ['policies.cancellation','Janelas de cancelamento',2],
+   ['policies.noShow','Não comparência (no-show)',2],
+   ['policies.checkIn','Hora de check-in'],['policies.checkOut','Hora de check-out'],
+   ['policies.childrenPets','Crianças e animais',2],
+   ['policies.circuitReschedule','Vitality Circuit — remarcações',2],
+   ['policies.voucherValidity','Validade dos vales-presente'],
+   ['policies.accessibility','Acessibilidade — descrição honesta do terreno',2],
+   ['policies.paymentMethods','Meios de pagamento aceites'],
+   ['policies.sibaRetention','Prazo de conservação dos boletins SIBA'],
+ ]},
+ {legend:'A experiência', hint:'Pormenores que o site afirma e que devem ser verdade.', fields:[
+   ['circuit.oilOrigin','Azeite da massagem — origem'],
+   ['circuit.aromatic','Sauna — corte aromático'],
+   ['testimonial.quote','Testemunho real (datado e com consentimento)',2],
+ ]},
+ {legend:'Disponibilidade', hint:'Cole aqui o link iCal exportado do Airbnb ou do Booking para cada unidade. O calendário do site passa a mostrar as datas realmente ocupadas.', feeds:1, fields:[]},
+ {legend:'Publicação', hint:'', fields:[['meta.updated','Data da última atualização legal']]},
+];
+
+let DATA={}, KEY='';
+const g=(o,p)=>p.split('.').reduce((a,k)=>a==null?a:a[k],o);
+function set(o,p,v){const k=p.split('.');let c=o;
+  k.slice(0,-1).forEach(x=>{if(typeof c[x]!=='object'||c[x]===null)c[x]={};c=c[x];});
+  c[k[k.length-1]]=v;}
+
+function render(){
+  const form=document.getElementById('form'); form.innerHTML='';
+  SCHEMA.forEach(sec=>{
+    const fs=document.createElement('fieldset');
+    fs.innerHTML='<legend>'+sec.legend+'</legend>'+(sec.hint?'<p class="hint">'+sec.hint+'</p>':'');
+    if(sec.feeds){ fs.appendChild(feedsBlock()); form.appendChild(fs); return; }
+    const grid=document.createElement('div'); grid.className='grid';
+    sec.fields.forEach(([path,label,kind])=>{
+      const wrap=document.createElement('div'); wrap.className='field';
+      if(kind===2){                                    // bilingual, long
+        wrap.style.gridColumn='1/-1';
+        const cur=g(DATA,path)||{};
+        wrap.innerHTML='<label>'+label+'</label><div class="pair">'+
+          '<div><span class="tag">Português</span><textarea data-p="'+path+'.pt"></textarea></div>'+
+          '<div><span class="tag">English</span><textarea data-p="'+path+'.en"></textarea></div></div>';
+        wrap.querySelector('[data-p$=".pt"]').value=cur.pt||'';
+        wrap.querySelector('[data-p$=".en"]').value=cur.en||'';
+      } else {
+        const v=g(DATA,path);
+        wrap.innerHTML='<label>'+label+'</label><input data-p="'+path+'">';
+        wrap.querySelector('input').value=(v&&typeof v==='object'?(v.pt||''):v)||'';
+      }
+      grid.appendChild(wrap);
+    });
+    fs.appendChild(grid); form.appendChild(fs);
+  });
+  form.hidden=false; document.getElementById('bar').hidden=false; countGaps();
+  form.addEventListener('input',countGaps);
+}
+
+function feedsBlock(){
+  const box=document.createElement('div');
+  const feeds=(g(DATA,'availability.feeds')||[{unit:'quartos',url:''},{unit:'suites',url:''},{unit:'casa',url:''}]);
+  box.className='grid';
+  feeds.forEach((f,i)=>{
+    const d=document.createElement('div'); d.className='field'; d.style.gridColumn='1/-1';
+    d.innerHTML='<label>'+f.unit+' — iCal</label><input data-feed="'+f.unit+'" placeholder="https://…/calendar.ics">';
+    d.querySelector('input').value=f.url||'';
+    box.appendChild(d);
+  });
+  return box;
+}
+
+function collect(){
+  const out=JSON.parse(JSON.stringify(DATA));
+  document.querySelectorAll('[data-p]').forEach(el=>{
+    const v=el.value.trim(); const p=el.getAttribute('data-p');
+    if(v==='' ) { /* keep empty so the site keeps showing the gap */ }
+    set(out,p,v);
+  });
+  const feeds=[];
+  document.querySelectorAll('[data-feed]').forEach(el=>{
+    feeds.push({unit:el.getAttribute('data-feed'),url:el.value.trim()});
+  });
+  set(out,'availability.feeds',feeds.filter(f=>f.url));
+  return out;
+}
+
+function countGaps(){
+  const all=[...document.querySelectorAll('[data-p]')];
+  const empty=all.filter(el=>!el.value.trim()).length;
+  document.getElementById('count').innerHTML= empty
+    ? 'Por preencher: <b>'+empty+'</b> de '+all.length
+    : '<b>Tudo preenchido.</b>';
+}
+
+document.getElementById('unlock').addEventListener('click',async()=>{
+  KEY=document.getElementById('key').value.trim();
+  if(!KEY) return;
+  const m=document.getElementById('gateMsg'); m.textContent='';
+  try{
+    const r=await fetch(API+'/content'); DATA=await r.json();
+    const t=await fetch(API+'/content/history?key='+encodeURIComponent(KEY));
+    if(!t.ok) throw 0;                                  // wrong key
+    try{ localStorage.setItem('mp-admin-key',KEY); }catch(_){}
+    document.getElementById('gate').hidden=true; render();
+  }catch(_){ m.textContent='Chave incorreta, ou o motor não respondeu.'; }
+});
+
+document.getElementById('save').addEventListener('click',async()=>{
+  const msg=document.getElementById('msg'); msg.className='msg'; msg.textContent='A guardar…';
+  try{
+    const r=await fetch(API+'/content?key='+encodeURIComponent(KEY),
+      {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(collect())});
+    if(!r.ok) throw 0;
+    DATA=collect();
+    msg.className='msg ok'; msg.textContent='Guardado. O site atualiza dentro de um minuto.';
+  }catch(_){ msg.className='msg err'; msg.textContent='Não foi possível guardar. Tente outra vez.'; }
+});
+
+try{ const k=localStorage.getItem('mp-admin-key');
+  if(k){ document.getElementById('key').value=k; } }catch(_){}
+</script>
+</body>
+</html>
